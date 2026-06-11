@@ -1,0 +1,42 @@
+title: fff-covers
+description: Automatic cover generation for fanfiction — a guide for FanFicFare + Calibre users
+baseurl: "/fff-covers"
+url: "https://wordsandpics.github.io"
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Navigation — edit this to match your pages
+nav:
+  - title: Getting started
+    pages:
+      - label: Introduction
+        url: /
+      - label: Prerequisites
+        url: /prerequisites/
+  - title: Guide
+    pages:
+      - label: 1. Basic covers
+        url: /basic-covers/
+      - label: 2. Per-fandom covers
+        url: /per-fandom/
+      - label: 3. Custom columns
+        url: /custom-columns/
+      - label: 4. Advanced nerdery
+        url: /nerdery/
+  - title: Reference
+    pages:
+      - label: personal.ini snippets
+        url: /reference/personal-ini/
+      - label: Column templates
+        url: /reference/column-templates/
+      - label: SVG templates
+        url: /reference/svg-templates/
