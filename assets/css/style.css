@@ -56,7 +56,7 @@ body {
 
 .topbar-sub {
   font-size: 13px;
-  color: #4a5270;
+  color: #56758E;
 }
 
 .site-wrap {
@@ -80,11 +80,11 @@ body {
 }
 
 .nav-section {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #4a5270;
+  color: #56758f;
   padding: 0 20px;
   margin: 24px 0 8px;
 }
@@ -96,7 +96,7 @@ body {
 .nav-link {
   display: block;
   padding: 6px 20px;
-  font-size: 13.5px;
+  font-size: 14px;
   color: #8b93b0;
   text-decoration: none;
   border-left: 2px solid transparent;
@@ -128,7 +128,7 @@ body {
 ---------------------------------------- */
 
 h1 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
   color: #ffffff;
   line-height: 1.3;
@@ -136,7 +136,7 @@ h1 {
 }
 
 h2 {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 600;
   color: #ffffff;
   margin-top: 48px;
@@ -146,7 +146,7 @@ h2 {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #dde2f0;
   margin-top: 32px;
@@ -160,15 +160,14 @@ h1 + p + h2 {
 }
 
 .page-subtitle {
-  font-size: 15px;
-  color: #6b7594;
+  color: #7d87a6;
   margin-bottom: 36px;
   margin-top: 0;
 }
 
 p {
-  font-size: 15px;
-  color: #b0b9d4;
+
+  color: #cad1e6;
   margin-bottom: 16px;
 }
 
@@ -259,7 +258,7 @@ pre code {
 }
 
 .callout-title {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -315,23 +314,23 @@ pre code {
 }
 
 .step-num {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #4a5270;
+  color: #56758E;
   margin-bottom: 6px;
 }
 
 .step-title {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
   color: #dde2f0;
   margin-bottom: 4px;
 }
 
 .step-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: #6b7594;
   line-height: 1.5;
 }
@@ -349,11 +348,11 @@ pre code {
 }
 
 .prereqs-title {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #4a5270;
+  color: #56758E;
   margin-bottom: 12px;
 }
 
