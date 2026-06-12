@@ -60,7 +60,7 @@ In step 3 you'll set up custom metadata columns — including ship names — tha
 
 ---
 <div class="next-step">
-  <a href="{{ '/per-fandom/' | relative_url }}">
+  <a href="{{ '/custom-columns/' | relative_url }}">
     <span class="next-label">Next</span>
     <span class="next-title">Step 3: Custom columns →</span>
   </a>
