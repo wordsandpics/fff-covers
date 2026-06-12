@@ -62,7 +62,9 @@ This is not a guide to setting up FanFicFare from scratch. For that, see the [FF
   <h6 class="callout-title">Note</h6>
   <p>This guide is written with AO3 in mind. Settings may need adjustments for other sites.</p>
 </div>
+
 ***
+
 <div class="next-step">
   <a href="{{ '/per-fandom/' | relative_url }}">
     <span class="next-label">Get Started</span>

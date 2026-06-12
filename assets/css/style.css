@@ -423,6 +423,23 @@ img.small{
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .site-wrap {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "content"
+      "sidebar";
+  }
+  
+  .content {
+    grid-area: content;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+  }
+}
 .next-step {
   margin-top: 64px;
   padding-top: 32px;
