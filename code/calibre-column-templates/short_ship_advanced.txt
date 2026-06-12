@@ -1,0 +1,75 @@
+## Short ship — advanced version (Step 5)
+## ─────────────────────────────────────────
+## Column settings:
+##   Column heading : Cover ship tags
+##   Lookup name    : short_ships
+##   Column type    : Column built from other columns, behaves like tags
+##
+## Reads from #primary_slash and #secondary_slash — dedicated columns
+## populated by the ship extraction pipeline in personal.ini (Step 5).
+## These preserve author order, so you reliably get the author's
+## intended primary and secondary ships.
+##
+## Falls back to #ship for fics downloaded before the pipeline was
+## set up, or for fics deleted from AO3.
+##
+## To add a ship: copy any elif block in either translation section
+## and update the pattern and label. Keep both sections in sync —
+## the same ship can appear as either primary or secondary.
+
+program:
+## Read from dedicated columns
+s0 = field('#primary_slash');
+s1 = field('#secondary_slash');
+result = '';
+
+## ── Fallback for pre-pipeline or deleted fics ──────────────────────
+if !s0 && !s1 then
+    ships_raw = field('#ship');
+    if contains(ships_raw, '/', '1', '') then
+        fallback = re(ships_raw, '^(?:[^/,]+,\s*)*([^,]+/[^,]+)(?:,.*)?$', '\1');
+        if contains(fallback, '/', '1', '') && !contains(fallback, ',', '1', '') then
+            s0 = fallback
+        fi
+    fi
+fi;
+
+## ── Translate primary ship ─────────────────────────────────────────
+t1 = '';
+if s0 then
+    s1_lc = lowercase(s0);
+    if contains(s1_lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then
+        t1 = 'Johnlock'
+    elif contains(s1_lc, 'shane hollander/ilya rozanov', '1', '') then
+        t1 = 'Hollanov'
+    ## Add your ships above this line
+    else
+        t1 = re(s0, '(?i)([^/]+)/([^/]+)', '\1/\2')
+    fi
+fi;
+
+## ── Translate secondary ship ───────────────────────────────────────
+t2 = '';
+if s1 then
+    s2_lc = lowercase(s1);
+    if contains(s2_lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then
+        t2 = 'Johnlock'
+    elif contains(s2_lc, 'shane hollander/ilya rozanov', '1', '') then
+        t2 = 'Hollanov'
+    ## Add your ships above this line
+    else
+        t2 = re(s1, '(?i)([^/]+)/([^/]+)', '\1/\2')
+    fi
+fi;
+
+## ── Combine results, skip duplicates ──────────────────────────────
+if t1 then result = t1 fi;
+if t2 then
+    if !result then
+        result = t2
+    elif lowercase(t2) != lowercase(result) then
+        result = result & ', ' & t2
+    fi
+fi;
+
+if !result then return 'Gen' else return result fi

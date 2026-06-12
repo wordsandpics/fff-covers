@@ -1,0 +1,42 @@
+## Genre tags
+## ───────────
+## Column settings:
+##   Column heading : Genre
+##   Lookup name    : genre
+##   Column type    : Column built from other columns, behaves like tags
+##
+## Scans the fic's tags and returns genre labels.
+## Multiple genres can match — a fic can be both Whump and Angst.
+##
+## To add a new genre: copy any block and change the keywords and label.
+## To add keywords to an existing genre: add them after a | separator.
+##
+## Note: this template reads from Calibre's standard 'tags' field.
+## If your freeform tags land in a different column, update
+## field('tags') to match (e.g. field('#genre')).
+
+program:
+tags = lowercase(field('tags'));
+result = '';
+
+## ── Fluff ──────────────────────────────────────────────────────────
+result = list_union(result, test(contains(tags,
+    'fluff|domestic|domestic bliss|soft|slice of life|comfort',
+    '1', ''), 'Fluff', ''), ', ');
+
+## ── Whump ──────────────────────────────────────────────────────────
+result = list_union(result, test(contains(tags,
+    'hurt/comfort|whump|hurt|sick|illness|injury|recovery',
+    '1', ''), 'Whump', ''), ', ');
+
+## ── Angst ──────────────────────────────────────────────────────────
+result = list_union(result, test(contains(tags,
+    'angst|major character death|grief|ptsd|trauma|depression',
+    '1', ''), 'Angst', ''), ', ');
+
+## ── ABO ────────────────────────────────────────────────────────────
+result = list_union(result, test(contains(tags,
+    'alpha/beta/omega|omegaverse|abo',
+    '1', ''), 'ABO', ''), ', ');
+
+return result

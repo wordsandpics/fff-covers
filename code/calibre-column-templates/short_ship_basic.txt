@@ -1,0 +1,53 @@
+## Short ship — basic version (Step 4)
+## ──────────────────────────────────────
+## Column settings:
+##   Column heading : Cover ship tags
+##   Lookup name    : short_ships
+##   Column type    : Column built from other columns, behaves like tags
+##
+## Reads the #ship column, finds the first slash (romantic) relationship,
+## and returns a short name for display on covers.
+##
+## To add a ship: copy any elif block and update the pattern and label.
+##   Pattern: the ship name as it appears in AO3 tags (lowercase).
+##   Use | to match multiple variants: 'name a|name b'
+##   Label: whatever you want displayed on the cover.
+##
+## Anything not in the translation table falls back to a trimmed
+## version of the raw tag ("Character A/Character B").
+##
+## Note: Calibre sorts the #ship column alphabetically, so this
+## template may not always return the author's intended primary ship
+## for fics with multiple pairings. See the advanced version (Step 5)
+## for order-preserving extraction.
+
+program:
+raw_ships = field('#ship');
+
+## Find the first slash ship, regardless of how many tags precede it.
+## If no slash ship exists, return 'Gen'.
+s0 = '';
+if contains(raw_ships, '/', '1', '') then
+    s0 = re(raw_ships, '^(?:[^/,]+,\s*)*([^,]+/[^,]+)(?:,.*)?$', '\1');
+    ## If the result still contains a comma, the regex didn't isolate
+    ## a single tag — clear it and fall through to Gen.
+    if contains(s0, ',', '1', '') then s0 = '' fi
+fi;
+
+if !s0 then return 'Gen' fi;
+
+## ── Translation table ──────────────────────────────────────────────
+## Add your ships here following the same elif pattern.
+lc = lowercase(s0);
+
+if contains(lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then
+    return 'Johnlock'
+elif contains(lc, 'shane hollander/ilya rozanov', '1', '') then
+    return 'Hollanov'
+
+## ── Add your ships above this line ────────────────────────────────
+
+else
+    ## Fallback: return trimmed raw tag
+    return re(s0, '(?i)([^/]+)/([^/]+)', '\1/\2')
+fi

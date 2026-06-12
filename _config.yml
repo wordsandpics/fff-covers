@@ -35,11 +35,14 @@ nav:
       - label: 6. Obsessive nerdery 2- Tips & tricks
         url: /nerdery/
       
-  - title: Reference
+  - title: Reference & Files
     pages:
       - label: personal.ini snippets
-        url: /reference/personal-ini/
+        url: /code/fff-personal-ini/
       - label: Column templates
-        url: /reference/column-templates/
-      - label: SVG templates
-        url: /reference/svg-templates/
+        url: /code/calibre-column-templates/
+      - label: fic cover svgs
+        url: /code/wordsandpics_classic_covers.zip
+      - label: fic cover preset
+        url: /code/classics_preset.zip
+

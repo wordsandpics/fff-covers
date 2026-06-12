@@ -23,6 +23,8 @@ You need two things from the [`code/cover-images/`](https://github.com/wordsandp
 1. **`classics-preset.zip`** — the preset settings file
 2. _Optional_: **Other colour images** — eight solid color options are available. The preset comes with a basic gray one, but you can swap it any time. Images are in the `code/cover-images/` folder.
 
+<img src="{{ '/assets/img/cover-colours.png' | relative_url }}" alt="Cover colour options" class="small">
+
 ### Import the preset
 
 Open Generate Cover from Calibre's toolbar. In the **Settings** tab:

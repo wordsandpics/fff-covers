@@ -1,0 +1,29 @@
+## Short wordcount
+## ─────────────────
+## Column settings:
+##   Column heading : Short wordcount
+##   Lookup name    : short_words
+##   Column type    : Column built from other columns
+##
+## Reads from the #words column (mapped from FFF's Words field in Step 3).
+## Formats word count for compact display:
+##   under 1000  → 750w
+##   1000–9999   → 6.5k
+##   10000+      → 34k
+
+program:
+w = field('#words');
+
+if w == '' then
+    ## Return empty if no word count data
+    ''
+elif w <# 1000 then
+    ## Under 1k: show raw number with 'w' suffix
+    w & 'w'
+elif w <# 10000 then
+    ## 1k–10k: round to one decimal place
+    round(divide(w,100)) / 10 & 'k'
+else
+    ## 10k+: round to nearest thousand
+    round(divide(w,1000)) & 'k'
+fi
