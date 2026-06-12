@@ -6,13 +6,13 @@ If you have opinions about fanfic metadata, a Calibre library that has gotten sl
 
 **fff-covers** is a complete walkthrough for setting up automatic, fandom-aware cover generation for fanfiction downloaded with FanFicFare and managed in Calibre. By the end you'll have covers that know what fandom they belong to, who the ship is, whether it's a WIP, and how long it is — generated automatically, every time, without touching a single file manually.
 
----
+***
 
 ## 📖 Read the guide
 
 ### **[wordsandpics.github.io/fff-covers](https://wordsandpics.github.io/fff-covers)**
 
----
+***
 
 ## ⬇️ Downloads
 
@@ -20,7 +20,7 @@ If you have opinions about fanfic metadata, a Calibre library that has gotten sl
 
 **[Color cover backgrounds](code/wordsandpics_classic_covers.zip)** — eight solid-color SVG backgrounds to use with the preset.
 
----
+***
 
 ## What's covered
 
@@ -31,7 +31,7 @@ If you have opinions about fanfic metadata, a Calibre library that has gotten sl
 5. Advanced ship tags — preserve author order with a personal.ini pipeline
 6. Tips and tricks — metadata normalization, advanced cover rules, likeability score
 
----
+***
 
 ## License
 

@@ -6,7 +6,7 @@ subtitle: "Independent techniques to extend and refine your setup"
 
 The techniques on this page are modular — use any combination, in any order. None of them require the previous steps to be complete.
 
----
+***
 
 ## Metadata normalization
 
@@ -41,7 +41,7 @@ ships=>(.*)[/&](.*) \(?[Ff]riendship(?: only)\)?=>\1 & \2
 ships=> - Relationship=>
 ```
 
----
+***
 
 ## Advanced cover rules
 
@@ -77,7 +77,7 @@ The `$` anchors the match to the end of the URL, preventing partial matches.
   <p>This list needs to be maintained manually — add a line whenever you assign a custom cover to a fic.</p>
 </div>
 
----
+***
 
 ## Advanced GCC content tags
 
@@ -128,7 +128,8 @@ Shows `34k words` when populated, nothing when empty. The double `||` means no p
 ```
 
 Shows `Length: 34k words` or nothing.
----
+
+***
 
 ## Likeability score
 

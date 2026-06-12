@@ -58,7 +58,8 @@ If the fandom doesn't match any of your rules, the default that you set in the F
 In step 3 you'll set up custom metadata columns — including ship names — that can feed back into cover selection here, allowing per-ship templates like a dedicated cover for your OTP.
 
 
----
+***
+
 <div class="next-step">
   <a href="{{ '/custom-columns/' | relative_url }}">
     <span class="next-label">Next</span>

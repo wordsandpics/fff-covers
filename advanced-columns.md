@@ -18,7 +18,7 @@ In **Preferences → Add your own columns**, click **Add custom column**. Set th
   <h6 class="callout-title">Code Editing tips</h6>
   <p>Creating and editing within Calibre's "add column" interface is a pain, so I suggest to keep text files with your templates and you copy and paste them in calibre. You can test your templates through Calibre preferences-->Tempalte functions, where you can paste in your code and see any errors, saving you calibre restarts.</p>
 </div>
----
+***
 
 ## Short wordcount
 Do you need to know at a glance whether a fic is 15341 or 15349 words? No, you need a rounded number. 
@@ -44,7 +44,7 @@ fi
 
 A 750-word fic shows as `750w`. A 34,000-word fic shows as `34k`. A 6,500-word fic shows as `6.5k`.
 
----
+***
 ## Short status
 
 Quickly check if a fic is completed
@@ -64,7 +64,7 @@ fi
 
 "Completed" becomes `✔`, anything in-progress becomes `WIP`. The `else` branch passes through any unexpected value rather than swallowing it silently.
 
----
+***
 
 ## Genre
 You want to know what a fic is about, and you don't want to display a fic's 25 tags on the cover. So generate Genre tags:
@@ -143,7 +143,7 @@ result = list_union(result, test(contains(tags,
     '1', ''), '🫃', ''), ', ');
 ```
 
----
+***
 
 ## Short ship
 You want to know the fic's ship- and preferrably without displaying John Johnsson (Some fandom)/Martin James Martinsson on every cover. 
@@ -198,7 +198,7 @@ fi
   <p>Once this column is working, you can use it in <code>generate_cover_settings</code> in FFF's personal.ini to assign per-ship cover templates — for example, a dedicated cover for your OTP. Add a line like <code>${#short_ships} => Johnlock => Classics Johnlock</code> above your fandom rules. First match wins, so ship-specific rules should come before fandom rules.</p>
 </div>
 
----
+***
 
 <div class="next-step">
   <a href="{{ 'advanced-ships/' | relative_url }}">

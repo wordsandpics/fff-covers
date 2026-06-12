@@ -47,6 +47,7 @@ Open the FanFicFare plugin settings and go to the **Custom Columns** tab. Your n
 | Words(#words) | Words |
 | content rating(#contentrating) | Rating |
 
+
 The **New Only** checkbox next to each column controls whether FFF updates it on metadata refreshes or only populates it on first download. Leave it unchecked for these fields — you want them to stay current.
 
 At the bottom of the tab, make sure **Allow custom_columns_settings from personal.ini to override** is checked. You'll need this in later steps.
@@ -63,7 +64,7 @@ You can also display column values directly on covers using the `{#custom_column
 
 In step 4 you'll learn how to tweak custom columns to get even more useful data for your covers.
 
----
+***
 
 <div class="next-step">
   <a href="{{ '/advanced-columns/' | relative_url }}">
