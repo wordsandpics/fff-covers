@@ -4,9 +4,9 @@ title: "Step 5: Advanced ship tags"
 subtitle: "Preserving author order to reliably identify primary and secondary ships"
 ---
 
-The short ship column in step 4 reads directly from `#ship` — which works, but has a limitation. Calibre's tag columns sort alphabetically, so for fics with multiple pairings the "first" ship in your column is whoever's name comes first in the alphabet, not who the author foregrounded. A Johnlock fic where the author listed Mycroft/Greg too might show Sherlock/John as primary because M comes before S.
+The short ship column in step 4 reads directly from `#ship` — which works, but has a limitation. Calibre's tag columns sort alphabetically, so for fics with multiple pairings the "first" ship in your column is whoever's name comes first in the alphabet, not who the author foregrounded. A Johnlock fic where the author listed Mycroft/Greg too might show it as the main ship because it comes first in the Calibre relationship tags.
 
-If that's good enough for your library, step 4 is fine as-is. This step sets up a more robust pipeline that captures ships in author order and extracts them into dedicated columns.
+If that's good enough for your library (if your fics tend to have only one ship at a time), step 4 is fine as-is. This step sets up a more robust pipeline that captures ships in author order and extracts them into dedicated columns.
 
 I've set it up to capture two ships: the first one in order of appearance I set as primary, the second one as secondary. You could in theory expend this to however many, or remove the secondary and just have one. 
 

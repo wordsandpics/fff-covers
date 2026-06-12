@@ -246,7 +246,6 @@ p code, li code {
   border-radius: 3px;
   padding: 1px 6px;
   color: #a8d0f0;
-  font-size: 12.5px;
 }
 
 pre {
@@ -257,7 +256,7 @@ pre {
   margin: 20px 0;
   overflow-x: auto;
   line-height: 1.6;
-  max-width:90%;
+  max-width:100%;
 }
 
 pre code {
