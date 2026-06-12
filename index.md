@@ -6,7 +6,7 @@ subtitle: A guide for FanFicFare + Calibre users
 
 <p>You're already using FanFicFare to download fic and Calibre to manage it. This guide is about making your library look good and give you useful information at a glance: automatically, per fandom, with metadata that actually matters to you.</p>
 
-<p>This is not a guide to setting up FanFicFare from scratch. If you need a more general, but advanced guide without emphasis on covers, I strongly recommend <a href="https://maelstrom.quest/2026/02/24/calibre-fff-guide/">Stormy Crossroads' Calibre + Fanficfare tutorial</a>. For thorough documentation there's the [FFF wiki](https://github.com/JimmXinu/FanFicFare/wiki). </p>
+<p>This is not a guide to setting up FanFicFare from scratch. If you need a more general, but advanced guide without emphasis on covers, I strongly recommend <a href="https://maelstrom.quest/2026/02/24/calibre-fff-guide/">Stormy Crossroads' Calibre + Fanficfare tutorial</a>. For thorough documentation there's the <a href="https://github.com/JimmXinu/FanFicFare/wiki)">FFF wiki</a>. </p>
 
 ![Cover samples]({{ '/assets/img/cover_samples.png' | relative_url }})
 
