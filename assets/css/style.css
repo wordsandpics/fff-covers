@@ -400,31 +400,7 @@ img.small{
   img.small{
     width: 80%;
   }
-  .site-wrap {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    position: static;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .content {
-    padding: 32px 24px;
-  }
-
-  .step-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .topbar-sub {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
+  
   .site-wrap {
     grid-template-columns: 1fr;
     grid-template-areas: 
