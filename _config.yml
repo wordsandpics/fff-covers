@@ -41,8 +41,12 @@ nav:
         url: https://github.com/wordsandpics/fff-covers/tree/main/code/fff-personal-ini/
       - label: Column templates
         url: https://github.com/wordsandpics/fff-covers/tree/main/code/calibre-column-templates/
-      - label: fic cover svgs
+      - label: Fic cover svgs
         url: /code/wordsandpics_classic_covers.zip
-      - label: fic cover preset
+      - label: Fic cover preset
         url: /code/classics_preset.zip
+      - label: GitHub
+        url: https://github.com/wordsandpics/fff-covers     
+        
+        
 
