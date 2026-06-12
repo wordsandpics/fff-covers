@@ -220,7 +220,7 @@ hr {
 
 code {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 p code, li code {
@@ -244,7 +244,7 @@ pre {
 
 pre code {
   color: #a8d0f0;
-  font-size: 13px;
+  font-size: 14px;
   background: none;
   border: none;
   padding: 0;
@@ -367,6 +367,7 @@ pre code {
   background: #7eb8f7;
   flex-shrink: 0;
   display:inline-block;
+  vertical-align: middle;
   margin-right:4px;
 }
 

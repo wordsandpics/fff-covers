@@ -47,6 +47,8 @@ A 750-word fic shows as `750w`. A 34,000-word fic shows as `34k`. A 6,500-word f
 ---
 ## Short status
 
+Quickly check if a fic is completed
+
 **Column name:** Short status — **Lookup name:** `short_status` — **Type:** Column built from other columns
 
 Converts FFF's status values into compact display text.

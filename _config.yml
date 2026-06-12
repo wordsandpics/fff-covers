@@ -30,8 +30,11 @@ nav:
         url: /custom-columns/
       - label: 4. Advanced custom columns
         url: /advanced-columns/
-      - label: 5. Obsessive nerdery
+      - label: 5. Obsessive nerdery 1- Advanced ships
+        url: /advanced-ships/
+      - label: 6. Obsessive nerdery 2- Tips & tricks
         url: /nerdery/
+      
   - title: Reference
     pages:
       - label: personal.ini snippets

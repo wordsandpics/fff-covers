@@ -13,6 +13,8 @@ Generate Cover is a separate Calibre plugin. Install it from Calibre's preferenc
 **Preferences → Plugins → Get new plugins**, search for "Generate Cover", install, and restart Calibre.
 
 ## 2. Import your starter preset
+To get you started I have prepared a preset and alternate coloured images. The design is very loosely inspired in Penguin Classics. It's meant to be a clean, simple design that prioritizes legibility above all. Feel free to use the images as you wish. 
+
 
 ### Download the files
 
