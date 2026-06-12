@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "Step 3: Simple custom columns"
-subtitle: "Map AO3 metadata to Calibre columns — no personal.ini required"
+subtitle: "Map AO3 metadata to Calibre columns and use in your covers"
 ---
 
 <div class="callout note">
-  <div class="callout-title">Already have custom columns set up?</div>
+  <h6 class="callout-title">Already have custom columns set up?</h6>
   <p>If you've already created and mapped your columns, skip to <a href="{{ '/advanced-columns/' | relative_url }}">Step 4</a>.</p>
 </div>
 

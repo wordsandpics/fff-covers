@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Step 4: Template columns"
-subtitle: "Computed columns that derive new data from existing metadata"
+title: "Step 4: Advanced columns"
+subtitle: "Template columns that derive new data from existing metadata"
 ---
 
 The columns in step 3 were simple mappings — FFF writes a value, Calibre stores it. Template columns work differently: they calculate their value from other columns every time they're displayed, using a small expression or program. Change the underlying data and the template column updates automatically.
@@ -15,7 +15,7 @@ In **Preferences → Add your own columns**, click **Add custom column**. Set th
 ![Creating a template column]({{ '/assets/img/calibre-template-column.png' | relative_url }})
 
 <div class="callout note">
-  <h6 class="callout-title">Creating and editing tips</h6>
+  <h6 class="callout-title">Code Editing tips</h6>
   <p>Creating and editing within Calibre's "add column" interface is a pain, so I suggest to keep text files with your templates and you copy and paste them in calibre. You can test your templates through Calibre preferences-->Tempalte functions, where you can paste in your code and see any errors, saving you calibre restarts.</p>
 </div>
 ---
@@ -133,11 +133,12 @@ lc = lowercase(s0);
 # Use | to match multiple variants of the same ship name
 # -----------------------------------------------
 
-if contains(lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then return 'Johnlock'
+if contains(lc, 'sherlock holmes/john watson|sherlock/john', '1', '') then return 'Johnlock'
 elif contains(lc, 'shane hollander/ilya rozanov', '1', '') then return 'Hollanov'
 
 # Add more ships here following the same pattern:
 # elif contains(lc, 'character a/character b', '1', '') then return 'ShipName'
+# "a/b|b/a" means a/b OR b/a
 # -----------------------------------------------
 
 # If the ship isn't in the list above, return the raw name trimmed to First/Last
