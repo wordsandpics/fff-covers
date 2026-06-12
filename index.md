@@ -40,11 +40,12 @@ This is a sample of what my covers look like
   <li><div class="prereq-dot"></div>Calibre with the FanFicFare plugin installed and working</li>
   <li><div class="prereq-dot"></div>The generate_cover plugin installed</li>
   <li><div class="prereq-dot"></div>Basic comfort editing personal.ini</li>
+  </ul>
 </div>
 
 This is not a guide to setting up FanFicFare from scratch. For that, see the [FFF wiki](https://github.com/JimmXinu/FanFicFare/wiki).
 
 <div class="callout note">
   <h6 class="callout-title">Note</h6>
-  <p>All personal.ini snippets in this guide are written for AO3. Settings may need minor adjustments for other sites.</p>
+  <p>This guide is written with AO3 in mind. Settings may need adjustments for other sites.</p>
 </div>

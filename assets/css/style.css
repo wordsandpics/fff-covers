@@ -320,7 +320,7 @@ pre code {
 
 .step-title {
   color: #dde2f0;
-  margin-bottom: 4px;
+  margin: 4px 0;
 }
 
 .step-desc {
@@ -361,12 +361,16 @@ pre code {
   border-radius: 50%;
   background: #7eb8f7;
   flex-shrink: 0;
+  display:inline-block;
+  margin-right:4px;
 }
 
 /* ----------------------------------------
    Responsive
 ---------------------------------------- */
-
+img{max-width:80%;
+  margin:.5em;
+}
 @media (max-width: 768px) {
   .site-wrap {
     grid-template-columns: 1fr;
