@@ -56,7 +56,7 @@ body {
 
 .topbar-sub {
   font-size: 13px;
-  color: #56758E;
+  color: #6289a3;
 }
 
 .site-wrap {
@@ -128,7 +128,7 @@ body {
 ---------------------------------------- */
 
 h1 {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 600;
   color: #ffffff;
   line-height: 1.3;
@@ -136,7 +136,7 @@ h1 {
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   color: #ffffff;
   margin-top: 48px;
@@ -146,11 +146,18 @@ h2 {
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #dde2f0;
   margin-top: 32px;
   margin-bottom: 12px;
+}
+h6{
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 h1 + h2,
@@ -257,17 +264,10 @@ pre code {
   border: 1px solid;
 }
 
-.callout-title {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
+
 
 .callout p {
   margin-bottom: 0;
-  font-size: 14px;
 }
 
 .callout.note {
@@ -314,24 +314,16 @@ pre code {
 }
 
 .step-num {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #56758E;
+  color: #6289a3;
   margin-bottom: 6px;
 }
 
 .step-title {
-  font-size: 18px;
-  font-weight: 600;
   color: #dde2f0;
   margin-bottom: 4px;
 }
 
 .step-desc {
-  font-size: 14px;
-  color: #6b7594;
   line-height: 1.5;
 }
 
@@ -348,21 +340,19 @@ pre code {
 }
 
 .prereqs-title {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #56758E;
+  color: #6289a3;
   margin-bottom: 12px;
 }
 
-.prereq-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
+.prereq-items {
   color: #8b93b0;
   padding: 4px 0;
+  margin:0;
+}
+.prereq-items li{
+  margin:0;
+  padding: 4px 0;
+  list-style: none;
 }
 
 .prereq-dot {
