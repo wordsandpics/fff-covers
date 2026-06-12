@@ -38,9 +38,9 @@ nav:
   - title: Reference & Files
     pages:
       - label: personal.ini snippets
-        url: /code/fff-personal-ini/
+        url: https://github.com/wordsandpics/fff-covers/tree/main/code/fff-personal-ini/
       - label: Column templates
-        url: /code/calibre-column-templates/
+        url: https://github.com/wordsandpics/fff-covers/tree/main/code/calibre-column-templates/
       - label: fic cover svgs
         url: /code/wordsandpics_classic_covers.zip
       - label: fic cover preset
