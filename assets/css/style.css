@@ -236,6 +236,8 @@ hr {
 code {
   font-family: 'JetBrains Mono', monospace;
   font-size: 14px;
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 p code, li code {
@@ -255,6 +257,7 @@ pre {
   margin: 20px 0;
   overflow-x: auto;
   line-height: 1.6;
+  max-width:90%;
 }
 
 pre code {
@@ -414,6 +417,18 @@ img.small{
   
   .sidebar {
     grid-area: sidebar;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  
+  .content {
+    padding: 24px 16px;
+    min-width: 0;
+  }
+  
+  pre {
+    font-size: 12px;
   }
 }
 .next-step {
