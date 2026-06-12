@@ -88,3 +88,12 @@ Download any fic from AO3. When it completes, you should see a generated cover i
 ## What's next
 
 In step 2, you'll set up different cover templates per fandom and have FFF apply them automatically when downloading.
+
+---
+
+<div class="next-step">
+  <a href="{{ '/per-fandom/' | relative_url }}">
+    <span class="next-label">Next</span>
+    <span class="next-title">Step 2: Per-fandom covers →</span>
+  </a>
+</div>

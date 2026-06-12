@@ -162,3 +162,12 @@ generate_cover_settings:
 
 This is how you get a dedicated cover for a specific pairing regardless of fandom — useful if you read across multiple fandoms that share a ship archetype, or simply because your OTP deserves its own template.
 
+
+---
+
+<div class="next-step">
+  <a href="{{ '/nerdery/' | relative_url }}">
+    <span class="next-label">Next</span>
+    <span class="next-title">Step 6: Tips & Tricks →</span>
+  </a>
+</div>

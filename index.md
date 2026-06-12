@@ -1,10 +1,12 @@
 ---
 layout: default
-title: Automatic covers for your fanfic library
+title: Advanced covers for your fanfic library
 subtitle: A guide for FanFicFare + Calibre users
 ---
 
 <p>You're already using FanFicFare to download fic and Calibre to manage it. This guide is about making your library look good and give you useful information at a glance: automatically, per fandom, with metadata that actually matters to you.</p>
+
+<p>If you need a more general, but advanced guide to setting up Calibre + FanFicFare, without emphasis on covers, I cannot recommend <a href="https://maelstrom.quest/2026/02/24/calibre-fff-guide/">Stormy Crossroads' Calibre + Fanficfare tutorial</a>
 
 ![Cover samples]({{ '/assets/img/cover_samples.png' | relative_url }})
 
@@ -49,4 +51,11 @@ This is not a guide to setting up FanFicFare from scratch. For that, see the [FF
 <div class="callout note">
   <h6 class="callout-title">Note</h6>
   <p>This guide is written with AO3 in mind. Settings may need adjustments for other sites.</p>
+</div>
+---
+<div class="next-step">
+  <a href="{{ '/per-fandom/' | relative_url }}">
+    <span class="next-label">Get Started</span>
+    <span class="next-title">Step 1: Basic covers →</span>
+  </a>
 </div>

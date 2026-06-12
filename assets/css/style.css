@@ -51,7 +51,7 @@ body {
 }
 
 .topbar-title:hover {
-  color: #7eb8f7;
+  color: #7EC6F6;
 }
 
 .topbar-sub {
@@ -110,7 +110,7 @@ body {
 
 .nav-link.active {
   color: #ffffff;
-  border-left-color: #7eb8f7;
+  border-left-color: #7EC6F6;
   background: rgba(126, 184, 247, 0.08);
 }
 
@@ -184,12 +184,24 @@ p {
 }
 
 a {
-  color: #7eb8f7;
+  color: #7ec6f7;
   text-decoration: none;
+  
 }
 
 a:hover {
   text-decoration: underline;
+}
+a.btn{
+  display: inline-block;
+  background-color: #7EC6F6;
+  color:#111827 ;
+  padding: 1em 3em;
+  font-weight: 700;
+  
+}
+a.btn:hover{
+  background-color: #6db6e6;
 }
 
 strong {
@@ -254,7 +266,7 @@ pre code {
 .highlight .c, .highlight .cm, .highlight .c1 { color: #4a5e6e; }  /* comments */
 .highlight .s, .highlight .s1, .highlight .s2 { color: #a8d870; }  /* strings */
 .highlight .k, .highlight .kd { color: #c792ea; }                   /* keywords */
-.highlight .n, .highlight .na { color: #7eb8f7; }                   /* names */
+.highlight .n, .highlight .na { color: #7EC6F6; }                   /* names */
 .highlight .o { color: #89ddff; }                                    /* operators */
 .highlight .m, .highlight .mi { color: #f78c6c; }                   /* numbers */
 
@@ -280,7 +292,7 @@ pre code {
   border-color: rgba(126, 184, 247, 0.25);
 }
 
-.callout.note .callout-title { color: #7eb8f7; }
+.callout.note .callout-title { color: #7EC6F6; }
 .callout.note p { color: #8b93b0; }
 
 .callout.warning {
@@ -364,7 +376,7 @@ pre code {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #7eb8f7;
+  background: #7EC6F6;
   flex-shrink: 0;
   display:inline-block;
   vertical-align: middle;
@@ -407,4 +419,40 @@ img.small{
   .topbar-sub {
     display: none;
   }
+}
+.next-step {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.next-step a {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #1a2340;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 16px 22px;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.next-step a:hover {
+  border-color: rgba(126, 184, 247, 0.3);
+  background: #1e284a;
+}
+
+.next-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4a5270;
+}
+
+.next-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #dde2f0;
 }

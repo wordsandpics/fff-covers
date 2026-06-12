@@ -197,3 +197,12 @@ fi
   <h6 class="callout-title">Using ship tags for covers</h6>
   <p>Once this column is working, you can use it in <code>generate_cover_settings</code> in FFF's personal.ini to assign per-ship cover templates — for example, a dedicated cover for your OTP. Add a line like <code>${#short_ships} => Johnlock => Classics Johnlock</code> above your fandom rules. First match wins, so ship-specific rules should come before fandom rules.</p>
 </div>
+
+---
+
+<div class="next-step">
+  <a href="{{ 'advanced-ships/' | relative_url }}">
+    <span class="next-label">Next</span>
+    <span class="next-title">Step 5: Advanced ships →</span>
+  </a>
+</div>

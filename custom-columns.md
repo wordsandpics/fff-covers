@@ -62,3 +62,12 @@ You can also display column values directly on covers using the `{#custom_column
 ## What's next
 
 In step 4 you'll learn how to tweak custom columns to get even more useful data for your covers.
+
+---
+
+<div class="next-step">
+  <a href="{{ '/advanced-columns/' | relative_url }}">
+    <span class="next-label">Next</span>
+    <span class="next-title">Step 4: Advanced columns →</span>
+  </a>
+</div>
