@@ -1,25 +1,38 @@
 # fff-covers
 
-A guide to automatic cover generation for fanfiction, using FanFicFare and Calibre's generate_cover plugin.
+![Cover samples](assets/img/cover-samples.png)
 
-**Live site:** https://wordsandpics.github.io/fff-covers
+If you have opinions about fanfic metadata, a Calibre library that has gotten slightly out of hand, and a nagging feeling that the default grey cover is a crime against aesthetics — this guide is for you.
 
-## Contents
+**fff-covers** is a complete walkthrough for setting up automatic, fandom-aware cover generation for fanfiction downloaded with FanFicFare and managed in Calibre. By the end you'll have covers that know what fandom they belong to, who the ship is, whether it's a WIP, and how long it is — generated automatically, every time, without touching a single file manually.
 
-1. Basic covers
-2. Per-fandom covers
-3. Custom columns
-4. Advanced nerdery
+---
 
-## Local development
+## 📖 Read the guide
 
-```bash
-gem install bundler jekyll
-bundle exec jekyll serve
-```
+### **[wordsandpics.github.io/fff-covers](https://wordsandpics.github.io/fff-covers)**
 
-Then visit `http://localhost:4000/fff-covers`
+---
 
-## Contributing
+## ⬇️ Downloads
 
-Found an error or have something to add? Issues and PRs welcome.
+**[Classics preset](code/classics_preset.zip)** — the starter Generate Cover preset used throughout the guide.
+
+**[Color cover backgrounds](code/wordsandpics_classic_covers.zip)** — eight solid-color SVG backgrounds to use with the preset.
+
+---
+
+## What's covered
+
+1. Basic covers — get something generating in under ten minutes
+2. Per-fandom covers — different templates for different fandoms
+3. Simple custom columns — map AO3 metadata to your Calibre library
+4. Template columns — computed columns for short wordcount, genre tags, and ship names
+5. Advanced ship tags — preserve author order with a personal.ini pipeline
+6. Tips and tricks — metadata normalization, advanced cover rules, likeability score
+
+---
+
+## License
+
+[MIT](LICENSE) — use it, adapt it, share it.
