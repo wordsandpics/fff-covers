@@ -45,6 +45,24 @@ fi
 A 750-word fic shows as `750w`. A 34,000-word fic shows as `34k`. A 6,500-word fic shows as `6.5k`.
 
 ---
+## Short status
+
+**Column name:** Short status — **Lookup name:** `short_status` — **Type:** Column built from other columns
+
+Converts FFF's status values into compact display text.
+
+```
+program:
+s = lowercase(field('#status'));
+if contains(s, 'complet', '1', '') then return '✔'
+elif contains(s, 'progress|wip', '1', '') then return 'WIP'
+else return field('#status')
+fi
+```
+
+"Completed" becomes `✔`, anything in-progress becomes `WIP`. The `else` branch passes through any unexpected value rather than swallowing it silently.
+
+---
 
 ## Genre
 You want to know what a fic is about, and you don't want to display a fic's 25 tags on the cover. So generate Genre tags:
@@ -100,6 +118,28 @@ Each block follows the same logic: look for any of these keywords in the tags, a
   <h6 class="callout-title">Which tags field?</h6>
   <p>This template reads from Calibre's standard <code>tags</code> field. Depending on how your FFF is configured, genre-relevant tags may instead be in a custom column. If the column comes up empty, check which column your freeform tags are landing in and update <code>field('tags')</code> accordingly.</p>
 </div>
+
+### Tag flags
+
+You can use the genres flag to make any tag show up in your cover. For example, I tag fics recommended by fandom friends. I then show that in my genre column and my covers with a single added line.
+
+Add this to your genre template, anywhere in the list:
+
+```
+result = list_union(result, test(contains(tags,
+    'recommend|recommends|recommended',
+    '1', ''), '🌟', ''), ', ');
+```
+
+A fic tagged "Recommended" in your library will show `🌟` alongside its other genre tags.
+
+You can also do something like: 
+
+```
+result = list_union(result, test(contains(tags,
+    'mpreg',
+    '1', ''), '🫃', ''), ', ');
+```
 
 ---
 
