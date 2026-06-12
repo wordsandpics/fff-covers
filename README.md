@@ -1,6 +1,6 @@
 # fff-covers
 
-![Cover samples](assets/img/cover-samples3.png)
+![Cover samples](assets/img/cover_samples3.png)
 
 If you have opinions about fanfic, a Calibre library that has gotten slightly out of hand, and a ~~nagging~~  persistent feeling that the default grey cover is a crime against aesthetics: this guide is for you.
 
