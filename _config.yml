@@ -28,7 +28,9 @@ nav:
         url: /per-fandom/
       - label: 3. Custom columns
         url: /custom-columns/
-      - label: 4. Advanced nerdery
+      - label: 4. Advanced custom columns
+        url: /advanced-columns/
+      - label: 5. Obsessive nerdery
         url: /nerdery/
   - title: Reference
     pages:

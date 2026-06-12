@@ -50,6 +50,9 @@ Partial match — you don't need the full fandom name. `Sherlock` will match "Sh
 
 AO3 crossovers have multiple fandoms in `${category}`. FFF matches against the full string, so a crossover between Sherlock and Good Omens will match whichever fandom appears first in your rule list. This is usually fine — the cover will reflect the primary fandom the author tagged first.
 
+## Other Fandoms
+If the fandom doesn't match any of your rules, the default that you set in the FFF preferences will be used. 
+
 ## What's next
 
 In step 3 you'll set up custom metadata columns — including ship names — that can feed back into cover selection here, allowing per-ship templates like a dedicated cover for your OTP.

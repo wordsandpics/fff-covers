@@ -83,4 +83,6 @@ Download any fic from AO3. When it completes, you should see a generated cover i
   <p>Check that Generate Cover is installed and that the Default row in the Calibre Cover tab is set to Classics rather than {Default}. If it was already set, selecting the book and clicking on "Generate cover" manually to confirm the plugin is working.</p>
 </div>
 
-When that's working, move on to step 2, where you'll set up different cover templates per fandom.
+## What's next
+
+In step 2, you'll set up different cover templates per fandom and have FFF apply them automatically when downloading.

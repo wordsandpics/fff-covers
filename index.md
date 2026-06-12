@@ -8,7 +8,7 @@ subtitle: A guide for FanFicFare + Calibre users
 
 ![Cover samples]({{ '/assets/img/cover_samples.png' | relative_url }})
 
-This is a sample of what my covers look like
+This is a sample of what my covers look like. I have per-fandom cover designs (even per-ship in some cases!) and I've set it up so I can see at a glance all the information to see what the fic is about: Main ship, genre, length, completion status. You can decide exactly what information you want displayed.
 
 <div class="step-grid">
   <a class="step-card" href="{{ '/basic-covers/' | relative_url }}">
