@@ -6,11 +6,11 @@ subtitle: A guide for FanFicFare + Calibre users
 
 <p>You're already using FanFicFare to download fic and Calibre to manage it. This guide is about making your library look good and give you useful information at a glance: automatically, per fandom, with metadata that actually matters to you.</p>
 
-<p>If you need a more general, but advanced guide to setting up Calibre + FanFicFare, without emphasis on covers, I strongly recommend <a href="https://maelstrom.quest/2026/02/24/calibre-fff-guide/">Stormy Crossroads' Calibre + Fanficfare tutorial</a>. </p>
+<p>This is not a guide to setting up FanFicFare from scratch. If you need a more general, but advanced guide without emphasis on covers, I strongly recommend <a href="https://maelstrom.quest/2026/02/24/calibre-fff-guide/">Stormy Crossroads' Calibre + Fanficfare tutorial</a>. For thorough documentation there's the [FFF wiki](https://github.com/JimmXinu/FanFicFare/wiki). </p>
 
 ![Cover samples]({{ '/assets/img/cover_samples.png' | relative_url }})
 
-This is a sample of what my covers look like. I have per-fandom cover designs (even per-ship in some cases!) and I've set it up so I can see at a glance all the information to see what the fic is about: Main ship, genre,length, completion status. You can decide exactly what information you want displayed. the templates available are slightly different as they don't have per-fandom icons and text, but they're editable, so if you want you can do that yourself.
+This is a sample of what my covers look like. I have per-fandom cover designs (even per-ship in some cases!) and I've set it up so I can see at a glance all the information to see what the fic is about: Main ship, genre, length, completion status. You can decide exactly what information you want displayed. the templates available in this guide are slightly different as they don't have per-fandom icons and text, but they're editable, so if you want you can modify them yourself.
 
 <div class="step-grid">
   <a class="step-card" href="{{ '/basic-covers/' | relative_url }}">
@@ -52,11 +52,11 @@ This is a sample of what my covers look like. I have per-fandom cover designs (e
   <ul class="prereq-items">
   <li><div class="prereq-dot"></div>Calibre with the FanFicFare plugin installed and working</li>
   <li><div class="prereq-dot"></div>The generate_cover plugin installed</li>
-  <li><div class="prereq-dot"></div>Basic comfort editing personal.ini</li>
+  <li><div class="prereq-dot"></div>Basic comfort editing code. Don't worry, it's all explained and ready to be copy/pasted and modified easily. </li>
   </ul>
 </div>
 
-This is not a guide to setting up FanFicFare from scratch. For that, see the [FFF wiki](https://github.com/JimmXinu/FanFicFare/wiki).
+
 
 <div class="callout note">
   <h6 class="callout-title">Note</h6>
