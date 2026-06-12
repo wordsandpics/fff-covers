@@ -2,9 +2,9 @@
 
 ![Cover samples](/assets/img/cover-samples3.png)
 
-If you have opinions about fanfic metadata, a Calibre library that has gotten slightly out of hand, and a nagging feeling that the default grey cover is a crime against aesthetics — this guide is for you.
+If you have opinions about fanfic, a Calibre library that has gotten slightly out of hand, and a ~~nagging~~  persistent feeling that the default grey cover is a crime against aesthetics: this guide is for you.
 
-**fff-covers** is a complete walkthrough for setting up automatic, fandom-aware cover generation for fanfiction downloaded with FanFicFare and managed in Calibre. By the end you'll have covers that know what fandom they belong to, who the ship is, whether it's a WIP, and how long it is — generated automatically, every time, without touching a single file manually.
+**fff-covers** is a complete walkthrough for setting up automatic, fandom-aware cover generation for fanfiction downloaded with FanFicFare and managed in Calibre. By the end you'll have covers that know what fandom they belong to, who the ship is, whether it's a WIP, and how long it is — generated automatically, every time you download or update a story, without touching a single file manually.
 
 ***
 

@@ -33,7 +33,7 @@ This is a sample of what my covers look like. I have per-fandom cover designs (e
     <h3 class="step-title">Advanced custom columns</h3>
     <p class="step-desc">Creating columns from other columns to process and change metadata.</p>
   </a>
-  <a class="step-card" href="{{ '/advanced ships/' | relative_url }}">
+  <a class="step-card" href="{{ '/advanced-ships/' | relative_url }}">
     <h6 class="step-num">Step 5</h6>
     <h3 class="step-title">Advanced ships</h3>
     <p class="step-desc">A better way of figuring out primary & secondary ships.</p>
