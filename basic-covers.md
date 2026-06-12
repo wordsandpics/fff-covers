@@ -6,13 +6,13 @@ subtitle: "Install the plugin, import a preset, generate your first cover"
 
 By the end of this step you'll have automatically generated covers appearing on every fic you download — no manual work per fic required.
 
-## Install Generate Cover
+## 1. Install Generate Cover
 
 Generate Cover is a separate Calibre plugin. Install it from Calibre's preferences:
 
 **Preferences → Plugins → Get new plugins**, search for "Generate Cover", install, and restart Calibre.
 
-## Create your starter preset
+## 2. Import your starter preset
 
 ### Download the files
 
@@ -48,16 +48,18 @@ This preset uses Tahoma — 84pt for the title, 44pt for author and custom text,
 #### Dimensions
 
 <img src="{{ '/assets/img/gcc-dimensions.png' | relative_url }}" alt="Generate Cover — Dimensions tab" class="small">
+
 Covers are generated at 750 × 1100 pixels, a standard ebook portrait ratio. The background SVG is stretched to fill the cover area. You don't need to change anything here. But you can tweak the margins if needed. 
 
 #### Contents
 
 <img src="{{ '/assets/img/gcc-contents.png' | relative_url }}" alt="Generate Cover — Contents tab" class="small">
-Five elements are displayed in this order: title, author, series (only appears if the fic is part of a series),and custom text. The custom text field is set to `{pubdate}`, which pulls the publication date — that's the "Dec 2021" you see in the preview.
+
+Four elements are displayed in this order: title, author, series (only appears if the fic is part of a series),and custom text. The custom text field is set to `{pubdate}`, which pulls the publication date — that's the "Dec 2021" you see in the preview.
 
 This is the minimum useful cover: you know what the fic is, who wrote it, when it was published, and whether it's part of a series. It all uses standard data that every fic already has In the next parts of the tutorial we'll see how to get in even more useful data by using custom columns and fanficfare automation.  
 
-## Configure FFF to use the preset
+## 3. Configure FFF to use the preset
 
 In Calibre, open the FanFicFare plugin settings and go to the **Calibre Cover** tab.
 
@@ -72,7 +74,7 @@ In the table below, find the **Default** row and select **Classics** from the dr
 
 Click OK.
 
-## Test it
+## 4. Test it
 
 Download any fic from AO3. When it completes, you should see a generated cover in the book details panel — your chosen color background, title, author, publication date.
 

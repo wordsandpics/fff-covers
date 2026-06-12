@@ -20,8 +20,6 @@ nav:
     pages:
       - label: Introduction
         url: /
-      - label: Prerequisites
-        url: /prerequisites/
   - title: Guide
     pages:
       - label: 1. Basic covers
