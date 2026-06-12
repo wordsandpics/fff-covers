@@ -7,6 +7,7 @@ subtitle: A guide for FanFicFare + Calibre users
 <p>You're already using FanFicFare to download fic and Calibre to manage it. This guide is about making your library look good and give you useful information at a glance: automatically, per fandom, with metadata that actually matters to you.</p>
 
 ![Cover samples]({{ '/assets/img/cover_samples.png' | relative_url }})
+
 This is a sample of what my covers look like
 
 <div class="step-grid">

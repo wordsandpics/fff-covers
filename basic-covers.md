@@ -41,21 +41,19 @@ Here's a brief tour of the four tabs so you know what you're working with.
 
 #### Fonts
 
-![Generate Cover — Fonts tab]({{ '/assets/img/gcc-fonts.png' | relative_url }})
+<img src="{{ '/assets/img/gcc-fonts.png' | relative_url }}" alt="Generate Cover — Fonts tab" class="small">
 
 This preset uses Tahoma — 84pt for the title, 44pt for author and custom text, 28pt for series. Text is white. The **Use the same font family for all text** option is checked, so if you want to change the typeface you only need to change it in one place. You can customize this any way you want, but be aware: there seems to be a bug and not all fonts will show un in the menu or work. Test your way forward. 
 
 #### Dimensions
 
-![Generate Cover — Dimensions tab]({{ '/assets/img/gcc-dimensions.png' | relative_url }})
-
+<img src="{{ '/assets/img/gcc-dimensions.png' | relative_url }}" alt="Generate Cover — Dimensions tab" class="small">
 Covers are generated at 750 × 1100 pixels, a standard ebook portrait ratio. The background SVG is stretched to fill the cover area. You don't need to change anything here. But you can tweak the margins if needed. 
 
 #### Contents
 
-![Generate Cover — Contents tab]({{ '/assets/img/gcc-contents.png' | relative_url }})
-
-Five elements are displayed in this order: title, author, series (only appears if the fic is part of a series),, and custom text. The custom text field is set to `{pubdate}`, which pulls the publication date — that's the "Dec 2021" you see in the preview.
+<img src="{{ '/assets/img/gcc-contents.png' | relative_url }}" alt="Generate Cover — Contents tab" class="small">
+Five elements are displayed in this order: title, author, series (only appears if the fic is part of a series),and custom text. The custom text field is set to `{pubdate}`, which pulls the publication date — that's the "Dec 2021" you see in the preview.
 
 This is the minimum useful cover: you know what the fic is, who wrote it, when it was published, and whether it's part of a series. It all uses standard data that every fic already has In the next parts of the tutorial we'll see how to get in even more useful data by using custom columns and fanficfare automation.  
 

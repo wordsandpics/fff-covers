@@ -128,7 +128,7 @@ body {
 ---------------------------------------- */
 
 h1 {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 600;
   color: #ffffff;
   line-height: 1.3;
@@ -136,7 +136,7 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   color: #ffffff;
   margin-top: 48px;
@@ -146,11 +146,16 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   color: #dde2f0;
   margin-top: 32px;
   margin-bottom: 12px;
+}
+h4{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 16px 0 8px 0;
 }
 h6{
   font-size: 13px;
@@ -368,10 +373,17 @@ pre code {
 /* ----------------------------------------
    Responsive
 ---------------------------------------- */
-img{max-width:80%;
+img{width:80%;
   margin:.5em;
+  border-radius:12px;
+}
+img.small{
+  width: 60%;
 }
 @media (max-width: 768px) {
+  img.small{
+    width: 80%;
+  }
   .site-wrap {
     grid-template-columns: 1fr;
   }
