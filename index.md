@@ -18,12 +18,12 @@ This is a sample of what my covers look like. I have per-fandom cover designs (e
   <a class="step-card" href="{{ '/basic-covers/' | relative_url }}">
     <h6 class="step-num">Step 1</h6>
     <h3 class="step-title">Basic covers</h3>
-    <p class="step-desc">Plugin setup, a working SVG template, minimal ini config</p>
+    <p class="step-desc">Get cover generation working with GCC</p>
   </a>
   <a class="step-card" href="{{ '/per-fandom/' | relative_url }}">
     <h6 class="step-num">Step 2</h6>
     <h3 class="step-title">Per-fandom covers</h3>
-    <p class="step-desc">Different cover templates per fandom using generate_cover_settings</p>
+    <p class="step-desc">Different cover templates per fandom using FFF</p>
   </a>
   <a class="step-card" href="{{ '/custom-columns/' | relative_url }}">
     <h6 class="step-num">Step 3</h6>
@@ -54,7 +54,7 @@ This is a sample of what my covers look like. I have per-fandom cover designs (e
   <ul class="prereq-items">
   <li><div class="prereq-dot"></div>Calibre with the FanFicFare plugin installed and working</li>
   <li><div class="prereq-dot"></div>The generate_cover plugin installed</li>
-  <li><div class="prereq-dot"></div>Basic comfort editing code. Don't worry, it's all explained and ready to be copy/pasted and modified easily. </li>
+  <li><div class="prereq-dot"></div>Basic comfort tinkering and editing code. Don't worry, it's all explained and ready to be copy/pasted and modified easily. </li>
   </ul>
 </div>
 
