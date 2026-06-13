@@ -466,3 +466,47 @@ img.small{
   font-weight: 600;
   color: #dde2f0;
 }
+/* ----------------------------------------
+   Tables
+---------------------------------------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 15px;
+}
+
+thead tr {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+th {
+  text-align: left;
+  padding: 10px 16px 10px 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6289a3;
+}
+
+td {
+  padding: 12px 16px 12px 0;
+  color: #b0b9d4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: top;
+}
+
+td:first-child, th:first-child {
+  color: #dde2f0;
+  font-weight: 500;
+}
+
+td code {
+  font-size: 12px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}

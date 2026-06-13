@@ -18,7 +18,7 @@ To get you started I have prepared a preset and alternate coloured images. The d
 
 ### Download the files
 
-You need two things from the [`code/cover-images/`](https://github.com/wordsandpics/fff-covers/tree/main/code/cover-images) folder in this repo:
+You need two things from the [`code/cover-images/`](https://github.com/wordsandpics/fff-covers/tree/main/code/cover-images) folder in this repo (also linked from the main nav on this tutorial):
 
 1. **`classics-preset.zip`** — the preset settings file
 2. _Optional_: **Other colour images** — eight solid color options are available. The preset comes with a basic gray one, but you can swap it any time. Images are in the `code/cover-images/` folder.
@@ -47,7 +47,7 @@ Here's a brief tour of the four tabs so you know what you're working with.
 
 <img src="{{ '/assets/img/gcc-fonts.png' | relative_url }}" alt="Generate Cover — Fonts tab" class="small">
 
-This preset uses Tahoma — 84pt for the title, 44pt for author and custom text, 28pt for series. Text is white. The **Use the same font family for all text** option is checked, so if you want to change the typeface you only need to change it in one place. You can customize this any way you want, but be aware: there seems to be a bug and not all fonts will show un in the menu or work. Test your way forward. 
+This preset uses Tahoma, just for wide availability. Text is white. The **Use the same font family for all text** option is checked, so if you want to change the typeface you only need to change it in one place. You can customize this any way you want, but be aware: there seems to be a bug and not all fonts will show un in the menu or work. Test your way forward. 
 
 #### Dimensions
 

@@ -8,7 +8,7 @@ In step 1 you set up a single cover preset that applies to everything you downlo
 
 ## Create a fandom preset
 
-Open Generate Cover and create a new preset for your first fandom — duplicate your Classics preset as a starting point, change the background image or design, and save it with a name like **Classics Sherlock** or **Classics HR**.
+Open Generate Cover and create a new preset for your first fandom — duplicate your Classics preset as a starting point, change the background image or design, and save it with a name like **Classics Sherlock** or **Classics Green**.
 
 Repeat for each fandom you want to handle. Your existing Classics preset remains the default for anything that doesn't match.
 

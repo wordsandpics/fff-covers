@@ -40,6 +40,7 @@ In **Preferences → Add your own columns**, add:
 | Primary Slash | primary_slash | Comma separated text, like tags, shown in the Tag browser |
 | Secondary Slash | secondary_slash | Comma separated text, like tags, shown in the Tag browser |
 
+
 Single-value tag columns don't sort in any meaningful way, so you get the tag browser benefit — clickable ship names — without any sorting side effects.
 
 ## Update personal.ini

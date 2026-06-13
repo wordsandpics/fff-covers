@@ -146,7 +146,7 @@ result = list_union(result, test(contains(tags,
 ***
 
 ## Short ship
-You want to know the fic's ship- and preferrably without displaying John Johnsson (Some fandom)/Martin James Martinsson on every cover. 
+You want to know the fic's ship- and preferrably without displaying "Jesper James Johnsson (Some fandom)/Martin Moriarty Martinsson" on every cover. 
 
 **Column name:** Cover ship tags — **Lookup name:** `short_ships` — **Type:** Column built from other columns, behaves like tags
 
