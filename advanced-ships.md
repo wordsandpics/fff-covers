@@ -161,7 +161,7 @@ generate_cover_settings:
     ...
 ```
 
-This is how you get a dedicated cover for a specific pairing regardless of fandom — useful if you read across multiple fandoms that share a ship archetype, or simply because your OTP deserves its own template.
+This is how you get a dedicated cover for a specific pairing, because your OTP deserves its own template. This also works across fandoms. 
 
 
 ***

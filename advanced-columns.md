@@ -4,7 +4,7 @@ title: "Step 4: Advanced columns"
 subtitle: "Template columns that derive new data from existing metadata"
 ---
 
-The columns in step 3 were simple mappings — FFF writes a value, Calibre stores it. Template columns work differently: they calculate their value from other columns every time they're displayed, using a small expression or program. Change the underlying data and the template column updates automatically.
+The columns in step 3 were simple mappings: FFF gets a value from AO3, Calibre stores it in a column. Template columns work differently: they calculate their value from other columns every time they're displayed, using a small expression or program. Change the underlying data and the template column updates automatically.
 
 All three columns in this step use the **Column built from other columns** type in Calibre.
 

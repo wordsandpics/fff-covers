@@ -8,9 +8,11 @@ subtitle: A guide for FanFicFare + Calibre users
 
 <p>This is not a guide to setting up FanFicFare from scratch. If you need a more general, but advanced guide without emphasis on covers, I strongly recommend <a href="https://maelstrom.quest/2026/02/24/calibre-fff-guide/">Stormy Crossroads' Calibre + Fanficfare tutorial</a>. For thorough documentation there's the <a href="https://github.com/JimmXinu/FanFicFare/wiki)">FFF wiki</a>. </p>
 
-![Cover samples]({{ '/assets/img/cover-samples.png' | relative_url }})
+![Cover samples]({{ '/assets/img/cover-samples-3.png' | relative_url }})
 
 This is a sample of what my covers look like. I have per-fandom cover designs (even per-ship in some cases!) and I've set it up so I can see at a glance all the information to see what the fic is about: Main ship, genre, length, completion status. You can decide exactly what information you want displayed. the templates available in this guide are slightly different as they don't have per-fandom icons and text, but they're editable, so if you want you can modify them yourself.
+
+## The Tutorial
 
 <div class="step-grid">
   <a class="step-card" href="{{ '/basic-covers/' | relative_url }}">
@@ -66,7 +68,7 @@ This is a sample of what my covers look like. I have per-fandom cover designs (e
 ***
 
 <div class="next-step">
-  <a href="{{ '/per-fandom/' | relative_url }}">
+  <a href="{{ '/basic-covers/' | relative_url }}">
     <span class="next-label">Get Started</span>
     <span class="next-title">Step 1: Basic covers →</span>
   </a>
