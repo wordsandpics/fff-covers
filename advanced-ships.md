@@ -147,7 +147,9 @@ The ship translation table works exactly the same way as in step 4 — add your 
 
 <div class="callout note">
   <h6 class="callout-title">Anthology Ships</h6>
-  <p>Anthology fics on AO3 list relationships for each story in the collection. This pipeline extracts the first and second slash ship across the whole fic, which for an anthology means the first slash ship of the first story. For most anthologies this is accurate enough — the main pairing of the collection tends to appear first. For collections where every story has a different primary ship, the result will be approximate.</p>
+<p> Anthology fics on AO3 list relationships per story, which means this pipeline collects slash ships from every story in the collection, not just one. FFF's internal extraction step doesn't reliably reduce these to single values when working with chained custom variables, so `#primary_slash` and `#secondary_slash` may end up with multiple values for anthology fics.</p>
+
+<p>If this bothers you, the solution is to map `all_slashes` to a dedicated plain text Calibre column (Long text type, which preserves FFF's ordering without Calibre re-sorting it), then update the short_ship template to extract the first and second ships from that column using Calibre's `list_item()` function rather than reading from `#primary_slash` and `#secondary_slash` directly. The updated template in `calibre-templates/short_ship_advanced.txt` already implements this approach. If you want concrete tips at this level of nerdery, let me know. </p>
 </div>
 
 ## Using primary ship for cover selection

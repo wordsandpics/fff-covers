@@ -40,7 +40,16 @@ characters=>(?i)^Original Character(\(s\)|s|)$=>OC
 ships=>(.*)[/&](.*) \(?[Ff]riendship(?: only)\)?=>\1 & \2
 ships=> - Relationship=>
 ```
+**Normalize fandom names**
+Sometimes a fandom goes by many names, or you want to condense several media/versions into one. Follow this template: 
 
+```ini
+#Normalize fandom names 
+ category=>^Sherlock$=>Sherlock (BBC TV 2010) 
+ category=>^Sherlock \(BBC\)$=>Sherlock (BBC TV 2010) 
+ category=>^Game Changers \| Heated Rivalry$=>Heated Rivalry
+ category=>^Game Changers Series - Rachel Reid$=>Heated Rivalry
+ ```
 ***
 
 ## Advanced cover rules
