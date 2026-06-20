@@ -147,9 +147,11 @@ The ship translation table works exactly the same way as in step 4 — add your 
 
 <div class="callout note">
   <h6 class="callout-title">Anthology Ships</h6>
-<p> Anthology fics on AO3 list relationships per story, which means this pipeline collects slash ships from every story in the collection, not just one. FFF's internal extraction step doesn't reliably reduce these to single values when working with chained custom variables, so `#primary_slash` and `#secondary_slash` may end up with multiple values for anthology fics.</p>
+  
+<p>Anthology fics on AO3 list relationships per story, which means this pipeline collects slash ships from every story in the collection, not just one. FFF's internal extraction step doesn't reliably reduce these to single values when working with chained custom variables, so <code>#primary_slash</code> and <code>#secondary_slash</code> may end up with multiple values for anthology fics.</p>
 
-<p>If this bothers you, the solution is to map `all_slashes` to a dedicated plain text Calibre column (Long text type, which preserves FFF's ordering without Calibre re-sorting it), then update the short_ship template to extract the first and second ships from that column using Calibre's `list_item()` function rather than reading from `#primary_slash` and `#secondary_slash` directly. The updated template in `calibre-templates/short_ship_advanced.txt` already implements this approach. If you want concrete tips at this level of nerdery, let me know. </p>
+
+<p>If this bothers you, the solution is to map <code>all_slashes</code> to a dedicated plain text Calibre column (Long text type, which preserves FFF's ordering without Calibre re-sorting it), then update the short_ship template to extract the first and second ships from that column using Calibre's <code>list_item()</code> function rather than reading from <code>#primary_slash</code> and <code>#secondary_slash</code> directly. If you want concrete tips at this level of nerdery, <a href="https://github.com/wordsandpics/fff-covers/issues">let me know</a>.</p> 
 </div>
 
 ## Using primary ship for cover selection
