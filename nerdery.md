@@ -180,3 +180,10 @@ Returns empty if any required field is missing or zero, so fics without hit/kudo
   <div class="callout-title">Keep this in perspective</div>
   <p>The score is not meaningful in absolute terms and is not comparable across fandoms: a niche fandom with 200 readers will score very differently from a mainstream one. It's most useful for relative sorting within a single fandom or pairing. Treat it as a starting point to tweak rather than a finished metric.</p>
 </div>
+
+# Ta-da!
+Hope this was useful. I might add more snippets as I go along. 
+
+### Questions? Comments? Refunds? 
+You can find me as [@wordsandpics on tumblr](https://www.tumblr.com/blog/imakewordsandpics) or [u/wordsandpics on reddit. 
+](https://www.reddit.com/user/wordsandpics/)
