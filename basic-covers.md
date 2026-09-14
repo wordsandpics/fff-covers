@@ -18,26 +18,50 @@ To get you started I have prepared a preset and alternate coloured images. The d
 
 ### Download the files
 
-You need two things from the [`code/cover-images/`](https://github.com/wordsandpics/fff-covers/tree/main/code/cover-images) folder in this repo (also linked from the main nav on this tutorial):
+There are two downloads. They serve different purposes:
 
-1. **`classics-preset.zip`** — the preset settings file
-2. _Optional_: **Other colour images** — eight solid color options are available. The preset comes with a basic gray one, but you can swap it any time. Images are in the `code/cover-images/` folder.
+1. **[Classics preset]({{ '/code/classics_preset.zip' | relative_url }})**
+   Import this ZIP into Generate Cover. It contains the preset settings and the default grey background with a generic book symbol.
+
+2. **[Alternative colour backgrounds]({{ '/code/wordsandpics_classic_covers.zip' | relative_url }})**
+   This optional ZIP contains SVG background images in several colours. Extract or unzip it before using the images. Do not try to import this ZIP as a Generate Cover preset.
+
+<div class="callout note">
+  <div class="callout-title">Preset or background image?</div>
+  <p><code>classics_preset.zip</code> is a complete Generate Cover preset and should be imported from the Settings tab. The files inside <code>wordsandpics_classic_covers.zip</code> are individual background images. Unzip that file and select an SVG from Generate Cover's Select Image tab.</p>
+</div>
+
+The supplied backgrounds use a generic book symbol. Fandom symbols shown in screenshots of my personal library are part of my own customised presets; they are not automatically detected or included in the download. Step 2 explains how to make separate presets for different fandoms.
 
 <img src="{{ '/assets/img/cover-colours.png' | relative_url }}" alt="Cover colour options" class="small">
 
-### Import the preset
+### Import the starter preset
 
-Open Generate Cover from Calibre's toolbar. In the **Settings** tab:
+1. Open **Generate Cover** from Calibre's toolbar.
+2. Open the **Settings** tab.
+3. Next to **Saved Settings**, click the import button—the arrow pointing inward.
+4. Select the downloaded file named `classics_preset.zip`.
+5. When asked for a name, enter **Classics** or choose another name you will recognise.
+6. Confirm that the preset now appears in the Saved Settings list.
+
 ![Generate Cover — Settings tab]({{ '/assets/img/gcc-settings.png' | relative_url }})
-1. Click the **import** button (the arrow pointing inward) next to Saved Settings
-2. Select `classics-preset.zip`
-3. You will be prompted for a name, you can keep Classics or change it to anything you want. 
 
-![Generate Cover — Settings tab]({{ '/assets/img/gcc-results.png' | relative_url }})
+The preview should now show the grey starter cover with the generic book symbol.
 
-The preset appears in the Saved Settings list as **Classics**. The preview on the right shows you what a cover will look like with your chosen background.
+![Imported Classics preset]({{ '/assets/img/gcc-results.png' | relative_url }})
 
-If you want to use other colours, load the images on the Select Image pane and select. 
+### Use a different background colour
+
+The colour backgrounds are images, not presets:
+
+1. Find `wordsandpics_classic_covers.zip` in your Downloads folder.
+2. Extract or unzip it.
+3. In Generate Cover, select the **Classics** preset.
+4. Open the **Select Image** tab.
+5. Add or choose one of the extracted `.svg` files.
+6. Return to **Settings** and save the preset.
+
+To keep several colour versions, duplicate or rename the preset before changing its image—for example, **Classics Blue** or **Classics Green**.
 
 ### What's in the preset
 
@@ -83,8 +107,13 @@ Click OK.
 Download any fic from AO3. When it completes, you should see a generated cover in the book details panel — your chosen color background, title, author, publication date.
 
 <div class="callout note">
-  <div class="callout-title">Not seeing a cover?</div>
-  <p>Check that Generate Cover is installed and that the Default row in the Calibre Cover tab is set to Classics rather than {Default}. If it was already set, selecting the book and clicking on "Generate cover" manually to confirm the plugin is working.</p>
+  <div class="callout-title">Something not working?</div>
+  <ul>
+    <li><strong>The preset will not import:</strong> make sure you selected <code>classics_preset.zip</code>, not the colour-background ZIP.</li>
+    <li><strong>The colour ZIP will not import:</strong> this is expected. Extract it first, then select an individual SVG from the Select Image tab.</li>
+    <li><strong>The cover still shows a book symbol:</strong> the supplied backgrounds use that symbol. Fandom symbols require background images that you provide yourself.</li>
+    <li><strong>No generated cover appears:</strong> check that the Default row in FanFicFare's Calibre Cover settings points to your saved preset. You can also select a book and run Generate Cover manually to test the preset.</li>
+  </ul>
 </div>
 
 ## What's next

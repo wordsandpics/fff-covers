@@ -18,7 +18,7 @@ If you have opinions about fanfic, a Calibre library that has gotten slightly ou
 
 **[Classics preset](code/classics_preset.zip)** — the starter Generate Cover preset used throughout the guide.
 
-**[Color cover backgrounds](code/wordsandpics_classic_covers.zip)** — eight solid-color SVG backgrounds to use with the preset.
+**[Colour cover backgrounds](code/wordsandpics_classic_covers.zip)** — optional SVG backgrounds in several colours. Extract the ZIP and select an individual SVG in Generate Cover.
 
 ***
 
