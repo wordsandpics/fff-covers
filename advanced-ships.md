@@ -1,105 +1,110 @@
 ---
 layout: default
 title: "Step 5: Advanced ship tags"
-subtitle: "Preserving author order to reliably identify primary and secondary ships"
+subtitle: "Preserving author order and handling repeated anthology ships"
 ---
 
-The short ship column in step 4 reads directly from `#ship` — which works, but has a limitation. Calibre's tag columns sort alphabetically, so for fics with multiple pairings the "first" ship in your column is whoever's name comes first in the alphabet, not who the author foregrounded. A Johnlock fic where the author listed Mycroft/Greg too might show it as the main ship because it comes first in the Calibre relationship tags.
+The short ship column in step 4 reads directly from `#ship`. That works, but Calibre sorts columns like this alphabetically. If a fic has several relationships, the first ship in the column may be the one that comes first in the alphabet, not the one the author listed first.
 
-If that's good enough for your library (if your fics tend to have only one ship at a time), step 4 is fine as-is. This step sets up a more robust pipeline that captures ships in author order and extracts them into dedicated columns.
-
-I've set it up to capture two ships: the first one in order of appearance I set as primary, the second one as secondary. You could in theory expend this to however many, or remove the secondary and just have one. 
+This step saves the ships in their original order before Calibre can sort them. The cover can then use the first two different slash relationships and turn them into short ship names.
 
 ## What you'll end up with
 
-Two new Calibre columns — `#primary_slash` and `#secondary_slash` — each containing a single ship in the order the author listed them. These feed a more accurate short ship template, and because they're tag columns, clicking a ship name in the tag browser shows every fic where that's the primary pairing.
+One new column, `#all_slashes`, containing all the romantic relationships in the order FanFicFare received them. We use Calibre's **Long text** column type because Calibre does not alphabetise its contents.
 
-A better `#short_ships` column that combines the primary and secondary ships in short format. Ready to drop into your covers
+You will also update `#short_ships` so it:
 
+1. reads the full ship list;
+2. removes repeated ships without changing the order;
+3. takes the first two different ships; and
+4. changes their full names into the short names you want on the cover.
+
+For example, after you add the Steddie and Ronance short-name replacements, an anthology containing those relationships several times can produce:
+
+```text
+Steddie, Ronance
+```
 
 ## How it works
 
-The key problem is timing: by the time data reaches Calibre, sorting has already happened. The solution is to intercept the relationship data inside FFF's processing pipeline, before Calibre touches it, and extract the ships we want into separate variables.
+The key is to save the data from AO3 before we shorten and rearrange it for the cover:
 
-The pipeline does five things in order:
+```text
+ships from AO3
+    ↓
+keep the relationships containing a slash (/), in their original order
+    ↓
+save the full list in #all_slashes
+    ↓
+remove repeats and choose the first two for #short_ships
+    ↓
+cover
+```
 
-1. Creates three internal FFF scratch variables: `all_slashes`, `primary_slash`, `secondary_slash`
-2. Copies the raw ships data — still in author order — into `all_slashes`
-3. Filters `all_slashes` down to slash-only relationships, dropping all `&` platonic tags
-4. Extracts the first ship into `primary_slash` and the second into `secondary_slash`
-5. Writes both to Calibre columns
+This template shows two ships because that fits neatly on most covers. The full list is still saved in `#all_slashes`, so the other ships are not lost. I'm working on a generator to make it easier to create a template that shows more ships without having to copy and edit all the code yourself.
 
-## Create the Calibre columns
-
-Before editing `personal.ini`, create the two columns in Calibre.
+## Create the Calibre column
 
 In **Preferences → Add your own columns**, add:
 
 | Column heading | Lookup name | Column type |
 |---|---|---|
-| Primary Slash | primary_slash | Comma separated text, like tags, shown in the Tag browser |
-| Secondary Slash | secondary_slash | Comma separated text, like tags, shown in the Tag browser |
+| All Slash Relationships | all_slashes | Long text, like comments, not shown in the Tag browser |
 
-
-Single-value tag columns don't sort in any meaningful way, so you get the tag browser benefit — clickable ship names — without any sorting side effects.
+Be sure to choose **Long text**. If you choose a comma-separated tag column instead, Calibre will put the ships in alphabetical order and we will once again lose the author's order.
 
 ## Update personal.ini
 
-Add the following to your `[defaults]` section. The order matters — each block depends on the one above it.
+Add the following to the `[defaults]` section of `personal.ini`. The comments beginning with `#` explain what each part does. If your file already contains one of these setting names, add the new value to the existing setting instead of creating a second copy.
 
 ```ini
-# Create internal scratch variables for the pipeline
-add_to_extra_valid_entries: ,all_slashes,primary_slash,secondary_slash
+# Tell FFF that all_slashes is a new name we want to use.
+# Keep the comma before all_slashes.
+add_to_extra_valid_entries: ,all_slashes
 
-# Copy ships into all_slashes while still in author order
- include_in_all_slashes: ships
+# Copy the ship list before its order changes.
+include_in_all_slashes: ships
 
-# Tell FFF not to alphabetise these fields during processing
- keep_in_order_ships:true
- keep_in_order_all_slashes:true
+# Tell FFF to keep the original order.
+keep_in_order_ships:true
+keep_in_order_all_slashes:true
 
-# Filter all_slashes down to slash-only relationships
- include_metadata_pre:
+# In all_slashes, keep tags containing / and leave out friendship tags using &.
+include_metadata_pre:
     all_slashes=~/
-
-# Copy the filtered list into both extraction variables
- include_in_primary_slash: all_slashes
- include_in_secondary_slash: all_slashes
 ```
 
-Check if you have an `add_to_replace_metadata` block. If you do skip the first line:
+Next, tell FFF to put `all_slashes` into the new Calibre column. Add this to your `[archiveofourown.org]` section. If that section already has an `add_to_custom_columns_settings` block, add only the `all_slashes=>#all_slashes` line beneath it.
 
 ```ini
-add_to_replace_metadata:
-# Extract first ship only into primary_slash
- primary_slash_LIST=>^([^,]+).*$=>\1
-
-# Extract second ship only into secondary_slash
-# (clears the field if there is no second ship)
- secondary_slash_LIST=>^[^,]+$=>
- secondary_slash_LIST=>^[^,]+,\s*([^,]+).*$=>\1
-```
-
-And add the column mappings to your `[archiveofourown.org]` section:
-
-```ini
+[archiveofourown.org]
 add_to_custom_columns_settings:
-    primary_slash=>#primary_slash
-    secondary_slash=>#secondary_slash
+    all_slashes=>#all_slashes
 ```
+
+Download a new fic or update the metadata for one already in Calibre. To check the result, select the fic and open **Edit metadata**, then find the **All Slash Relationships** custom field. It should contain the fic's slash relationships in the same order as AO3. You can also show the column in your main library view if you want to compare several fics.
+
+### Downloadable copies
+
+If you would rather download the code than copy it from the page, use these files:
+
+- [personal.ini setup for `[defaults]`]({{ '/code/fff-personal-ini/ship-extraction-pipeline.ini' | relative_url }})
+- [personal.ini setup for `[archiveofourown.org]`]({{ '/code/fff-personal-ini/ship-column-mappings.ini' | relative_url }})
+- [Advanced short ship template]({{ '/code/calibre-column-templates/short_ship_advanced.txt' | relative_url }})
 
 ## Update the short ship template
 
-Replace your step 4 short ship template with this version, which reads from the new columns and falls back to `#ship` for fics downloaded before the pipeline was set up — or for fics that have since been deleted from AO3.
+Replace the short ship template from step 4 with the version below. It reads the new `#all_slashes` column, removes repeated ships, and uses the first two different relationships. If an older fic does not have anything in `#all_slashes` yet, the template tries the original `#ship` column instead.
 
-```
+```text
 program:
-# Read from the dedicated columns
-s0 = field('#primary_slash');
-s1 = field('#secondary_slash');
+# Read the saved ship list, remove repeats, and take the first two.
+ordered_unique = list_union('', field('#all_slashes'), ',');
+s0 = re(list_item(ordered_unique, 0, ','), '^\s+|\s+$', '');
+s1 = re(list_item(ordered_unique, 1, ','), '^\s+|\s+$', '');
 result = '';
 
-# Fallback: if both columns are empty, extract from #ship directly
+# If this is an older fic with no #all_slashes value, try #ship instead.
 if !s0 && !s1 then
     ships_raw = field('#ship');
     if contains(ships_raw, '/', '1', '') then
@@ -110,29 +115,35 @@ if !s0 && !s1 then
     fi
 fi;
 
-# Translate slot 1
+# Translate the first ship.
 t1 = '';
 if s0 then
     s1_lc = lowercase(s0);
-    if contains(s1_lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then t1 = 'Johnlock'
-    elif contains(s1_lc, 'shane hollander/ilya rozanov', '1', '') then t1 = 'Hollanov'
-    # Add your ships here
-    else t1 = re(s0, '(?i)([^/]+)/([^/]+)', '\1/\2')
+    if contains(s1_lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then
+        t1 = 'Johnlock'
+    elif contains(s1_lc, 'shane hollander/ilya rozanov', '1', '') then
+        t1 = 'Hollanov'
+    # Add your ships above this line.
+    else
+        t1 = re(s0, '(?i)([^/]+)/([^/]+)', '\1/\2')
     fi
 fi;
 
-# Translate slot 2
+# Translate the second ship.
 t2 = '';
 if s1 then
     s2_lc = lowercase(s1);
-    if contains(s2_lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then t2 = 'Johnlock'
-    elif contains(s2_lc, 'shane hollander/ilya rozanov', '1', '') then t2 = 'Hollanov'
-    # Add your ships here
-    else t2 = re(s1, '(?i)([^/]+)/([^/]+)', '\1/\2')
+    if contains(s2_lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then
+        t2 = 'Johnlock'
+    elif contains(s2_lc, 'shane hollander/ilya rozanov', '1', '') then
+        t2 = 'Hollanov'
+    # Add your ships above this line.
+    else
+        t2 = re(s1, '(?i)([^/]+)/([^/]+)', '\1/\2')
     fi
 fi;
 
-# Combine, skip duplicates
+# Put the two short names together, without showing the same name twice.
 if t1 then result = t1 fi;
 if t2 then
     if !result then result = t2
@@ -143,30 +154,33 @@ fi;
 if !result then return 'Gen' else return result fi
 ```
 
-The ship translation table works exactly the same way as in step 4 — add your ships to both the slot 1 and slot 2 sections following the same pattern.
+The ship-name replacements work like the ones in step 4. Add each ship to both the first-ship and second-ship sections, because it could appear in either place. If one relationship name contains another, put the longer one first. For example, put `A/B/C` before `A/B` so the template does not mistake the three-person ship for the shorter one.
 
-<div class="callout note">
-  <h6 class="callout-title">Anthology Ships</h6>
-  
-<p>Anthology fics on AO3 list relationships per story, which means this pipeline collects slash ships from every story in the collection, not just one. FFF's internal extraction step doesn't reliably reduce these to single values when working with chained custom variables, so <code>#primary_slash</code> and <code>#secondary_slash</code> may end up with multiple values for anthology fics.</p>
+## A note about anthologies
 
+I have tested several ways of getting slash relationships from anthologies, and none is perfect. This approach gave me the best balance between being easy to set up and usually giving the right result.
 
-<p>If this bothers you, the solution is to map <code>all_slashes</code> to a dedicated plain text Calibre column (Long text type, which preserves FFF's ordering without Calibre re-sorting it), then update the short_ship template to extract the first and second ships from that column using Calibre's <code>list_item()</code> function rather than reading from <code>#primary_slash</code> and <code>#secondary_slash</code> directly. If you want concrete tips at this level of nerdery, <a href="https://github.com/wordsandpics/fff-covers/issues">let me know</a>.</p> 
-</div>
+For an anthology, FanFicFare joins together the ship lists from all the works it contains. This setup removes ships that appear more than once, keeps the order in which they first appeared, and shows the first two different ships on the cover. It does not count which ship appears most often or try to decide which ships are the most important.
 
-## Using primary ship for cover selection
+This works well for something like several Steddie works mixed with several Ronance works: the cover can show `Steddie, Ronance` without repeating either name. An anthology with many different background ships may still need a manual choice or a more customised template.
 
-With `#primary_slash` reliably populated, you can add per-ship rules to `generate_cover_settings`. Ship-specific rules should sit above fandom rules, since the first match wins:
+## Using the first ship for cover selection
+
+You can also tell FFF to use a special cover preset when a particular ship appears first. Put ship rules above fandom rules, because FFF uses the first rule that matches:
 
 ```ini
 generate_cover_settings:
-    ${primary_slash} => Mycroft Holmes/Greg Lestrade => Classics Mystrade
+    ${all_slashes} => ^\s*Mycroft Holmes/Greg Lestrade(?:\s*,|$) => Classics Mystrade
     ${category} => [Ss]herlock => Classics Sherlock
-    ...
 ```
 
-This is how you get a dedicated cover for a specific pairing, because your OTP deserves its own template. This also works across fandoms. 
+The symbols around the ship name make the rule check only the first ship in the list. Copy the complete pattern and replace `Mycroft Holmes/Greg Lestrade` with the relationship you want to match.
 
+## If you followed the previous version of this step
+
+Earlier versions of this step created `#primary_slash` and `#secondary_slash`. You can keep them if you use them to search or filter your library, but the new `#short_ships` template does not need them.
+
+Follow the new instructions to create and fill `#all_slashes`, then replace your old `#short_ships` template. If you have a ship-specific cover rule using `${primary_slash}`, replace it with an `${all_slashes}` rule like the example above. You do not need to delete your old columns.
 
 ***
 

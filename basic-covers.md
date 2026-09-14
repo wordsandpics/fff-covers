@@ -71,7 +71,7 @@ Here's a brief tour of the four tabs so you know what you're working with.
 
 <img src="{{ '/assets/img/gcc-fonts.png' | relative_url }}" alt="Generate Cover — Fonts tab" class="small">
 
-This preset uses Tahoma, just for wide availability. Text is white. The **Use the same font family for all text** option is checked, so if you want to change the typeface you only need to change it in one place. You can customize this any way you want, but be aware: there seems to be a bug and not all fonts will show un in the menu or work. Test your way forward. 
+This preset uses Tahoma, just for wide availability. Text is white. The **Use the same font family for all text** option is checked, so if you want to change the typeface you only need to change it in one place. You can customise this any way you want, but be aware: there seems to be a bug and not all fonts will appear in the menu or work. Test your way forward.
 
 #### Dimensions
 
@@ -85,7 +85,7 @@ Covers are generated at 750 × 1100 pixels, a standard ebook portrait ratio. The
 
 Four elements are displayed in this order: title, author, series (only appears if the fic is part of a series),and custom text. The custom text field is set to `{pubdate}`, which pulls the publication date.
 
-This is the minimum useful cover: you know what the fic is, who wrote it, when it was published, and whether it's part of a series. It all uses standard data that every fic already has. In the next parts of the tutorial we'll see how to get in even more useful data into covers by using custom columns and fanficfare automation.  
+This is the minimum useful cover: you know what the fic is, who wrote it, when it was published, and whether it's part of a series. It all uses standard data that every fic already has. In the next parts of the tutorial we'll add more useful information to covers using custom columns and FanFicFare automation.
 
 ## 3. Configure FFF to use the preset
 

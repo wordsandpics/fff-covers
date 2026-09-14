@@ -69,7 +69,7 @@ Partial match — you don't need the full fandom name. `Sherlock` will match "Sh
 
 ## What about crossovers?
 
-AO3 crossovers have multiple fandoms in `${category}`. FFF matches against the full string, so a crossover between Sherlock and Good Omens will match whichever fandom appears first in your rule list. This is usually fine — the cover will reflect the primary fandom the author tagged first.
+AO3 crossovers have multiple fandoms in `${category}`, so a fic may match more than one of your rules. Because FFF checks the rules from top to bottom, the fandom rule you put first decides which preset is used. Put the fandom you prefer above the others.
 
 ## Other Fandoms
 If the fandom doesn't match any of your rules, the default that you set in the FFF preferences will be used. 
