@@ -33,6 +33,17 @@ If you have opinions about fanfic, a Calibre library that has gotten slightly ou
 
 ***
 
+## Changelog
+
+### 14 September 2026
+
+- Clarified the difference between importing the Generate Cover preset and extracting the optional background-image pack.
+- Added guidance for editing the supplied SVGs to create personalised fandom covers.
+- Reworked the advanced ship setup to save the full ordered relationship list and handle repeated anthology ships more reliably.
+- Updated the downloadable snippets and added clearer migration and troubleshooting instructions.
+
+***
+
 ## License
 
 [MIT](LICENSE) — use it, adapt it, share it.
