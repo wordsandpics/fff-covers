@@ -71,7 +71,7 @@ You want to know what a fic is about, and you don't want to display a fic's 25 t
 
 **Column name:** Genre — **Lookup name:** `genre` — **Type:** Column built from other columns, behaves like tags
 
-This column scans the fic's tags and checks them against a list of genre keywords. Each check is independent — a fic can have multiple genres.
+This column scans the fic's tags and checks them against a list of genre keyphrases. Each check is independent — a fic can have multiple genres.
 
 ```
 program:
@@ -82,39 +82,41 @@ result = '';
 
 # -----------------------------------------------
 # EDIT THIS SECTION: add, remove, or modify genres
-# Pattern: look for any of these keywords in the tags,
+# Pattern: look for any of these keyphrases in the tags,
 # and if found, add this label to the result.
-# Use | to add more keywords to an existing genre.
+# Use | to add more keyphrases to an existing genre.
 # A fic can match multiple genres simultaneously.
 # -----------------------------------------------
 
-result = list_union(result, test(contains(tags,
+result = list_join(', ', result, ',', test(contains(tags,
     'fluff|domestic|domestic bliss|soft|slice of life|comfort',
-    '1', ''), 'Fluff', ''), ', ');
+    '1', ''), 'Fluff', ''), ',');
 
-result = list_union(result, test(contains(tags,
+result = list_join(', ', result, ',', test(contains(tags,
     'hurt/comfort|whump|hurt|sick|illness|injury|recovery',
-    '1', ''), 'Whump', ''), ', ');
+    '1', ''), 'Whump', ''), ',');
 
-result = list_union(result, test(contains(tags,
+result = list_join(', ', result, ',', test(contains(tags,
     'angst|major character death|grief|ptsd|trauma|depression',
-    '1', ''), 'Angst', ''), ', ');
+    '1', ''), 'Angst', ''), ',');
 
-result = list_union(result, test(contains(tags,
+result = list_join(', ', result, ',', test(contains(tags,
     'alpha/beta/omega|omegaverse|abo',
-    '1', ''), 'ABO', ''), ', ');
+    '1', ''), 'ABO', ''), ',');
 
 # To add a new genre, copy any block above and change
-# the keywords and the label. Example:
-# result = list_union(result, test(contains(tags,
+# the keyphrases and the label. Example:
+# result = list_join(', ', result, ',', test(contains(tags,
 #     'time travel|time loop',
-#     '1', ''), 'TimeTrav', ''), ', ');
+#     '1', ''), 'TimeTrav', ''), ',');
 
 
 return result
 ```
 
-Each block follows the same logic: look for any of these keywords in the tags, and if found, add this label to the result. To add a new genre, copy any block and change the keywords and label. To add keywords to an existing genre, add them to that line separated by `|`.
+Each block follows the same logic: look for any of these keyphrases in the tags, and if found, add this label to the result. To add a new genre, copy any block and change the keyphrases and label. To add keyphrases to an existing genre, add them to that line separated by `|`.
+
+If you would rather not edit these repeating blocks by hand, the [genre generator]({{ '/genre-generator/' | relative_url }}) can build the complete template for you.
 
 <div class="callout note">
   <h6 class="callout-title">Which tags field?</h6>
@@ -128,9 +130,9 @@ You can use the genres flag to make any tag show up in your cover. For example, 
 Add this to your genre template, anywhere in the list:
 
 ```
-result = list_union(result, test(contains(tags,
+result = list_join(', ', result, ',', test(contains(tags,
     'recommend|recommends|recommended',
-    '1', ''), '🌟', ''), ', ');
+    '1', ''), '🌟', ''), ',');
 ```
 
 A fic tagged "Recommended" in your library will show `🌟` alongside its other genre tags.
@@ -138,9 +140,9 @@ A fic tagged "Recommended" in your library will show `🌟` alongside its other 
 You can also do something like: 
 
 ```
-result = list_union(result, test(contains(tags,
+result = list_join(', ', result, ',', test(contains(tags,
     'mpreg',
-    '1', ''), '🫃', ''), ', ');
+    '1', ''), '🫃', ''), ',');
 ```
 
 ***

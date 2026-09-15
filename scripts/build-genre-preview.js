@@ -1,0 +1,15 @@
+'use strict';
+const fs = require('fs');
+const path = require('path');
+const root = path.resolve(__dirname, '..');
+const source = fs.readFileSync(path.join(root, 'genre-generator.md'), 'utf8');
+const css = fs.readFileSync(path.join(root, 'assets/css/style.css'), 'utf8');
+const javascript = fs.readFileSync(path.join(root, 'assets/js/genre-generator.js'), 'utf8');
+const start = source.indexOf('<div class="ship-generator"');
+const end = source.indexOf('<noscript>');
+if (start < 0 || end <= start) throw new Error('Could not find generator markup.');
+const markup = source.slice(start, end).trim();
+const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Genre generator — fff-covers preview</title><style>${css}</style></head><body><header class="topbar"><span class="topbar-title">fff-covers</span><span class="topbar-sub">Local generator preview</span></header><div class="site-wrap preview-site-wrap"><aside class="sidebar preview-sidebar"><div class="nav-section">Preview</div><span class="nav-link">4. Advanced custom columns</span><span class="nav-link nav-subitem active">Genre generator</span></aside><main class="content"><h1>Genre generator</h1><p class="page-subtitle">Turn lists of tag keyphrases into a ready-to-paste Calibre template</p><p>This generator creates the <code>#genre</code> template described in step 4. For each cover label, add the words or phrases that should make it appear.</p><div class="callout note"><div class="callout-title">Your information stays in your browser</div><p>The generator runs entirely on this page and does not upload your genre list.</p></div>${markup}</main></div><script>${javascript}</script></body></html>`;
+const output = path.join(root, '.genre-generator-preview.html');
+fs.writeFileSync(output, html);
+console.log(output);

@@ -35,6 +35,11 @@ This is a sample of what my covers look like. I have per-fandom cover designs (e
     <h3 class="step-title">Advanced custom columns</h3>
     <p class="step-desc">Creating columns from other columns to process and change metadata.</p>
   </a>
+  <a class="step-card" href="{{ '/genre-generator/' | relative_url }}">
+    <h6 class="step-num">Companion to Step 4</h6>
+    <h3 class="step-title">Genre generator</h3>
+    <p class="step-desc">Turn groups of tag keyphrases into ready-to-paste genre code.</p>
+  </a>
   <a class="step-card" href="{{ '/advanced-ships/' | relative_url }}">
     <h6 class="step-num">Step 5</h6>
     <h3 class="step-title">Advanced ships</h3>

@@ -669,6 +669,10 @@ tr:last-child td {
   margin-bottom: 12px;
 }
 
+.genre-mapping-fields {
+  grid-template-columns: 1fr;
+}
+
 .mapping-actions,
 .generator-actions {
   display: flex;

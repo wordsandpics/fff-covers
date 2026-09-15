@@ -30,6 +30,9 @@ nav:
         url: /custom-columns/
       - label: 4. Advanced custom columns
         url: /advanced-columns/
+      - label: Genre generator
+        url: /genre-generator/
+        subitem: true
       - label: 5. Obsessive nerdery 1- Advanced ships
         url: /advanced-ships/
       - label: Short ship generator
