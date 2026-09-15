@@ -23,7 +23,7 @@
       {% for section in site.nav %}
       <div class="nav-section">{{ section.title }}</div>
       {% for p in section.pages %}
-      <a class="nav-link{% if page.url == p.url %} active{% endif %}" href="{{ p.url | relative_url }}">{{ p.label }}</a>
+      <a class="nav-link{% if p.subitem %} nav-subitem{% endif %}{% if page.url == p.url %} active{% endif %}" href="{{ p.url | relative_url }}">{{ p.label }}</a>
       {% endfor %}
       {% endfor %}
     </nav>

@@ -40,6 +40,11 @@ This is a sample of what my covers look like. I have per-fandom cover designs (e
     <h3 class="step-title">Advanced ships</h3>
     <p class="step-desc">Preserve ship order and handle repeated anthology relationships.</p>
   </a>
+  <a class="step-card" href="{{ '/ship-generator/' | relative_url }}">
+    <h6 class="step-num">Companion to Step 5</h6>
+    <h3 class="step-title">Short ship generator</h3>
+    <p class="step-desc">Create customised ship code without the repetitive editing.</p>
+  </a>
   <a class="step-card" href="{{ '/nerdery/' | relative_url }}">
     <h6 class="step-num">Step 6</h6>
     <h3 class="step-title">Tips & tricks</h3>

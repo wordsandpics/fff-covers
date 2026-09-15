@@ -16,7 +16,7 @@ program:
 ## Put specific relationships before overlapping shorter ones.
 
 ## Read the saved ship list, remove repeats, and take the first two.
-ordered_unique = list_union('', field('#all_slashes'), ',');
+ordered_unique = list_remove_duplicates(field('#all_slashes'), ',');
 s0 = re(list_item(ordered_unique, 0, ','), '^\s+|\s+$', '');
 s1 = re(list_item(ordered_unique, 1, ','), '^\s+|\s+$', '');
 result = '';

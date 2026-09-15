@@ -29,11 +29,17 @@ If you have opinions about fanfic, a Calibre library that has gotten slightly ou
 3. Simple custom columns — map AO3 metadata to your Calibre library
 4. Template columns — computed columns for short wordcount, genre tags, and ship names
 5. Advanced ship tags — preserve author order with a personal.ini pipeline
+   - Short ship generator — a companion tool for creating customised ship templates without repetitive editing
 6. Tips and tricks — metadata normalization, advanced cover rules, likeability score
 
 ***
 
 ## Changelog
+
+### 15 September 2026
+
+- Added a browser-based short ship generator with editable mappings, code import, previews, and templates for one to six ships.
+- Corrected the advanced template so removing duplicate relationships keeps their original order.
 
 ### 14 September 2026
 

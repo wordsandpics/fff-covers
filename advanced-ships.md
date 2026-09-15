@@ -41,7 +41,7 @@ remove repeats and choose the first two for #short_ships
 cover
 ```
 
-This template shows two ships because that fits neatly on most covers. The full list is still saved in `#all_slashes`, so the other ships are not lost. I'm working on a generator to make it easier to create a template that shows more ships without having to copy and edit all the code yourself.
+This template shows two ships because that fits neatly on most covers. The full list is still saved in `#all_slashes`, so the other ships are not lost. If you want to show more, the [short ship generator]({{ '/ship-generator/' | relative_url }}) will write the longer template for you.
 
 ## Create the Calibre column
 
@@ -99,7 +99,7 @@ Replace the short ship template from step 4 with the version below. It reads the
 ```text
 program:
 # Read the saved ship list, remove repeats, and take the first two.
-ordered_unique = list_union('', field('#all_slashes'), ',');
+ordered_unique = list_remove_duplicates(field('#all_slashes'), ',');
 s0 = re(list_item(ordered_unique, 0, ','), '^\s+|\s+$', '');
 s1 = re(list_item(ordered_unique, 1, ','), '^\s+|\s+$', '');
 result = '';
@@ -185,8 +185,8 @@ Follow the new instructions to create and fill `#all_slashes`, then replace your
 ***
 
 <div class="next-step">
-  <a href="{{ '/nerdery/' | relative_url }}">
-    <span class="next-label">Next</span>
-    <span class="next-title">Step 6: Tips & Tricks →</span>
+  <a href="{{ '/ship-generator/' | relative_url }}">
+    <span class="next-label">Companion to this step</span>
+    <span class="next-title">Short ship generator →</span>
   </a>
 </div>
