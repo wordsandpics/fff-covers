@@ -1,0 +1,13 @@
+## Short chapter count
+## Requires: #chapters
+
+program:
+chapters = field('#chapters');
+
+if !chapters then
+    ''
+elif chapters ==# 1 then
+    '1 chapter'
+else
+    chapters & ' chapters'
+fi

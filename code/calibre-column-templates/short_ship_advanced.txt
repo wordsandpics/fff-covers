@@ -1,5 +1,5 @@
 program:
-## Short ship — advanced version (Step 5)
+## Short ship — anthology-aware version
 ## ─────────────────────────────────────────
 ## Column settings:
 ##   Column heading : Cover ship tags

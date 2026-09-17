@@ -357,7 +357,7 @@
       return;
     }
     if (!source.includes('program:') || !source.includes("field('#all_slashes')")) {
-      showMessage(elements.importMessage, 'This does not look like the Step 5 #all_slashes template.', 'error');
+      showMessage(elements.importMessage, 'This does not look like the tutorial #all_slashes template.', 'error');
       return;
     }
 

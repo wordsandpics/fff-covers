@@ -1,13 +1,18 @@
 ---
 layout: default
-title: "Short ship generator"
+title: "Ship code generator"
 subtitle: "Build the repetitive Calibre template without writing it by hand"
 description: "Generate a Calibre short-ships template from AO3 relationship names."
+permalink: /display/ships/code-generator/
+section: Cover content
+requirements: [Template code]
+previous: {label: "Ships", url: "/display/ships/", section: "Cover content"}
+next: {label: "Genres and flags", url: "/display/genres/", section: "Cover content"}
 ---
 
-This generator creates the `#short_ships` template used in step 5. Add the full AO3 relationship name and the shorter name you want on your covers; the generator writes the repetitive Calibre code for you.
+This generator creates the `#short_ships` template used in [Ships]({{ '/display/ships/' | relative_url }}) and [Anthology-aware ships]({{ '/advanced/anthology-ships/' | relative_url }}). Add the full AO3 relationship name and the shorter name you want on your covers; the generator writes the repetitive Calibre code for you.
 
-Before using it, complete the [`#all_slashes` setup from step 5]({{ '/advanced-ships/' | relative_url }}). This tool creates the calculated template only—it does not create the Calibre columns or change `personal.ini`.
+Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-ships/' | relative_url }}). This tool creates the calculated template only—it does not create the Calibre columns or change `personal.ini`.
 
 <div class="callout note">
   <div class="callout-title">Your information stays in your browser</div>
@@ -34,7 +39,7 @@ Before using it, complete the [`#all_slashes` setup from step 5]({{ '/advanced-s
         <button class="generator-button" id="import-template" type="button">Import code</button>
         <button class="generator-button generator-button-secondary" id="clear-import" type="button">Clear</button>
       </div>
-      <p class="generator-help">The importer understands the Step 5 tutorial template and templates made by this generator. Other hand-written Calibre code might not import correctly.</p>
+      <p class="generator-help">The importer understands the tutorial's anthology-aware template and templates made by this generator. Other hand-written Calibre code might not import correctly.</p>
       <div class="generator-message" id="import-message" role="status" aria-live="polite" hidden></div>
     </details>
   </section>
@@ -99,7 +104,7 @@ Before using it, complete the [`#all_slashes` setup from step 5]({{ '/advanced-s
       </div>
     </div>
 
-    <p>When your rows and preview look right, generate the complete template. Replace the existing code in your `#short_ships` composite column with this result.</p>
+    <p>When your rows and preview look right, generate the complete template. In Calibre, open <strong>Preferences → Add your own columns</strong>, edit <code>#short_ships</code>, and replace the contents of its <strong>Template</strong> box with this result.</p>
 
     <div class="generator-actions">
       <button class="generator-button generator-button-primary" id="generate-template" type="button">Generate template</button>
@@ -120,17 +125,8 @@ Before using it, complete the [`#all_slashes` setup from step 5]({{ '/advanced-s
 <noscript>
   <div class="callout warning">
     <div class="callout-title">JavaScript is required</div>
-    <p>The generator runs in your browser and needs JavaScript enabled. The manual two-ship template in step 5 still works without it.</p>
+    <p>The generator runs in your browser and needs JavaScript enabled. The manual two-ship template on the Anthology-aware ships page still works without it.</p>
   </div>
 </noscript>
-
-***
-
-<div class="next-step">
-  <a href="{{ '/nerdery/' | relative_url }}">
-    <span class="next-label">Next</span>
-    <span class="next-title">Step 6: Tips & Tricks →</span>
-  </a>
-</div>
 
 <script src="{{ '/assets/js/ship-generator.js' | relative_url }}" defer></script>

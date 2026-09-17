@@ -1,7 +1,12 @@
 ---
 layout: default
-title: "Step 1: Basic covers"
+title: "1. Create your first cover"
 subtitle: "Install the plugin, import a preset, generate your first cover"
+permalink: /start/first-cover/
+section: Start here
+requirements: [Calibre settings, FanFicFare, Generate Cover]
+previous: {label: "Overview", url: "/", section: "Start here"}
+next: {label: "Set up your artwork", url: "/start/artwork/", section: "Start here"}
 ---
 
 By the end of this step you'll have automatically generated covers appearing on every fic you download — no manual work per fic required.
@@ -114,17 +119,4 @@ Download any fic from AO3. When it completes, you should see a generated cover i
     <li><strong>The cover still shows a book symbol:</strong> the supplied backgrounds use that symbol. Fandom symbols require background images that you provide yourself.</li>
     <li><strong>No generated cover appears:</strong> check that the Default row in FanFicFare's Calibre Cover settings points to your saved preset. You can also select a book and run Generate Cover manually to test the preset.</li>
   </ul>
-</div>
-
-## What's next
-
-In step 2, you'll set up different cover templates per fandom and have FFF apply them automatically when downloading.
-
-***
-
-<div class="next-step">
-  <a href="{{ '/per-fandom/' | relative_url }}">
-    <span class="next-label">Next</span>
-    <span class="next-title">Step 2: Per-fandom covers →</span>
-  </a>
 </div>

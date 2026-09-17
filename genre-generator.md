@@ -1,11 +1,16 @@
 ---
 layout: default
-title: "Genre generator"
+title: "Genre code generator"
 subtitle: "Turn lists of tag keyphrases into a ready-to-paste Calibre template"
 description: "Generate a Calibre genre template from groups of tag keyphrases."
+permalink: /display/genres/code-generator/
+section: Cover content
+requirements: [Template code]
+previous: {label: "Genres and flags", url: "/display/genres/", section: "Cover content"}
+next: {label: "Put it all together", url: "/display/combining-fields/", section: "Cover content"}
 ---
 
-This generator creates the `#genre` template described in [step 4]({{ '/advanced-columns/' | relative_url }}). For each cover label, add the words or phrases that should make it appear.
+This generator creates the `#genre` template described in [Genres and flags]({{ '/display/genres/' | relative_url }}). For each cover label, add the words or phrases that should make it appear.
 
 <div class="callout note">
   <div class="callout-title">Your information stays in your browser</div>
@@ -15,11 +20,11 @@ This generator creates the `#genre` template described in [step 4]({{ '/advanced
 <div class="ship-generator" id="genre-generator">
   <section class="generator-panel" aria-labelledby="genre-start-title">
     <div class="generator-panel-heading"><div><span class="generator-step">1</span><h2 id="genre-start-title">Choose a starting point</h2></div><button class="generator-button generator-button-secondary" id="genre-load-examples" type="button">Load examples</button></div>
-    <p>Start with an empty list, load the tutorial examples, or paste the Step 4 template—or code previously made by this generator.</p>
+    <p>Start with an empty list, load the tutorial examples, or paste the tutorial genre template—or code previously made by this generator.</p>
     <details class="generator-import"><summary>Import existing template code</summary>
       <label for="genre-import-code">Paste the complete Calibre template</label><textarea id="genre-import-code" rows="8" spellcheck="false" placeholder="program:&#10;..."></textarea>
       <div class="generator-actions"><button class="generator-button" id="genre-import-template" type="button">Import code</button><button class="generator-button generator-button-secondary" id="genre-clear-import" type="button">Clear</button></div>
-      <p class="generator-help">The importer understands the Step 4 tutorial template and templates made by this generator. Other hand-written code might not import correctly.</p><div class="generator-message" id="genre-import-message" role="status" aria-live="polite" hidden></div>
+      <p class="generator-help">The importer understands the tutorial genre template and templates made by this generator. Other hand-written code might not import correctly.</p><div class="generator-message" id="genre-import-message" role="status" aria-live="polite" hidden></div>
     </details>
   </section>
 
@@ -42,12 +47,12 @@ This generator creates the `#genre` template described in [step 4]({{ '/advanced
 
   <section class="generator-panel" aria-labelledby="genre-output-title">
     <div class="generator-panel-heading"><div><span class="generator-step">4</span><h2 id="genre-output-title">Generate your Calibre template</h2></div></div>
-    <p>Replace the existing code in your <code>#genre</code> composite column with the generated template.</p>
+    <p>In Calibre, open <strong>Preferences → Add your own columns</strong>, edit <code>#genre</code>, and replace the contents of its <strong>Template</strong> box with the generated code.</p>
     <div class="generator-actions"><button class="generator-button generator-button-primary" id="genre-generate-template" type="button">Generate template</button></div>
     <div class="generator-output-wrap" id="genre-output-wrap" hidden><label for="genre-generated-code">Generated template</label><textarea id="genre-generated-code" rows="22" readonly spellcheck="false"></textarea><div class="generator-actions"><button class="generator-button" id="genre-copy-template" type="button">Copy code</button><button class="generator-button generator-button-secondary" id="genre-download-template" type="button">Download .txt</button></div><div class="generator-message" id="genre-copy-message" role="status" aria-live="polite" hidden></div></div>
   </section>
 </div>
 
-<noscript><div class="callout warning"><div class="callout-title">JavaScript is required</div><p>The generator runs in your browser and needs JavaScript enabled. The manual template in step 4 still works without it.</p></div></noscript>
+<noscript><div class="callout warning"><div class="callout-title">JavaScript is required</div><p>The generator runs in your browser and needs JavaScript enabled. The downloadable template on the Genres and flags page still works without it.</p></div></noscript>
 
 <script src="{{ '/assets/js/genre-generator.js' | relative_url }}" defer></script>

@@ -1,0 +1,28 @@
+## Chapter-aware and dormant status
+## Requires: #status, #chapters, #updated
+## Change 365 below to choose how many days count as dormant.
+
+program:
+status = lowercase(field('#status'));
+chapters = field('#chapters');
+updated = field('#updated');
+dormant_days = 365;
+is_complete = contains(status, 'complet', '1', '');
+is_in_progress = contains(status, 'progress', '1', '');
+chapter_text = test(chapters, chapters & 'ch', '');
+
+if is_complete then
+    if chapters ># 1 then
+        '✅ ' & chapter_text
+    else
+        '✅'
+    fi
+elif is_in_progress then
+    if and(updated, days_between(format_date(today(), 'yyyy-MM-dd'), format_date(updated, 'yyyy-MM-dd')) ># dormant_days) then
+        '😴 ' & chapter_text
+    else
+        chapter_text
+    fi
+else
+    field('#status')
+fi

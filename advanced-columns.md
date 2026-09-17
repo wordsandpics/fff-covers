@@ -2,6 +2,7 @@
 layout: default
 title: "Step 4: Advanced columns"
 subtitle: "Template columns that derive new data from existing metadata"
+published: false
 ---
 
 The columns in step 3 were simple mappings: FFF gets a value from AO3, Calibre stores it in a column. Template columns work differently: they calculate their value from other columns every time they're displayed, using a small expression or program. Change the underlying data and the template column updates automatically.
@@ -116,7 +117,7 @@ return result
 
 Each block follows the same logic: look for any of these keyphrases in the tags, and if found, add this label to the result. To add a new genre, copy any block and change the keyphrases and label. To add keyphrases to an existing genre, add them to that line separated by `|`.
 
-If you would rather not edit these repeating blocks by hand, the [genre generator]({{ '/genre-generator/' | relative_url }}) can build the complete template for you.
+If you would rather not edit these repeating blocks by hand, the [Genre code generator]({{ '/display/genres/code-generator/' | relative_url }}) can build the complete template for you.
 
 <div class="callout note">
   <h6 class="callout-title">Which tags field?</h6>

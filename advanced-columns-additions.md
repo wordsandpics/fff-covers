@@ -1,4 +1,7 @@
 ---
+published: false
+---
+
 ## Short status
 
 **Column name:** Short status — **Lookup name:** `short_status` — **Type:** Column built from other columns

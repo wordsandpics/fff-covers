@@ -1,85 +1,54 @@
 ---
 layout: default
-title: Advanced covers for your fanfic library
+title: Make fanfic covers that update themselves
 subtitle: A guide for FanFicFare + Calibre users
+next: {label: "Create your first cover", url: "/start/first-cover/", section: "Start here"}
 ---
 
-<p>You're already using FanFicFare to download fic and Calibre to manage it. This guide is about making your library look good and give you useful information at a glance: automatically, per fandom, with metadata that actually matters to you.</p>
+<p>You're already using FanFicFare to download fic and Calibre to manage it. This guide helps you make your library look good and show useful information at a glance, with covers that update automatically.</p>
 
 <p>This is not a guide to setting up FanFicFare from scratch. If you need a more general, but advanced guide without emphasis on covers, I strongly recommend <a href="https://maelstrom.quest/2026/02/24/calibre-fff-guide/">Stormy Crossroads' Calibre + Fanficfare tutorial</a>. For thorough documentation there's the <a href="https://github.com/JimmXinu/FanFicFare/wiki">FFF wiki</a>. </p>
 
 ![Cover samples]({{ '/assets/img/cover-samples-3.png' | relative_url }})
 
-This is a sample of what my covers look like. I have per-fandom cover designs (even per-ship in some cases!) and I've set it up so I can see at a glance all the information to see what the fic is about: Main ship, genre, length, completion status. You can decide exactly what information you want displayed. the templates available in this guide are slightly different as they don't have per-fandom icons and text, but they're editable, so if you want you can modify them yourself.
+This is a sample from my own library. My covers use custom artwork for different fandoms—and sometimes different ships—and show the main ship, genre, length, and completion status. You can choose which of those details matter to you. The ready-made artwork in this guide uses a generic book symbol so it works for everyone, but you can edit it to add your own colours, layouts, and fandom icons.
 
-## The Tutorial
+## Start here
+
+Follow these three pages for a complete working setup. After that, choose only the optional recipes that match what you want on your covers.
 
 <div class="step-grid">
-  <a class="step-card" href="{{ '/basic-covers/' | relative_url }}">
-    <h6 class="step-num">Step 1</h6>
-    <h3 class="step-title">Basic covers</h3>
-    <p class="step-desc">Get cover generation working with GCC</p>
+  <a class="step-card" href="{{ '/start/first-cover/' | relative_url }}">
+    <span class="step-num">Step 1</span>
+    <h3 class="step-title">Create your first cover</h3>
+    <p class="step-desc">Import a preset and generate a working cover.</p>
   </a>
-  <a class="step-card" href="{{ '/per-fandom/' | relative_url }}">
-    <h6 class="step-num">Step 2</h6>
-    <h3 class="step-title">Per-fandom covers</h3>
-    <p class="step-desc">Different cover templates per fandom using FFF</p>
+  <a class="step-card" href="{{ '/start/artwork/' | relative_url }}">
+    <span class="step-num">Step 2</span>
+    <h3 class="step-title">Set up your artwork</h3>
+    <p class="step-desc">Use the included backgrounds or customize your own.</p>
   </a>
-  <a class="step-card" href="{{ '/custom-columns/' | relative_url }}">
-    <h6 class="step-num">Step 3</h6>
-    <h3 class="step-title">Custom columns</h3>
-    <p class="step-desc">Ship names, genre tags, status — on the cover and in the library</p>
-  </a>
-  <a class="step-card" href="{{ '/advanced-columns/' | relative_url }}">
-    <h6 class="step-num">Step 4</h6>
-    <h3 class="step-title">Advanced custom columns</h3>
-    <p class="step-desc">Creating columns from other columns to process and change metadata.</p>
-  </a>
-  <a class="step-card" href="{{ '/genre-generator/' | relative_url }}">
-    <h6 class="step-num">Companion to Step 4</h6>
-    <h3 class="step-title">Genre generator</h3>
-    <p class="step-desc">Turn groups of tag keyphrases into ready-to-paste genre code.</p>
-  </a>
-  <a class="step-card" href="{{ '/advanced-ships/' | relative_url }}">
-    <h6 class="step-num">Step 5</h6>
-    <h3 class="step-title">Advanced ships</h3>
-    <p class="step-desc">Preserve ship order and handle repeated anthology relationships.</p>
-  </a>
-  <a class="step-card" href="{{ '/ship-generator/' | relative_url }}">
-    <h6 class="step-num">Companion to Step 5</h6>
-    <h3 class="step-title">Short ship generator</h3>
-    <p class="step-desc">Create customised ship code without the repetitive editing.</p>
-  </a>
-  <a class="step-card" href="{{ '/nerdery/' | relative_url }}">
-    <h6 class="step-num">Step 6</h6>
-    <h3 class="step-title">Tips & tricks</h3>
-    <p class="step-desc">Take it further with these techniques.</p>
+  <a class="step-card" href="{{ '/start/metadata/' | relative_url }}">
+    <span class="step-num">Step 3</span>
+    <h3 class="step-title">Add AO3 metadata</h3>
+    <p class="step-desc">Connect fandom, ships, status, words, and chapters.</p>
   </a>
 </div>
 
 ## Before you start
 
 <div class="prereqs">
-  <h6 class="prereqs-title">You'll need</h6>
+  <p class="prereqs-title">You'll need</p>
   <ul class="prereq-items">
   <li><div class="prereq-dot"></div>Calibre with the FanFicFare plugin installed and working</li>
   <li><div class="prereq-dot"></div>The generate_cover plugin installed</li>
-  <li><div class="prereq-dot"></div>Basic comfort tinkering and editing code. Don't worry, it's all explained and ready to be copy/pasted and modified easily. </li>
+  <li><div class="prereq-dot"></div>No coding experience. The guide explains where every setting and code block goes.</li>
   </ul>
 </div>
 
 
 
 <div class="callout note">
-  <h6 class="callout-title">Note</h6>
+  <div class="callout-title">Note</div>
   <p>This guide is written with AO3 in mind. Settings may need adjustments for other sites.</p>
-</div>
-
-***
-
-<div class="next-step">
-  <a href="{{ '/basic-covers/' | relative_url }}">
-    <span class="next-label">Get Started</span>
-    <span class="next-title">Step 1: Basic covers →</span>
-  </a>
 </div>

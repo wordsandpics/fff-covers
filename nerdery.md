@@ -2,6 +2,7 @@
 layout: default
 title: "Step 6: Tips and tricks"
 subtitle: "Independent techniques to extend and refine your setup"
+published: false
 ---
 
 The techniques on this page are modular — use any combination, in any order. None of them require the previous steps to be complete.

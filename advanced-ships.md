@@ -1,10 +1,15 @@
 ---
 layout: default
-title: "Step 5: Advanced ship tags"
+title: "Anthology-aware ships"
 subtitle: "Preserving author order and handling repeated anthology ships"
+permalink: /advanced/anthology-ships/
+section: Advanced options
+requirements: [Calibre settings, personal.ini, Template code]
+previous: {label: "Protect custom covers", url: "/choose/protect-covers/", section: "Choose a cover"}
+next: {label: "Chapter-aware and dormant status", url: "/advanced/status/", section: "Advanced options"}
 ---
 
-The short ship column in step 4 reads directly from `#ship`. That works, but Calibre sorts columns like this alphabetically. If a fic has several relationships, the first ship in the column may be the one that comes first in the alphabet, not the one the author listed first.
+The basic short ship setup reads directly from `#ship`. That works, but Calibre sorts columns like this alphabetically. If a fic has several relationships, the first ship in the column may be the one that comes first in the alphabet, not the one the author listed first.
 
 This step saves the ships in their original order before Calibre can sort them. The cover can then use the first two different slash relationships and turn them into short ship names.
 
@@ -41,7 +46,7 @@ remove repeats and choose the first two for #short_ships
 cover
 ```
 
-This template shows two ships because that fits neatly on most covers. The full list is still saved in `#all_slashes`, so the other ships are not lost. If you want to show more, the [short ship generator]({{ '/ship-generator/' | relative_url }}) will write the longer template for you.
+This template shows two ships because that fits neatly on most covers. The full list is still saved in `#all_slashes`, so the other ships are not lost. If you want to show more, the [Ship code generator]({{ '/display/ships/code-generator/' | relative_url }}) will write the longer template for you.
 
 ## Create the Calibre column
 
@@ -94,7 +99,7 @@ If you would rather download the code than copy it from the page, use these file
 
 ## Update the short ship template
 
-Replace the short ship template from step 4 with the version below. It reads the new `#all_slashes` column, removes repeated ships, and uses the first two different relationships. If an older fic does not have anything in `#all_slashes` yet, the template tries the original `#ship` column instead.
+Replace the [basic short ship template]({{ '/display/ships/' | relative_url }}) with the version below. In **Preferences → Add your own columns**, edit `#short_ships` and paste this into its **Template** box. It reads the new `#all_slashes` column, removes repeated ships, and uses the first two different relationships. If an older fic does not have anything in `#all_slashes` yet, the template tries the original `#ship` column instead.
 
 ```text
 program:
@@ -154,7 +159,7 @@ fi;
 if !result then return 'Gen' else return result fi
 ```
 
-The ship-name replacements work like the ones in step 4. Add each ship to both the first-ship and second-ship sections, because it could appear in either place. If one relationship name contains another, put the longer one first. For example, put `A/B/C` before `A/B` so the template does not mistake the three-person ship for the shorter one.
+The ship-name replacements work like the ones in the basic Ships recipe. Add each ship to both the first-ship and second-ship sections, because it could appear in either place. If one relationship name contains another, put the longer one first. For example, put `A/B/C` before `A/B` so the template does not mistake the three-person ship for the shorter one.
 
 ## A note about anthologies
 
@@ -181,12 +186,3 @@ The symbols around the ship name make the rule check only the first ship in the 
 Earlier versions of this step created `#primary_slash` and `#secondary_slash`. You can keep them if you use them to search or filter your library, but the new `#short_ships` template does not need them.
 
 Follow the new instructions to create and fill `#all_slashes`, then replace your old `#short_ships` template. If you have a ship-specific cover rule using `${primary_slash}`, replace it with an `${all_slashes}` rule like the example above. You do not need to delete your old columns.
-
-***
-
-<div class="next-step">
-  <a href="{{ '/ship-generator/' | relative_url }}">
-    <span class="next-label">Companion to this step</span>
-    <span class="next-title">Short ship generator →</span>
-  </a>
-</div>

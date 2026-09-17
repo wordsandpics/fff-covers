@@ -4,7 +4,7 @@
 
 If you have opinions about fanfic, a Calibre library that has gotten slightly out of hand, and a ~~nagging~~  persistent feeling that the default grey cover is a crime against aesthetics: this guide is for you.
 
-**fff-covers** is a complete walkthrough for setting up automatic, fandom-aware cover generation for fanfiction downloaded with FanFicFare and managed in Calibre. By the end you'll have covers that know what fandom they belong to, who the ship is, whether it's a WIP, and how long it is — generated automatically, every time you download or update a story, without touching a single file manually.
+**fff-covers** is a beginner-friendly guide to automatic covers for fanfiction downloaded with FanFicFare and managed in Calibre. Start with one working cover, then choose which information and automatic cover rules are useful for your own library.
 
 ***
 
@@ -24,21 +24,37 @@ If you have opinions about fanfic, a Calibre library that has gotten slightly ou
 
 ## What's covered
 
-1. Basic covers — get something generating in under ten minutes
-2. Per-fandom covers — different templates for different fandoms
-3. Simple custom columns — map AO3 metadata to your Calibre library
-4. Template columns — computed columns for short wordcount, genre tags, and ship names
-   - Genre generator — a companion tool for building keyphrase-to-genre templates
-5. Advanced ship tags — preserve author order with a personal.ini pipeline
-   - Short ship generator — a companion tool for creating customised ship templates without repetitive editing
-6. Tips and tricks — metadata normalization, advanced cover rules, likeability score
+The required setup is three short parts:
+
+1. Create your first cover.
+2. Set up your artwork.
+3. Add AO3 metadata to Calibre.
+
+After that, the guide is organized by what you want to do:
+
+- **Cover content:** word and chapter count, status, ships, genres, and putting the finished fields together on a cover.
+- **Choose a cover:** select artwork by fandom, ship, genre, or fallback rules.
+- **Advanced options:** anthology-aware ships, chapter-aware status, precise matching, metadata cleanup, and the optional likeability score.
+- **Reference:** troubleshooting, downloads, changelog, and contact information.
+
+The [Ship code generator](https://wordsandpics.github.io/fff-covers/display/ships/code-generator/) and [Genre code generator](https://wordsandpics.github.io/fff-covers/display/genres/code-generator/) build repetitive Calibre template code without requiring you to write it by hand.
 
 ***
 
 ## Changelog
 
+### 16 September 2026
+
+- Reorganized the tutorial into a three-page setup followed by optional recipes grouped by purpose.
+- Added responsive navigation, breadcrumbs, clearer code-placement instructions, and Previous/Next links.
+- Added chapter display, advanced status, cover fallbacks, precise tag matching, Saved Metadata guidance, troubleshooting, downloads, and contact pages.
+
 ### 15 September 2026
 
+- Reorganized the guide into a three-page setup followed by optional, task-based recipes.
+- Added responsive grouped navigation, breadcrumbs, and Previous/Next links.
+- Added dedicated pages for chapter display, cover fallbacks, advanced status, precise tag matching, troubleshooting, downloads, and contact information.
+- Added a browser-based genre code generator.
 - Added a browser-based short ship generator with editable mappings, code import, previews, and templates for one to six ships.
 - Corrected the advanced template so removing duplicate relationships keeps their original order.
 

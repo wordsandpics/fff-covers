@@ -11,47 +11,73 @@ permalink: pretty
 # Exclude from build
 exclude:
   - README.md
+  - RESTRUCTURE_PLAN.md
+  - scripts
+  - tests
   - Gemfile
   - Gemfile.lock
 
-# Navigation — edit this to match your pages
+# Navigation
 nav:
-  - title: Getting started
+  - title: Start here
     pages:
-      - label: Introduction
+      - label: Overview
         url: /
-  - title: Guide
+      - label: 1. Create your first cover
+        url: /start/first-cover/
+      - label: 2. Set up your artwork
+        url: /start/artwork/
+      - label: 3. Add AO3 metadata
+        url: /start/metadata/
+  - title: Cover content
     pages:
-      - label: 1. Basic covers
-        url: /basic-covers/
-      - label: 2. Per-fandom covers
-        url: /per-fandom/
-      - label: 3. Custom columns
-        url: /custom-columns/
-      - label: 4. Advanced custom columns
-        url: /advanced-columns/
-      - label: Genre generator
-        url: /genre-generator/
+      - label: Word and chapter count
+        url: /display/length/
+      - label: Status
+        url: /display/status/
+      - label: Ships
+        url: /display/ships/
+      - label: Ship code generator
+        url: /display/ships/code-generator/
         subitem: true
-      - label: 5. Obsessive nerdery 1- Advanced ships
-        url: /advanced-ships/
-      - label: Short ship generator
-        url: /ship-generator/
+      - label: Genres and flags
+        url: /display/genres/
+      - label: Genre code generator
+        url: /display/genres/code-generator/
         subitem: true
-      - label: 6. Obsessive nerdery 2- Tips & tricks
-        url: /nerdery/
-      
-  - title: Reference & Files
+      - label: Put it all together
+        url: /display/combining-fields/
+  - title: Choose a cover
     pages:
-      - label: personal.ini snippets
-        url: https://github.com/wordsandpics/fff-covers/tree/main/code/fff-personal-ini/
-      - label: Column templates
-        url: https://github.com/wordsandpics/fff-covers/tree/main/code/calibre-column-templates/
-      - label: Background image pack
-        url: /code/wordsandpics_classic_covers.zip
-      - label: Generate Cover preset
-        url: /code/classics_preset.zip
-      - label: GitHub
-        url: https://github.com/wordsandpics/fff-covers     
-        
-        
+      - label: By fandom
+        url: /choose/fandom/
+      - label: By ship or genre
+        url: /choose/ship-or-genre/
+      - label: Original works and fallbacks
+        url: /choose/fallbacks/
+      - label: Long titles
+        url: /choose/long-titles/
+      - label: Protect custom covers
+        url: /choose/protect-covers/
+  - title: Advanced options
+    pages:
+      - label: Anthology-aware ships
+        url: /advanced/anthology-ships/
+      - label: Chapter-aware and dormant status
+        url: /advanced/status/
+      - label: Precise tag matching
+        url: /advanced/tag-matching/
+      - label: Metadata cleanup
+        url: /advanced/metadata-cleanup/
+      - label: Likeability score
+        url: /advanced/likeability/
+  - title: Reference
+    pages:
+      - label: Troubleshooting
+        url: /reference/troubleshooting/
+      - label: Downloads
+        url: /reference/downloads/
+      - label: Changelog
+        url: /reference/changelog/
+      - label: Contact
+        url: /contact/

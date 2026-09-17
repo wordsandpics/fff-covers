@@ -1,26 +1,23 @@
 ---
 layout: default
-title: "Step 2: Per-fandom covers"
+title: "Choose a cover by fandom"
 subtitle: "Different cover templates for different fandoms, with two lines of config"
+permalink: /choose/fandom/
+section: Choose a cover
+requirements: [personal.ini, Generate Cover]
+previous: {label: "Put it all together", url: "/display/combining-fields/", section: "Cover content"}
+next: {label: "By ship or genre", url: "/choose/ship-or-genre/", section: "Choose a cover"}
 ---
 
-In step 1 you set up a single cover preset that applies to everything you download. In this step you'll create fandom-specific presets and tell FFF which one to use based on the fic's fandom tags.
+In Step 1 you set up one cover preset. Here you will create fandom-specific presets and tell FanFicFare which one to use from the story's fandom metadata.
+
+FanFicFare applies these rules whenever it processes a story: on a new download, an update, or a metadata-only refresh. You can also run Generate Cover manually for a selected book, but in that case you choose the preset yourself.
 
 ## Generic and personalised covers
 
-The backgrounds supplied with this tutorial are deliberately generic. They use a simple book symbol so they can be used immediately for any fandom, without requiring you to find or edit any artwork first.
+The supplied backgrounds are generic so they work for any fandom. [Set up your artwork]({{ '/start/artwork/' | relative_url }}) explains that the SVG files are editable and suggests programs you can use.
 
-They are also intended as starting points. The background files are SVGs: scalable image files made from editable shapes and text rather than a fixed grid of pixels. You can open them in a vector image editor such as [Inkscape](https://inkscape.org/) or [Affinity](https://www.affinity.studio/get-affinity) and adapt them to suit your library.
-
-For example, you can:
-
-- change the background and accent colours;
-- replace the book symbol with a fandom-specific icon or other artwork;
-- move, resize, add, or remove design elements;
-- change the overall layout while keeping the same cover dimensions; or
-- create several related designs for different fandoms or ships.
-
-Save each finished design as an SVG. In Generate Cover, open the **Select Image** tab and choose your edited file as the preset's background image.
+For a fandom-specific version, you might add the fandom name, an image, or a recognizable icon. Save the finished SVG under a new name, then use it as the background of a separate Generate Cover preset.
 
 <div class="callout note">
   <div class="callout-title">Fandom symbols are not added automatically</div>
@@ -73,17 +70,3 @@ AO3 crossovers have multiple fandoms in `${category}`, so a fic may match more t
 
 ## Other Fandoms
 If the fandom doesn't match any of your rules, the default that you set in the FFF preferences will be used. 
-
-## What's next
-
-In step 3 you'll set up custom metadata columns — including ship names — that can feed back into cover selection here, allowing per-ship templates like a dedicated cover for your OTP.
-
-
-***
-
-<div class="next-step">
-  <a href="{{ '/custom-columns/' | relative_url }}">
-    <span class="next-label">Next</span>
-    <span class="next-title">Step 3: Custom columns →</span>
-  </a>
-</div>

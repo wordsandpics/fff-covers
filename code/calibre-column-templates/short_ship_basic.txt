@@ -1,4 +1,4 @@
-## Short ship — basic version (Step 4)
+## Short ship — basic version
 ## ──────────────────────────────────────
 ## Column settings:
 ##   Column heading : Cover ship tags
@@ -18,7 +18,7 @@
 ##
 ## Note: Calibre sorts the #ship column alphabetically, so this
 ## template may not always return the author's intended primary ship
-## for fics with multiple pairings. See the advanced version (Step 5)
+## for fics with multiple pairings. See the anthology-aware version
 ## for order-preserving extraction.
 
 program:
