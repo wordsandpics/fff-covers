@@ -7,6 +7,10 @@ previous: {label: "Downloads", url: "/reference/downloads/", section: "Reference
 next: {label: "Contact", url: "/contact/", section: "Reference"}
 ---
 
+## 18 September 2026
+
+- Updated the Ship code generator so relationship matching ignores capitalization and works with both AO3 participant order and FanFicFare's `sort_ships:true` order.
+
 ## 16 September 2026
 
 - Reorganized the guide into a three-page setup followed by optional recipes grouped by purpose.

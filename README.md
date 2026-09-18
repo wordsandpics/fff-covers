@@ -43,6 +43,10 @@ The [Ship code generator](https://wordsandpics.github.io/fff-covers/display/ship
 
 ## Changelog
 
+### 18 September 2026
+
+- Updated the Ship code generator so relationship matching ignores capitalization and works with both AO3 participant order and FanFicFare's `sort_ships:true` order.
+
 ### 16 September 2026
 
 - Reorganized the tutorial into a three-page setup followed by optional recipes grouped by purpose.

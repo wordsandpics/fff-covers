@@ -67,6 +67,10 @@ test('preview preserves order and removes repeated names', function () {
   assert.equal(core.previewValue(input, mappings, 4), 'Johnlock, Hollanov');
 });
 
+test('preview matches relationships regardless of case or participant order', function () {
+  assert.equal(core.previewValue('JOHN WATSON/SHERLOCK HOLMES, Ilya Rozanov/Shane Hollander', mappings, 2), 'Johnlock, Hollanov');
+});
+
 test('preview keeps a three-person ship separate from a pairing', function () {
   assert.equal(core.previewValue('A/B/C, A/B', mappings, 2), 'Triad, Pair');
 });
@@ -81,6 +85,19 @@ test('generated matching treats punctuation literally', function () {
   ], 1);
   assert.ok(generated.includes('Name \\(TV\\)/Other\\.Name'));
   assert.match(generated, /\^\(\?:.*\)\$/);
+});
+
+test('generated matching is case-insensitive and supports sort_ships order', function () {
+  const generated = core.generateTemplate([
+    { pairing: 'Steve Harrington/Eddie Munson', shortName: 'Steddie', aliases: ['Steve/Eddie'] }
+  ], 1);
+  assert.ok(generated.includes("(?i)^(?:Steve Harrington/Eddie Munson|Steve/Eddie)$"));
+  assert.ok(generated.includes("(?i)^(?:Eddie Munson/Steve Harrington|Eddie/Steve)$"));
+});
+
+test('automatic sort_ships variants do not become imported aliases', function () {
+  const generated = core.generateTemplate(mappings, 2);
+  assert.deepEqual(core.parseTemplate(generated).mappings, mappings);
 });
 
 test('generated template preserves order instead of sorting lists', function () {
