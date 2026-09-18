@@ -1,49 +1,14 @@
 ---
 layout: default
-title: "Put it all together"
-subtitle: "Add your finished metadata fields to a cover preset"
+title: "Advanced display options"
+subtitle: "Refine cover text with conditional formatting and fallbacks"
 section: Cover content
 requirements: [Generate Cover]
 previous: {label: "Genre code generator", url: "/display/genres/code-generator/", section: "Cover content"}
 next: {label: "Choose by fandom", url: "/choose/fandom/", section: "Choose a cover"}
 ---
 
-The earlier pages created short values such as `Johnlock`, `Fluff`, `34k`, and `WIP`. This page places those values on your generated cover.
-
-## Open the cover text settings
-
-1. Open **Generate Cover** from Calibre's toolbar.
-2. Select the preset you want to change.
-3. Open the **Contents** tab.
-4. Find **Custom text**. This is where every example on this page goes.
-
-The starter preset currently uses `{pubdate}` in this box. You can replace it, keep it on another line, or combine it with your new fields.
-
-## Put values on one line
-
-Paste this into **Custom text**:
-
-```
-{#short_ships} · {#genre} · {#short_words} · {#short_status}
-```
-
-The names inside braces are Calibre lookup names. The middle dots are ordinary visible separators. A cover might show:
-
-```text
-Johnlock · Fluff · 34k · WIP
-```
-
-You can remove any field you do not want, change their order, or replace the dots with another separator.
-
-## Put values on separate lines
-
-Each line in **Custom text** becomes a separate line on the cover:
-
-```
-{#short_ships}
-{#genre}
-{#short_words} · {#short_status}
-```
+The earlier recipes can create short values such as `Johnlock`, `Fluff`, `34k`, and `WIP`. This page refines how those values appear together. For opening a preset, adding ordinary `{#column}` values, and regenerating covers, see [Generate covers with your metadata]({{ '/start/generate-covers/' | relative_url }}).
 
 ## Hide labels and separators when a value is empty
 

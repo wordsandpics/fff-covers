@@ -7,7 +7,7 @@ permalink: /display/genres/code-generator/
 section: Cover content
 requirements: [Template code]
 previous: {label: "Genres and flags", url: "/display/genres/", section: "Cover content"}
-next: {label: "Put it all together", url: "/display/combining-fields/", section: "Cover content"}
+next: {label: "Advanced display options", url: "/display/combining-fields/", section: "Cover content"}
 ---
 
 This generator creates the `#genre` template described in [Genres and flags]({{ '/display/genres/' | relative_url }}). For each cover label, add the words or phrases that should make it appear.

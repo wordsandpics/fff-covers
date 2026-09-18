@@ -829,6 +829,24 @@ tr:last-child td {
   margin-top: 18px;
 }
 
+.generator-panel .generator-checkbox {
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.generator-panel .generator-checkbox input {
+  accent-color: #7EC6F6;
+  flex: 0 0 auto;
+  height: 18px;
+  padding: 0;
+  width: 18px;
+}
+
+#category-fallback-settings {
+  margin-top: 12px;
+}
+
 .generator-import {
   background: #151c2e;
   border: 1px solid rgba(255, 255, 255, 0.08);

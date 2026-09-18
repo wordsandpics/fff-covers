@@ -6,7 +6,7 @@ permalink: /start/metadata/
 section: Start here
 requirements: [Calibre settings, FanFicFare]
 previous: {label: "Set up your artwork", url: "/start/artwork/", section: "Start here"}
-next: {label: "Word and chapter count", url: "/display/length/", section: "Cover content"}
+next: {label: "Generate covers with your metadata", url: "/start/generate-covers/", section: "Start here"}
 ---
 
 Metadata is information about a story: its title, author, tags, relationships, word count, status, and so on. FanFicFare reads this information from AO3 and writes it into your Calibre library.
@@ -27,7 +27,9 @@ You can search these values, filter your library with them, and place many of th
 
 A **custom column** is an extra place in your Calibre library for information that does not have a suitable standard column. For example, you can keep relationships in `#ship`, status in `#status`, and word count in `#words` instead of mixing everything together in Tags.
 
-The name beginning with `#` is the column's **lookup name**. Calibre, FanFicFare, Generate Cover, and the templates in this guide use that name to find the column.
+There are two kinds of custom column in this guide. A **saved-metadata column** receives a value from FanFicFare, such as AO3's word count. A **calculated column** works out a new value from saved columns, such as turning `34,291` words into `34k`. Calculated columns do not download anything and should not be mapped in FanFicFare.
+
+Each column has a reader-facing **heading** and a machine-facing **lookup name**. Enter the lookup name without `#` when you create the column: `words`, for example. Calibre then displays and stores it as `#words`. Use `#words` in Calibre templates and Generate Cover fields such as `{#words}`. FanFicFare source metadata is different: `${category}` and `${freeformtags}` are values it has read from the site, not names of your Calibre columns.
 
 Once metadata has its own column, you can:
 
@@ -37,7 +39,7 @@ Once metadata has its own column, you can:
 - use it to decide which cover preset FanFicFare selects; or
 - use it as the input for a calculated column.
 
-A **calculated column** is a custom column whose value is produced from other columns. It does not download new information. For example, the later `#short_words` column reads `#words` and turns `34,291` into `34k`. The optional pages after this step explain each calculated column and provide the code it needs.
+A **calculated column** is a custom column whose value is produced from other columns. For example, the later `#short_words` column reads `#words` and turns `34,291` into `34k`. The optional pages after this step explain each calculated column and provide the code it needs.
 
 ### Create and test a calculated column
 
@@ -55,11 +57,13 @@ Open **Preferences → Add your own columns**. Click **Add custom column** at th
 
 ![Add your own columns]({{ '/assets/img/calibre-add-columns.png' | relative_url }})
 
-For each column you want, fill in the lookup name, a column heading, and the column type. The lookup name becomes the column's identifier — Calibre prefixes it with `#` automatically, so `fandom` becomes `#fandom`.
+For each column you want, fill in the lookup name, a column heading, and the column type. Use **comma separated text, like tags** when a story can have several values that you want to browse individually, such as fandoms or relationships. Use **Text** for one short value, **Integers** for whole numbers, and **Date** for dates.
 
 ![Create a custom column]({{ '/assets/img/calibre-create-column.png' | relative_url }})
 
-Here are the columns to create for this step:
+### Basic columns
+
+Create these now. They support the main cover-content recipes and the later fandom and ship choices:
 
 | Column heading | Lookup name | Column type |
 |---|---|---|
@@ -68,8 +72,17 @@ Here are the columns to create for this step:
 | Status | status | Text, column shown in the Tag browser |
 | Words | words | Integers |
 | Chapters | chapters | Integers |
-| Updated | updated | Date |
-| Content rating | contentrating | Text, column shown in the Tag browser |
+
+### Extra columns
+
+Create these only if you want their information or plan to follow the recipe named below:
+
+| Column heading | Lookup name | Column type | Used by |
+|---|---|---|---|
+| Updated | updated | Date | Chapter-aware and dormant status |
+| Content rating | contentrating | Text, column shown in the Tag browser | Optional information for your library |
+
+The **Updated** column is needed only for [Chapter-aware and dormant status]({{ '/advanced/status/' | relative_url }}).
 
 Click **Apply** and restart Calibre when prompted.
 
@@ -79,6 +92,8 @@ Open the FanFicFare plugin settings and go to the **Custom Columns** tab. Your n
 
 ![FFF Custom Columns tab]({{ '/assets/img/fff-custom-columns.png' | relative_url }})
 
+### Basic columns
+
 | Column | Map to |
 |---|---|
 | Fandom(#fandom) | Category |
@@ -86,6 +101,11 @@ Open the FanFicFare plugin settings and go to the **Custom Columns** tab. Your n
 | Status(#status) | Status |
 | Words(#words) | Words |
 | Chapters(#chapters) | Chapters |
+
+### Extra columns
+
+| Column | Map to |
+|---|---|
 | Updated(#updated) | Updated |
 | content rating(#contentrating) | Rating |
 
@@ -94,17 +114,13 @@ The **New Only** checkbox next to each column controls whether FFF updates it on
 
 At the bottom of the tab, make sure **Allow custom_columns_settings from personal.ini to override** is checked. You'll need this in later steps.
 
-## 3. Use saved metadata
+## Refresh metadata for books you already have
 
-Any custom column can be used in FFF's `generate_cover_settings` using its lookup name. The `#fandom` column, for example, contains the same Category data used by [fandom cover rules]({{ '/choose/fandom/' | relative_url }}). As you add more columns, you can use saved ship or genre information to choose more specific cover presets.
+New columns fill automatically when you download a new fic. To fill them for books already in your library, select one or more books, open the **FanFicFare** menu, and choose **Update Existing FanFiction Books**. In the update window, choose **Update Calibre Metadata from Website** and run the update. FanFicFare reads the current site metadata and fills every mapped column whose **New Only** box is unchecked.
 
-![FFF Custom Columns in covers]({{ '/assets/img/gcc-custom-columns.png' | relative_url }})
+If you set up the optional Saved metadata column below and it already contains data for the selected books, choose **Update Calibre Metadata from Saved Metadata Column** instead. That reuses the saved copy without contacting AO3, but it cannot supply metadata that was not saved at the time.
 
-You can also display column values directly on covers using the `{#custom_column}` syntax in Generate Cover's Contents tab. For example, adding `{#status}` to the custom text field will print the fic's status on the cover.
-
-The next pages create calculated columns that shorten or combine these saved values. Later, [Put it all together]({{ '/display/combining-fields/' | relative_url }}) walks through adding the finished fields to your cover.
-
-## Optional: save a reusable metadata copy
+## Optional: save raw metadata
 
 FanFicFare can keep a copy of all the metadata it extracted in one long-text column. If you later add a custom column or change a mapping, you can use **Update Calibre Metadata from Saved Metadata Column** instead of requesting the same metadata from AO3 again.
 
@@ -115,4 +131,4 @@ FanFicFare can keep a copy of all the metadata it extracted in one long-text col
 
 This is a backup of metadata, not of the story chapters or images. It begins filling when FanFicFare next downloads or updates each book, and it contains only the information available at that time. Keep your EPUB files backed up separately.
 
-After the Saved metadata column has been filled for a fic, you should be able to use **Update Calibre Metadata from Saved Metadata Column** to reprocess its metadata and generate a cover without connecting to AO3 again.
+The next step shows how to use this saved copy to populate newly added columns and regenerate covers without connecting to AO3 again.

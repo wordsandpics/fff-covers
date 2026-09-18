@@ -4,7 +4,7 @@ title: "Chapter-aware and dormant status"
 subtitle: "Combine completion, chapter progress, and last-update information"
 section: Advanced options
 requirements: [Calibre settings, Template code]
-previous: {label: "Anthology-aware ships", url: "/advanced/anthology-ships/", section: "Advanced options"}
+previous: {label: "Ship code generator", url: "/display/ships/code-generator/", section: "Advanced options"}
 next: {label: "Precise tag matching", url: "/advanced/tag-matching/", section: "Advanced options"}
 ---
 
@@ -27,11 +27,16 @@ The sleeping symbol means only that the work has not been updated within your ch
 
 ## Add the template
 
-Open the [chapter-aware status template]({{ '/code/calibre-column-templates/short_status_advanced.txt' | relative_url }}) in a plain-text editor. In Calibre, go to **Preferences → Add your own columns**, edit `#short_status`, and replace its **Template** box with everything from `program:` to the end. Near the top, this line sets the dormant period to one year:
+1. Open the [chapter-aware status template]({{ '/code/calibre-column-templates/short_status_advanced.txt' | relative_url }}) in a plain-text editor.
+2. In Calibre, go to **Preferences → Add your own columns** and edit `#short_status`.
+3. Replace its **Template** box with everything from `program:` to the end.
+4. Near the top, set your preferred dormant period. This line sets it to one year:
 
-```
-dormant_days = 365;
-```
+   ```
+   dormant_days = 365;
+   ```
+
+5. Save the column and restart Calibre if asked.
 
 Change `365` if you prefer a shorter or longer period. The template checks completion first, so an old but completed work still shows as complete.
 

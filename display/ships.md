@@ -5,30 +5,18 @@ subtitle: "Turn long AO3 relationship tags into compact cover names"
 section: Cover content
 requirements: [Calibre settings, Template code]
 previous: {label: "Status", url: "/display/status/", section: "Cover content"}
-next: {label: "Ship code generator", url: "/display/ships/code-generator/", section: "Cover content"}
+next: {label: "Genres and flags", url: "/display/genres/", section: "Cover content"}
 ---
 
-AO3 supplies relationship tags. FanFicFare writes them into `#ship`. A calculated `#short_ships` column can find the first romantic relationship and replace its full tag with a familiar short name.
+AO3 supplies relationship tags. FanFicFare writes them into `#ship`. This page is the simple route: a calculated `#short_ships` column finds one romantic relationship and replaces its full tag with a familiar short name. It is a good starting point for ordinary single works.
+
+On AO3, a `/` in a relationship tag means a romantic or sexual relationship, while `&` means a platonic relationship. **Gen** is AO3's category for works without a romantic or sexual relationship as the main focus. The basic template uses `Gen` as a convenient fallback when it finds no `/` relationship; that is helpful cover text, but it does not prove that AO3 assigned the Gen category.
 
 ## Create the calculated column
 
 Create **Cover ship tags**, with lookup name `short_ships`, as **Column built from other columns, behaves like tags**. If you have not created a calculated column before, review the explanation in [Add AO3 metadata]({{ '/start/metadata/' | relative_url }}).
 
-## Easiest route: use the Ship code generator
-
-The [Ship code generator]({{ '/display/ships/code-generator/' | relative_url }}) is the easiest way to create and maintain a longer list of ship names. You enter each complete AO3 relationship tag and the short name you want on the cover. The generator writes the repetitive Calibre code for you.
-
-The generator uses the more reliable, order-preserving setup described in [Anthology-aware ships]({{ '/advanced/anthology-ships/' | relative_url }}). Complete that setup first so you have an `#all_slashes` source column. Then:
-
-1. Add your ship names in the generator.
-2. Select **Generate template**.
-3. Copy the generated code.
-4. In Calibre, open **Preferences → Add your own columns**, select **Cover ship tags**, and edit it.
-5. Paste the code into the column's **Template** box, replacing anything already there. Save and restart Calibre if asked.
-
-Use `{#short_ships}` in Generate Cover's **Contents → Custom text** field. The generated template can show more than one ship, which is particularly useful for anthologies.
-
-## Manual basic route
+## Basic route
 
 If you do not want to set up the extra anthology source column, use the basic template instead. It reads the first romantic relationship available in `#ship`.
 
@@ -38,6 +26,12 @@ If you do not want to set up the extra anthology source column, use the basic te
 4. In the column's **Template** box, replace the existing contents with everything from the file's `program:` line to the end. Save the column and restart Calibre if asked.
 
 When a relationship is not in your short-name list, the template shows a shortened version of the original AO3 tag instead of leaving the cover blank.
+
+Use `{#short_ships}` in Generate Cover's **Contents → Custom text** field when you are ready to show it on a cover.
+
+## Want more than one ship or better anthology handling?
+
+For a cover that preserves AO3's relationship order, can show several ships, or works better with anthologies, continue to [Anthology-aware ships]({{ '/advanced/anthology-ships/' | relative_url }}). That optional setup adds an `#all_slashes` source column. Its [Ship code generator]({{ '/display/ships/code-generator/' | relative_url }}) then creates the longer `#short_ships` template without asking you to edit repeated code by hand.
 
 ## Works without a romantic relationship tag
 

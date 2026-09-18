@@ -6,7 +6,7 @@ permalink: /advanced/anthology-ships/
 section: Advanced options
 requirements: [Calibre settings, personal.ini, Template code]
 previous: {label: "Protect custom covers", url: "/choose/protect-covers/", section: "Choose a cover"}
-next: {label: "Chapter-aware and dormant status", url: "/advanced/status/", section: "Advanced options"}
+next: {label: "Ship code generator", url: "/display/ships/code-generator/", section: "Advanced options"}
 ---
 
 The basic short ship setup reads directly from `#ship`. That works, but Calibre sorts columns like this alphabetically. If a fic has several relationships, the first ship in the column may be the one that comes first in the alphabet, not the one the author listed first.
@@ -30,6 +30,16 @@ For example, after you add the Steddie and Ronance short-name replacements, an a
 Steddie, Ronance
 ```
 
+## Setup checklist
+
+1. Create the `all_slashes` long-text column in Calibre.
+2. Add the `all_slashes` extraction settings to the `[defaults]` section of `personal.ini`.
+3. Add the AO3 mapping that sends `all_slashes` to `#all_slashes`.
+4. Refresh one test fic and check that the new column preserved AO3's relationship order.
+5. Replace the `#short_ships` template with the advanced version below, or use the Ship code generator after the setup is working.
+
+The sections below walk through each step and explain why it is needed.
+
 ## How it works
 
 The key is to save the data from AO3 before we shorten and rearrange it for the cover:
@@ -46,7 +56,7 @@ remove repeats and choose the first two for #short_ships
 cover
 ```
 
-This template shows two ships because that fits neatly on most covers. The full list is still saved in `#all_slashes`, so the other ships are not lost. If you want to show more, the [Ship code generator]({{ '/display/ships/code-generator/' | relative_url }}) will write the longer template for you.
+This template shows two ships because that fits neatly on most covers. The full list is still saved in `#all_slashes`, so the other ships are not lost. After completing this setup, you can use the [Ship code generator]({{ '/display/ships/code-generator/' | relative_url }}) if you want to show more ships or avoid editing the repeated ship-name rules by hand.
 
 ## Create the Calibre column
 
@@ -56,7 +66,7 @@ In **Preferences → Add your own columns**, add:
 |---|---|---|
 | All Slash Relationships | all_slashes | Long text, like comments, not shown in the Tag browser |
 
-Be sure to choose **Long text**. If you choose a comma-separated tag column instead, Calibre will put the ships in alphabetical order and we will once again lose the author's order.
+Enter `all_slashes`—without the `#`—in Calibre's **Lookup name** box. Calibre displays it as `#all_slashes` after you save; that is the name used in the template and in the FanFicFare mapping below. Be sure to choose **Long text**. If you choose a comma-separated tag column instead, Calibre will put the ships in alphabetical order and we will once again lose the author's order.
 
 ## Update personal.ini
 
@@ -160,6 +170,10 @@ if !result then return 'Gen' else return result fi
 ```
 
 The ship-name replacements work like the ones in the basic Ships recipe. Add each ship to both the first-ship and second-ship sections, because it could appear in either place. If one relationship name contains another, put the longer one first. For example, put `A/B/C` before `A/B` so the template does not mistake the three-person ship for the shorter one.
+
+### Optional AO3 category fallback
+
+The manual template above displays `Gen` when it finds no slash relationship. If you want it to show AO3's saved relationship category instead—such as `M/M`, `F/F`, or `Other`—first complete the [AO3 relationship-category setup]({{ '/display/ships/' | relative_url }}#works-without-a-romantic-relationship-tag). Then use the [Ship code generator]({{ '/display/ships/code-generator/' | relative_url }}) and enable **Use AO3 category when no relationship is found**. The generated template replaces the manual one above and needs the mapped `#ao3_category` column to work.
 
 ## A note about anthologies
 

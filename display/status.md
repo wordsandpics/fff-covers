@@ -12,18 +12,21 @@ AO3 supplies the story status. FanFicFare writes it into your `#status` column, 
 
 ## Create a short status column
 
-In **Preferences → Add your own columns**, create **Short status**, with lookup name `short_status`, as **Column built from other columns**. Paste this code into the column's **Template** box:
+1. In **Preferences → Add your own columns**, create **Short status**, with lookup name `short_status`.
+2. Choose **Column built from other columns** as the column type.
+3. Paste this code into the column's **Template** box:
 
-```
-program:
-s = lowercase(field('#status'));
-if contains(s, 'complet', '1', '') then return '✔'
-elif contains(s, 'progress|wip', '1', '') then return 'WIP'
-else return field('#status')
-fi
-```
+   ```
+   program:
+   s = lowercase(field('#status'));
+   if contains(s, 'complet', '1', '') then return '✔'
+   elif contains(s, 'progress|wip', '1', '') then return 'WIP'
+   else return field('#status')
+   fi
+   ```
 
-Add `{#short_status}` to Generate Cover's **Contents → Custom text** field.
+4. Save the column and restart Calibre if asked.
+5. Add `{#short_status}` to Generate Cover's **Contents → Custom text** field.
 
 ## Limitations
 

@@ -4,7 +4,7 @@ title: "Original works and fallbacks"
 subtitle: "Choose a sensible cover when no fandom-specific rule matches"
 section: Choose a cover
 requirements: [personal.ini, Generate Cover]
-previous: {label: "By ship or genre", url: "/choose/ship-or-genre/", section: "Choose a cover"}
+previous: {label: "By ship or tag", url: "/choose/ship-or-genre/", section: "Choose a cover"}
 next: {label: "Long titles", url: "/choose/long-titles/", section: "Choose a cover"}
 ---
 
@@ -18,7 +18,7 @@ generate_cover_settings:
     ${category} => .*                                  => Classics
 ```
 
-The final rule is the fallback: it matches anything that has not already selected another preset.
+The final `.*` rule is the catch-all fallback: it matches everything, so it must be the **last indented rule in the entire `generate_cover_settings:` list**. Put every ship, tag, fandom, original-work, protected-cover, and long-title rule above it. If you add a new rule later, insert it before `.*`, never after it.
 
 ## Limitations
 

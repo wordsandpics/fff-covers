@@ -15,7 +15,7 @@ This is a sample from my own library. My covers use custom artwork for different
 
 ## Start here
 
-Follow these three pages for a complete working setup. After that, choose only the optional recipes that match what you want on your covers.
+Follow these four pages for a complete working setup. After that, choose only the optional recipes that match what you want on your covers.
 
 <div class="step-grid">
   <a class="step-card" href="{{ '/start/first-cover/' | relative_url }}">
@@ -33,9 +33,19 @@ Follow these three pages for a complete working setup. After that, choose only t
     <h3 class="step-title">Add AO3 metadata</h3>
     <p class="step-desc">Connect fandom, ships, status, words, and chapters.</p>
   </a>
+  <a class="step-card" href="{{ '/start/generate-covers/' | relative_url }}">
+    <span class="step-num">Step 4</span>
+    <h3 class="step-title">Generate covers with your metadata</h3>
+    <p class="step-desc">Put saved values on a cover and update existing books.</p>
+  </a>
 </div>
 
 ## Before you start
+
+<div class="callout note">
+  <div class="callout-title">New to FanFicFare?</div>
+  <p>This guide starts after FanFicFare is installed and can download one fic successfully. Before beginning, install FanFicFare, download one public AO3 work into Calibre, and confirm that you can open the EPUB and see it in your library. You do not need any other configuration yet.</p>
+</div>
 
 <div class="prereqs">
   <p class="prereqs-title">You'll need</p>

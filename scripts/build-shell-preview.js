@@ -5,10 +5,10 @@ const root = path.resolve(__dirname, '..');
 const css = fs.readFileSync(path.join(root, 'assets/css/style.css'), 'utf8');
 const javascript = fs.readFileSync(path.join(root, 'assets/js/site-navigation.js'), 'utf8');
 const groups = [
-  ['Start here', ['Overview', '1. Create your first cover', '2. Set up your artwork', '3. Add AO3 metadata']],
-  ['Cover content', ['Word and chapter count', 'Status', 'Ships', 'Ship code generator', 'Genres and flags', 'Genre code generator', 'Put it all together']],
-  ['Choose a cover', ['By fandom', 'By ship or genre', 'Original works and fallbacks', 'Long titles', 'Protect custom covers']],
-  ['Advanced options', ['Anthology-aware ships', 'Chapter-aware and dormant status', 'Precise tag matching', 'Metadata cleanup', 'Likeability score']],
+  ['Start here', ['Overview', '1. Create your first cover', '2. Set up your artwork', '3. Add AO3 metadata', '4. Generate covers with your metadata']],
+  ['Cover content', ['Word and chapter count', 'Status', 'Ships', 'Genres and flags', 'Genre code generator', 'Advanced display options']],
+  ['Choose a cover', ['By fandom', 'By ship or tag', 'Original works and fallbacks', 'Long titles', 'Protect custom covers']],
+  ['Advanced options', ['Anthology-aware ships', 'Ship code generator', 'Chapter-aware and dormant status', 'Precise tag matching', 'Metadata cleanup', 'Likeability score']],
   ['Reference', ['Troubleshooting', 'Downloads', 'Changelog', 'Contact']]
 ];
 const links = groups.map(function (group) {

@@ -4,7 +4,7 @@ title: "Genres and flags"
 subtitle: "Turn many AO3 tags into a few useful cover labels"
 section: Cover content
 requirements: [Calibre settings, Template code]
-previous: {label: "Ship code generator", url: "/display/ships/code-generator/", section: "Cover content"}
+previous: {label: "Ships", url: "/display/ships/", section: "Cover content"}
 next: {label: "Genre code generator", url: "/display/genres/code-generator/", section: "Cover content"}
 ---
 
@@ -29,7 +29,7 @@ Add `{#genre}` to Generate Cover's **Contents → Custom text** field when you a
 
 ## Use a tag as a simple flag
 
-The same method can show a small flag for a tag you add yourself in Calibre. For example, create a generator row with `Recommended` as the matching keyphrase and `🌟` as its cover label. Any book whose standard Tags column contains “Recommended” can then show the star alongside its genres.
+A **flag** is simply a small visual marker, often an emoji, that calls attention to something in your library. The same method can show one for a tag you add yourself in Calibre. For example, create a generator row with `Recommended` as the matching keyphrase and `🌟` as its cover label. Any book whose standard Tags column contains “Recommended” can then show the star alongside its genres.
 
 The downloadable template reads Calibre's standard `tags` field. If the tags you want to search are stored in a custom column instead, change `field('tags')` near the top of the template to that lookup name—for example, `field('#ao3_tags')`. The Genre code generator lets you enter the source column directly.
 

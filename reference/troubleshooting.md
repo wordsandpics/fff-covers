@@ -17,7 +17,16 @@ Information passes through several places:
 4. Calibre calculates any template columns.
 5. Generate Cover chooses a preset and prints values on the cover.
 
-Check the value at each stage instead of changing several settings at once.
+Check one test fic at each stage instead of changing several settings at once:
+
+1. **On the source site:** Open the fic's AO3 page and find the value you expect—for example, its fandom, relationship, Additional Tag, word count, or status. If it is not on the source page, FanFicFare cannot save it.
+2. **In FanFicFare's settings:** Open **FanFicFare → Configure FanFicFare → Custom Columns**. Confirm that the destination column has the expected lookup name and is mapped to the right source value. Confirm that **New Only** is unchecked if you are testing an existing book.
+3. **After FanFicFare updates the book:** Select the test fic and use **FanFicFare → Update Existing FanFiction Books → Update Calibre Metadata from Website**. Wait for the update to finish, then open **Edit metadata** and check the destination custom column. If it is blank or wrong here, the problem is the source data, mapping, or a `personal.ini` rule—not the cover.
+4. **After Calibre calculates a column:** If the saved source column is correct but a field such as `#short_words`, `#short_ships`, `#genre`, or `#short_status` is wrong, open that calculated column in **Preferences → Add your own columns**. Check its **Template** box and use Calibre's template editor preview with the same test fic.
+5. **On the finished cover:** If the calculated column is correct, open Generate Cover, select the intended preset, and check its **Contents → Custom text** field. Confirm it uses the correct `{#lookup_name}` and save the preset before generating a test cover.
+6. **For the wrong preset:** Check the `generate_cover_settings:` rules in `personal.ini`. The preset name must exactly match a saved Generate Cover preset, and the first matching rule wins. Keep the `.*` catch-all rule last.
+
+This isolates the first stage where the value changes or disappears, which tells you where to fix it.
 
 ## The column is correct but the wrong cover was selected
 

@@ -4,15 +4,20 @@ title: "Ship code generator"
 subtitle: "Build the repetitive Calibre template without writing it by hand"
 description: "Generate a Calibre short-ships template from AO3 relationship names."
 permalink: /display/ships/code-generator/
-section: Cover content
+section: Advanced options
 requirements: [Template code]
-previous: {label: "Ships", url: "/display/ships/", section: "Cover content"}
-next: {label: "Genres and flags", url: "/display/genres/", section: "Cover content"}
+previous: {label: "Anthology-aware ships", url: "/advanced/anthology-ships/", section: "Advanced options"}
+next: {label: "Chapter-aware and dormant status", url: "/advanced/status/", section: "Advanced options"}
 ---
 
-This generator creates the `#short_ships` template used in [Ships]({{ '/display/ships/' | relative_url }}) and [Anthology-aware ships]({{ '/advanced/anthology-ships/' | relative_url }}). Add the full AO3 relationship name and the shorter name you want on your covers; the generator writes the repetitive Calibre code for you.
+This generator is the optional advanced continuation of [Anthology-aware ships]({{ '/advanced/anthology-ships/' | relative_url }}). It creates the longer `#short_ships` template that can show several order-preserved relationships. Add the full AO3 relationship name and the shorter name you want on your covers; the generator writes the repetitive Calibre code for you.
 
 Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-ships/' | relative_url }}). This tool creates the calculated template only—it does not create the Calibre columns or change `personal.ini`.
+
+<div class="callout note">
+  <div class="callout-title">Optional AO3 category fallback</div>
+  <p>If you have completed the <a href="{{ '/display/ships/' | relative_url }}#works-without-a-romantic-relationship-tag">AO3 relationship-category setup</a>, you can enable <strong>Use AO3 category when no relationship is found</strong>. When a fic has no slash relationship, the generated template can then show its saved AO3 category, such as <code>M/M</code> or <code>F/F</code>, instead of the generic <code>Gen</code> fallback. The checkbox does not create or fill that category column for you.</p>
+</div>
 
 <div class="callout note">
   <div class="callout-title">Your information stays in your browser</div>
@@ -70,6 +75,20 @@ Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-shi
       <p class="generator-help">This is the maximum number of different ships that will be displayed on a cover.</p>
     </div>
 
+    <div class="generator-limit-setting">
+      <label class="generator-checkbox" for="category-fallback">
+        <input id="category-fallback" type="checkbox">
+        Use AO3 category when no relationship is found
+      </label>
+      <div id="category-fallback-settings" hidden>
+        <label class="generator-limit" for="category-column">
+          AO3 category column lookup name
+          <input id="category-column" type="text" value="#ao3_category" placeholder="#ao3_category">
+        </label>
+        <p class="generator-help">Enter any custom-column lookup name, with or without its leading <code>#</code>. The column must contain FanFicFare's AO3 Categories metadata; see <a href="{{ '/display/ships/' | relative_url }}#works-without-a-romantic-relationship-tag">Works without a romantic relationship tag</a>.</p>
+      </div>
+    </div>
+
     <div id="mapping-list" class="mapping-list"></div>
 
     <div class="generator-actions">
@@ -91,6 +110,11 @@ Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-shi
     <label for="preview-input">Sample value from <code>#all_slashes</code></label>
     <p class="generator-help generator-help-before-field">Separate relationships with commas, just as they appear in the Calibre column. Repeated relationships and repeated short names are shown only once.</p>
     <textarea id="preview-input" rows="3" placeholder="Sherlock Holmes/John Watson, Shane Hollander/Ilya Rozanov"></textarea>
+    <div id="preview-category-wrap" class="generator-limit-setting" hidden>
+      <label for="preview-category">Sample AO3 category value</label>
+      <p class="generator-help generator-help-before-field">Used only when the relationship sample above does not contain a slash relationship.</p>
+      <input id="preview-category" type="text" placeholder="M/M, Gen">
+    </div>
     <div class="generator-preview-result">
       <span>Cover text</span>
       <output id="preview-output" for="preview-input">Gen</output>

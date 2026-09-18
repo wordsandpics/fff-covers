@@ -24,15 +24,16 @@ If you have opinions about fanfic, a Calibre library that has gotten slightly ou
 
 ## What's covered
 
-The required setup is three short parts:
+The required setup is four short parts:
 
 1. Create your first cover.
 2. Set up your artwork.
 3. Add AO3 metadata to Calibre.
+4. Generate covers with your metadata.
 
 After that, the guide is organized by what you want to do:
 
-- **Cover content:** word and chapter count, status, ships, genres, and putting the finished fields together on a cover.
+- **Cover content:** word and chapter count, status, ships, genres, and advanced display options for finished fields.
 - **Choose a cover:** select artwork by fandom, ship, genre, or fallback rules.
 - **Advanced options:** anthology-aware ships, chapter-aware status, precise matching, metadata cleanup, and the optional likeability score.
 - **Reference:** troubleshooting, downloads, changelog, and contact information.
@@ -45,13 +46,9 @@ The [Ship code generator](https://wordsandpics.github.io/fff-covers/display/ship
 
 ### 18 September 2026
 
-- Updated the Ship code generator so relationship matching ignores capitalization and works with both AO3 participant order and FanFicFare's `sort_ships:true` order.
-
-### 16 September 2026
-
-- Reorganized the tutorial into a three-page setup followed by optional recipes grouped by purpose.
-- Added responsive navigation, breadcrumbs, clearer code-placement instructions, and Previous/Next links.
-- Added chapter display, advanced status, cover fallbacks, precise tag matching, Saved Metadata guidance, troubleshooting, downloads, and contact pages.
+- Reorganized the guide into a four-step setup with task-focused optional recipes.
+- Added cover-selection, advanced metadata and display tools, and code generators.
+- Improved navigation, beginner guidance, troubleshooting, downloads, and contact information.
 
 ### 15 September 2026
 

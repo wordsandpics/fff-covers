@@ -5,8 +5,8 @@ subtitle: "Different cover templates for different fandoms, with two lines of co
 permalink: /choose/fandom/
 section: Choose a cover
 requirements: [personal.ini, Generate Cover]
-previous: {label: "Put it all together", url: "/display/combining-fields/", section: "Cover content"}
-next: {label: "By ship or genre", url: "/choose/ship-or-genre/", section: "Choose a cover"}
+previous: {label: "Advanced display options", url: "/display/combining-fields/", section: "Cover content"}
+next: {label: "By ship or tag", url: "/choose/ship-or-genre/", section: "Choose a cover"}
 ---
 
 In Step 1 you set up one cover preset. Here you will create fandom-specific presets and tell FanFicFare which one to use from the story's fandom metadata.
@@ -26,13 +26,22 @@ For a fandom-specific version, you might add the fandom name, an image, or a rec
 
 ## Create a fandom preset
 
-Open Generate Cover and duplicate your **Classics** preset as a starting point. On the **Select Image** tab, choose the SVG you customised for your first fandom, then save the preset with a name such as **Classics Sherlock**. If you only want different colours rather than fandom artwork, a name such as **Classics Green** works just as well.
+1. Open Generate Cover and select your **Classics** preset.
+2. Duplicate it so your original default preset remains unchanged.
+3. Open **Select Image** and choose the SVG you customised for your first fandom.
+4. Return to **Settings**, give the copy a clear name such as **Classics Sherlock**, and save it.
+
+If you only want different colours rather than fandom artwork, a name such as **Classics Green** works just as well.
 
 Repeat for each fandom you want to handle. Your existing Classics preset remains the default for anything that doesn't match.
 
 ## Add the rule to personal.ini
 
-Open your `personal.ini` (FanFicFare-->Edit personal.ini) and find  `[archiveofourown.org]` . Add a  `generate_cover_settings` block under it: 
+Open your `personal.ini` (**FanFicFare → Edit personal.ini**). It is organised into sections: `[defaults]` applies to every supported site, while `[archiveofourown.org]` applies only to AO3. This guide puts its cover rules in the AO3 section because the examples use AO3 metadata.
+
+A heading such as `generate_cover_settings:` starts a list of rules. The indented lines beneath it belong to that list. Keep one `generate_cover_settings:` heading in each section; when you add another rule later, add an indented line to the existing list instead of creating a second heading.
+
+Find or add `[archiveofourown.org]`, then add this block beneath it:
 
 ```ini
 [archiveofourown.org]
@@ -44,6 +53,22 @@ generate_cover_settings:
 The value on the left (`${category}`) is the fandom metadata field FFF matches against. The middle value is the text or pattern to match. The value on the right is the name of the Generate Cover preset to use — it must match your saved preset name exactly.
 
 That's all the configuration needed.
+
+## Read a cover rule
+
+Each rule has three slots, separated by `=>`:
+
+```ini
+${category} => Sherlock => Classics Sherlock
+```
+
+| Slot | Meaning | In this example |
+|---|---|---|
+| Left | Which piece of FanFicFare metadata to inspect | `${category}` (the fandom) |
+| Middle | What to look for in that metadata | `Sherlock` |
+| Right | The saved Generate Cover preset to use | `Classics Sherlock` |
+
+The middle slot uses a **regular expression**—a flexible way to search text. A plain word such as `Sherlock` is already a valid pattern, so you can usually copy a rule and change only the fandom text and preset name. The next examples use a few optional pattern shortcuts; keep their punctuation exactly as shown when you use them.
 
 ## How matching works
 

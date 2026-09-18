@@ -68,6 +68,10 @@ The colour backgrounds are images, not presets:
 
 To keep several colour versions, duplicate or rename the preset before changing its image—for example, **Classics Blue** or **Classics Green**.
 
+### Saving and selecting a preset
+
+**Saving** stores your design changes under a preset name in Generate Cover. **Selecting** chooses which saved preset Generate Cover should use. Select a preset inside Generate Cover when you want to preview or edit it; select it in FanFicFare's **Calibre Cover** table when you want FanFicFare to use it automatically. After editing a preset, return to **Settings** and save it before testing a download.
+
 ### What's in the preset
 
 Here's a brief tour of the four tabs so you know what you're working with.
@@ -92,7 +96,9 @@ Four elements are displayed in this order: title, author, series (only appears i
 
 This is the minimum useful cover: you know what the fic is, who wrote it, when it was published, and whether it's part of a series. It all uses standard data that every fic already has. In the next parts of the tutorial we'll add more useful information to covers using custom columns and FanFicFare automation.
 
-## 3. Configure FFF to use the preset
+## 3. Configure automatic cover selection
+
+FanFicFare decides whether to generate a cover each time it downloads or updates a fic. Generate Cover then uses a saved **preset**—your complete design, including its image, fonts, and text—to make that cover. In this first setup, FanFicFare uses one preset, **Classics**, as the default for every fic that needs a generated cover. Later, you can add rules that choose different saved presets for different fandoms or tags.
 
 In Calibre, open the FanFicFare plugin settings and go to the **Calibre Cover** tab.
 
@@ -100,7 +106,7 @@ In Calibre, open the FanFicFare plugin settings and go to the **Calibre Cover** 
 
 Two settings to check:
 
-- **Generate Calibre Cover**: set to "Yes, unless FanFicFare found a cover image"
+- **Generate Calibre Cover**: choose **Yes** if you want this generated preset to replace every cover, including a cover image FanFicFare finds on the source site. Choose **Yes, unless FanFicFare found a cover image** if you want to keep any source cover image and generate this preset only when the story has no cover.
 - Select **Plugin Generate Cover** (not "Calibre Generate Cover")
 
 In the table below, find the **Default** row and select **Classics** from the dropdown.

@@ -29,6 +29,8 @@ nav:
         url: /start/artwork/
       - label: 3. Add AO3 metadata
         url: /start/metadata/
+      - label: 4. Generate covers with your metadata
+        url: /start/generate-covers/
   - title: Cover content
     pages:
       - label: Word and chapter count
@@ -37,21 +39,18 @@ nav:
         url: /display/status/
       - label: Ships
         url: /display/ships/
-      - label: Ship code generator
-        url: /display/ships/code-generator/
-        subitem: true
       - label: Genres and flags
         url: /display/genres/
       - label: Genre code generator
         url: /display/genres/code-generator/
         subitem: true
-      - label: Put it all together
+      - label: Advanced display options
         url: /display/combining-fields/
   - title: Choose a cover
     pages:
       - label: By fandom
         url: /choose/fandom/
-      - label: By ship or genre
+      - label: By ship or tag
         url: /choose/ship-or-genre/
       - label: Original works and fallbacks
         url: /choose/fallbacks/
@@ -63,6 +62,9 @@ nav:
     pages:
       - label: Anthology-aware ships
         url: /advanced/anthology-ships/
+      - label: Ship code generator
+        url: /display/ships/code-generator/
+        subitem: true
       - label: Chapter-aware and dormant status
         url: /advanced/status/
       - label: Precise tag matching

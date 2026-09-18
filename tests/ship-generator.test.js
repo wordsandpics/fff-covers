@@ -79,6 +79,13 @@ test('preview returns Gen when there are no slash relationships', function () {
   assert.equal(core.previewValue('Sherlock Holmes & John Watson', mappings, 2), 'Gen');
 });
 
+test('preview uses ordered AO3 categories only when no relationship is found', function () {
+  const options = { categoryFallback: true, categoryValue: 'M/M, Gen, Not Rated' };
+  assert.equal(core.previewValue('', mappings, 2, options), 'Gen, M/M');
+  assert.equal(core.previewValue('Sherlock Holmes/John Watson', mappings, 2, options), 'Johnlock');
+  assert.equal(core.previewValue('', mappings, 2, { categoryFallback: true, categoryValue: 'Not Rated' }), 'Gen');
+});
+
 test('generated matching treats punctuation literally', function () {
   const generated = core.generateTemplate([
     { pairing: 'Name (TV)/Other.Name', shortName: 'Example', aliases: [] }
@@ -98,6 +105,25 @@ test('generated matching is case-insensitive and supports sort_ships order', fun
 test('automatic sort_ships variants do not become imported aliases', function () {
   const generated = core.generateTemplate(mappings, 2);
   assert.deepEqual(core.parseTemplate(generated).mappings, mappings);
+});
+
+test('category fallback generation normalizes and re-imports its column', function () {
+  const generated = core.generateTemplate(mappings, 2, {
+    categoryFallback: true,
+    categoryColumn: 'relationship_type'
+  });
+  assert.ok(generated.includes("field('#relationship_type')"));
+  assert.ok(generated.includes("'Gen, F/F, F/M, M/M, Multi, Other'"));
+  const imported = core.parseTemplate(generated);
+  assert.equal(imported.categoryFallback, true);
+  assert.equal(imported.categoryColumn, '#relationship_type');
+  assert.deepEqual(imported.mappings, mappings);
+});
+
+test('category fallback remains off for existing templates without it', function () {
+  const imported = core.parseTemplate(core.generateTemplate(mappings, 2));
+  assert.equal(imported.categoryFallback, false);
+  assert.equal(imported.categoryColumn, '#ao3_category');
 });
 
 test('generated template preserves order instead of sorting lists', function () {
