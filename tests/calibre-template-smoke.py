@@ -64,4 +64,29 @@ assert formatter.safe_format(
     category_fallback, {}, "FORMAT ERROR", book(ao3_category="M/M, Gen")
 ) == "Gen, M/M"
 
+compact_ship_loop = r"""program:
+ordered_unique = list_remove_duplicates(field('#all_slashes'), ',');
+selected = sublist(ordered_unique, 0, 6, ',');
+result = '';
+for ship in selected separator ',':
+    ship_value = re(ship, '^\s+|\s+$', '');
+    translated = '';
+    if contains(ship_value, '(?i)^(?:Sherlock Holmes/John Watson)$', '1', '') then
+        translated = 'Johnlock'
+    elif contains(ship_value, '(?i)^(?:Shane Hollander/Ilya Rozanov)$', '1', '') then
+        translated = 'Hollanov'
+    else
+        translated = ship_value
+    fi;
+    if translated then result = list_join(', ', result, ',', translated, ',') fi
+rof;
+return result
+"""
+assert formatter.safe_format(
+    compact_ship_loop,
+    {},
+    "FORMAT ERROR",
+    book(all_slashes="Sherlock Holmes/John Watson, Unknown One/Unknown Two, Shane Hollander/Ilya Rozanov"),
+) == "Johnlock, Unknown One/Unknown Two, Hollanov"
+
 print("Calibre template smoke tests passed")

@@ -59,7 +59,29 @@ test('imports the tutorial template', function () {
   assert.equal(imported.limit, 2);
   assert.equal(imported.mappings.length, 2);
   assert.equal(imported.mappings[0].shortName, 'Johnlock');
-  assert.deepEqual(imported.mappings[0].aliases, ['john/sherlock', 'sherlock/john']);
+  assert.deepEqual(imported.mappings[0].aliases, ['John/Sherlock', 'Sherlock/John']);
+});
+
+test('imports templates generated in the old repeated-slot format', function () {
+  const source = `program:
+ordered_unique = list_remove_duplicates(field('#all_slashes'), ',');
+s0 = re(list_item(ordered_unique, 0, ','), '^\\s+|\\s+$', '');
+s1 = re(list_item(ordered_unique, 1, ','), '^\\s+|\\s+$', '');
+s1_lc = lowercase(s0);
+if contains(s1_lc, 'sherlock holmes/john watson|john/sherlock', '1', '') then
+    t1 = 'Johnlock'
+fi;
+s2_lc = lowercase(s1);
+if contains(s2_lc, 'sherlock holmes/john watson|john/sherlock', '1', '') then
+    t2 = 'Johnlock'
+fi`;
+  const imported = core.parseTemplate(source);
+  assert.equal(imported.limit, 2);
+  assert.deepEqual(imported.mappings, [{
+    pairing: 'sherlock holmes/john watson',
+    shortName: 'Johnlock',
+    aliases: ['john/sherlock']
+  }]);
 });
 
 test('preview preserves order and removes repeated names', function () {
@@ -67,8 +89,9 @@ test('preview preserves order and removes repeated names', function () {
   assert.equal(core.previewValue(input, mappings, 4), 'Johnlock, Hollanov');
 });
 
-test('preview matches relationships regardless of case or participant order', function () {
-  assert.equal(core.previewValue('JOHN WATSON/SHERLOCK HOLMES, Ilya Rozanov/Shane Hollander', mappings, 2), 'Johnlock, Hollanov');
+test('preview ignores case but preserves participant order', function () {
+  assert.equal(core.previewValue('SHERLOCK HOLMES/JOHN WATSON, SHANE HOLLANDER/ILYA ROZANOV', mappings, 2), 'Johnlock, Hollanov');
+  assert.equal(core.previewValue('John Watson/Sherlock Holmes', mappings, 2), 'John Watson/Sherlock Holmes');
 });
 
 test('preview keeps a three-person ship separate from a pairing', function () {
@@ -94,15 +117,15 @@ test('generated matching treats punctuation literally', function () {
   assert.match(generated, /\^\(\?:.*\)\$/);
 });
 
-test('generated matching is case-insensitive and supports sort_ships order', function () {
+test('generated matching is case-insensitive and uses the entered participant order', function () {
   const generated = core.generateTemplate([
     { pairing: 'Steve Harrington/Eddie Munson', shortName: 'Steddie', aliases: ['Steve/Eddie'] }
   ], 1);
   assert.ok(generated.includes("(?i)^(?:Steve Harrington/Eddie Munson|Steve/Eddie)$"));
-  assert.ok(generated.includes("(?i)^(?:Eddie Munson/Steve Harrington|Eddie/Steve)$"));
+  assert.ok(!generated.includes('Eddie Munson/Steve Harrington'));
 });
 
-test('automatic sort_ships variants do not become imported aliases', function () {
+test('generated mappings re-import without changing aliases', function () {
   const generated = core.generateTemplate(mappings, 2);
   assert.deepEqual(core.parseTemplate(generated).mappings, mappings);
 });
@@ -131,6 +154,15 @@ test('generated template preserves order instead of sorting lists', function () 
   assert.match(generated, /list_remove_duplicates/);
   assert.match(generated, /list_join/);
   assert.doesNotMatch(generated, /list_union/);
+});
+
+test('six-ship output uses one translation table and stays compact', function () {
+  const five = core.generateTemplate(mappings, 5);
+  const six = core.generateTemplate(mappings, 6);
+  assert.match(six, /for ship in selected/);
+  assert.equal((six.match(/# Translate each selected relationship\./g) || []).length, 1);
+  assert.ok(six.length - five.length < 100);
+  assert.ok(six.length < 32767);
 });
 
 process.on('exit', function () {

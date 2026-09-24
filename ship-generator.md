@@ -57,7 +57,8 @@ Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-shi
       </div>
     </div>
 
-    <p>Use the complete relationship name as it appears on AO3. Matching ignores capitalization and also works when FanFicFare's <code>sort_ships:true</code> reverses or rearranges the people within a relationship. Add alternative names only when older or differently sourced stories use another version of the same relationship.</p>
+    <p>Use the complete relationship name exactly as it appears on AO3, including the order of the people: <code>Character A/Character B</code> and <code>Character B/Character A</code> are different relationship names. Matching ignores capitalization, but it does not reverse the relationship for you. Add an alternative name when older or differently sourced stories use the other order or another version of the same relationship.</p>
+    <p class="generator-help">If you deliberately use FanFicFare's <code>sort_ships:true</code>, enter the participant order FanFicFare saves instead of AO3's original order.</p>
     <p class="generator-help">If you use <a href="{{ '/advanced/metadata-cleanup/' | relative_url }}">metadata cleanup</a> that changes relationship names, enter the cleaned value instead of the original AO3 value.</p>
 
     <div class="generator-limit-setting">

@@ -113,63 +113,43 @@ Replace the [basic short ship template]({{ '/display/ships/' | relative_url }}) 
 
 ```text
 program:
-# Read the saved ship list, remove repeats, and take the first two.
+# Shows up to 2 different ships from #all_slashes.
+
+# Read the saved ship list, remove repeats, and take the requested number.
 ordered_unique = list_remove_duplicates(field('#all_slashes'), ',');
-s0 = re(list_item(ordered_unique, 0, ','), '^\s+|\s+$', '');
-s1 = re(list_item(ordered_unique, 1, ','), '^\s+|\s+$', '');
+selected = sublist(ordered_unique, 0, 2, ',');
 result = '';
 
 # If this is an older fic with no #all_slashes value, try #ship instead.
-if !s0 && !s1 then
+if !selected then
     ships_raw = field('#ship');
     if contains(ships_raw, '/', '1', '') then
         fallback = re(ships_raw, '^(?:[^/,]+,\s*)*([^,]+/[^,]+)(?:,.*)?$', '\1');
         if contains(fallback, '/', '1', '') && !contains(fallback, ',', '1', '') then
-            s0 = fallback
+            selected = fallback
         fi
     fi
 fi;
 
-# Translate the first ship.
-t1 = '';
-if s0 then
-    s1_lc = lowercase(s0);
-    if contains(s1_lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then
-        t1 = 'Johnlock'
-    elif contains(s1_lc, 'shane hollander/ilya rozanov', '1', '') then
-        t1 = 'Hollanov'
+# Translate each selected relationship.
+for ship in selected separator ',':
+    ship_value = re(ship, '^\s+|\s+$', '');
+    translated = '';
+    if contains(ship_value, '(?i)^(?:Sherlock Holmes/John Watson|John/Sherlock|Sherlock/John)$', '1', '') then
+        translated = 'Johnlock'
+    elif contains(ship_value, '(?i)^(?:Shane Hollander/Ilya Rozanov)$', '1', '') then
+        translated = 'Hollanov'
     # Add your ships above this line.
     else
-        t1 = re(s0, '(?i)([^/]+)/([^/]+)', '\1/\2')
-    fi
-fi;
-
-# Translate the second ship.
-t2 = '';
-if s1 then
-    s2_lc = lowercase(s1);
-    if contains(s2_lc, 'sherlock holmes/john watson|john/sherlock|sherlock/john', '1', '') then
-        t2 = 'Johnlock'
-    elif contains(s2_lc, 'shane hollander/ilya rozanov', '1', '') then
-        t2 = 'Hollanov'
-    # Add your ships above this line.
-    else
-        t2 = re(s1, '(?i)([^/]+)/([^/]+)', '\1/\2')
-    fi
-fi;
-
-# Put the two short names together, without showing the same name twice.
-if t1 then result = t1 fi;
-if t2 then
-    if !result then result = t2
-    elif lowercase(t2) != lowercase(result) then result = result & ', ' & t2
-    fi
-fi;
+        translated = re(ship_value, '(?i)([^/]+)/([^/]+)', '\1/\2')
+    fi;
+    if translated then result = list_join(', ', result, ',', translated, ',') fi
+rof;
 
 if !result then return 'Gen' else return result fi
 ```
 
-The ship-name replacements work like the ones in the basic Ships recipe. Add each ship to both the first-ship and second-ship sections, because it could appear in either place. If one relationship name contains another, put the longer one first. For example, put `A/B/C` before `A/B` so the template does not mistake the three-person ship for the shorter one.
+The ship-name replacements work like the ones in the basic Ships recipe. The template uses one translation table for every selected relationship, so add each ship only once. Copy each complete relationship in the same participant order used by AO3: `Character A/Character B` does not match `Character B/Character A`. To add a mapping, copy an `elif` block above the **Add your ships** line.
 
 ### Optional AO3 category fallback
 

@@ -21,7 +21,7 @@ Create **Cover ship tags**, with lookup name `short_ships`, as **Column built fr
 If you do not want to set up the extra anthology source column, use the basic template instead. It reads the first romantic relationship available in `#ship`.
 
 1. Open the [basic ship template]({{ '/code/calibre-column-templates/short_ship_basic.txt' | relative_url }}) in a plain-text editor.
-2. Find the two example ship rules between **Translation table** and **Add your ships above this line**. Replace the complete AO3 relationship name and the short cover label with your own. Copy an `elif` block when you need another ship.
+2. Find the two example ship rules between **Translation table** and **Add your ships above this line**. Replace the complete AO3 relationship name and the short cover label with your own. Preserve the participant order exactly as AO3 shows it: `Character A/Character B` does not match `Character B/Character A`. Copy an `elif` block when you need another ship.
 3. In Calibre, open **Preferences → Add your own columns**, select **Cover ship tags**, and edit it.
 4. In the column's **Template** box, replace the existing contents with everything from the file's `program:` line to the end. Save the column and restart Calibre if asked.
 
