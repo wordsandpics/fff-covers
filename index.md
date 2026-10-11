@@ -13,9 +13,31 @@ next: {label: "Create your first cover", url: "/start/first-cover/", section: "S
 
 This is a sample from my own library. My covers use custom artwork for different fandoms—and sometimes different ships—and show the main ship, genre, length, and completion status. You can choose which of those details matter to you. The ready-made artwork in this guide uses a generic book symbol so it works for everyone, but you can edit it to add your own colours, layouts, and fandom icons.
 
+Metadata simply means information about a story, such as its fandom, relationships, tags, and word count.
+
+<figure class="cover-flow" aria-labelledby="cover-flow-title">
+  <figcaption id="cover-flow-title">How a cover comes together</figcaption>
+  <div class="cover-flow-node"><strong>AO3 story</strong><span>Title, author, tags, relationships, word count, and more</span></div>
+  <div class="cover-flow-arrow" aria-hidden="true">↓</div>
+  <div class="cover-flow-node"><strong>FanFicFare reads the story</strong><span>It saves information in Calibre and can choose which cover design to use.</span></div>
+  <div class="cover-flow-arrow" aria-hidden="true">↓</div>
+  <div class="cover-flow-branches">
+    <div class="cover-flow-branch">
+      <div class="cover-flow-label">What the cover says</div>
+      <div class="cover-flow-node"><strong>Calibre columns</strong><span>Saved values such as words and relationships; optional calculated columns can shorten them.</span></div>
+    </div>
+    <div class="cover-flow-branch">
+      <div class="cover-flow-label">What the cover looks like</div>
+      <div class="cover-flow-node"><strong>Saved cover design (preset)</strong><span>FanFicFare uses your selection rules, or your default preset, to choose the artwork and layout.</span></div>
+    </div>
+  </div>
+  <div class="cover-flow-arrow" aria-hidden="true">↓</div>
+  <div class="cover-flow-node"><strong>Generate Cover makes the finished cover</strong><span>It puts the book's Calibre values into the chosen design.</span></div>
+</figure>
+
 ## Start here
 
-Follow these four pages for a complete working setup. After that, choose only the optional recipes that match what you want on your covers.
+Step 1 gives you a working automatic cover. Step 2 is optional artwork; Steps 3 and 4 add story details to the cover. Follow the parts you want for your library.
 
 <div class="step-grid">
   <a class="step-card" href="{{ '/start/first-cover/' | relative_url }}">
@@ -40,6 +62,8 @@ Follow these four pages for a complete working setup. After that, choose only th
   </a>
 </div>
 
+After the basic setup, the rest of the guide offers optional ways to refine your covers: shorten what they say, choose different artwork for particular stories, or handle more specialised cases. You can pick the techniques that interest you without following every page.
+
 ## Before you start
 
 <div class="callout note">
@@ -51,10 +75,11 @@ Follow these four pages for a complete working setup. After that, choose only th
   <p class="prereqs-title">You'll need</p>
   <ul class="prereq-items">
   <li><div class="prereq-dot"></div>Calibre with the FanFicFare plugin installed and working</li>
-  <li><div class="prereq-dot"></div>The generate_cover plugin installed</li>
-  <li><div class="prereq-dot"></div>No coding experience. The guide explains where every setting and code block goes.</li>
+  <li><div class="prereq-dot"></div>Generate Cover, which you'll install in Step 1</li>
   </ul>
 </div>
+
+You do not need coding experience. When a later technique uses code, the guide explains what to copy and where to put it.
 
 
 

@@ -4,11 +4,25 @@ title: "Advanced display options"
 subtitle: "Refine cover text with conditional formatting and fallbacks"
 section: Cover content
 requirements: [Generate Cover]
+guide:
+  result: "Cover text with labels, separators, or fallbacks that appear only when useful."
+  needs:
+    - {label: "A working metadata cover", url: "/start/generate-covers/"}
+  see: "Save the edited preset and regenerate covers for books with both full and missing metadata."
 previous: {label: "Genre code generator", url: "/display/genres/code-generator/", section: "Cover content"}
 next: {label: "Choose by fandom", url: "/choose/fandom/", section: "Choose a cover"}
 ---
 
 The earlier recipes can create short values such as `Johnlock`, `Fluff`, `34k`, and `WIP`. This page refines how those values appear together. For opening a preset, adding ordinary `{#column}` values, and regenerating covers, see [Generate covers with your metadata]({{ '/start/generate-covers/' | relative_url }}).
+
+For example, once those calculated columns are working, these two lines in Generate Cover's **Contents → Custom text** can produce `Johnlock` on one line and `34k · WIP · Fluff` on the next:
+
+```text
+{#short_ships}
+{#short_words}{#short_status:| · |}{#genre:| · |}
+```
+
+The conditional separators keep the line tidy when Status or Genre is empty. The sections below explain each piece.
 
 ## Hide labels and separators when a value is empty
 

@@ -4,11 +4,16 @@ title: "Precise tag matching"
 subtitle: "Avoid accidental matches from short or ambiguous keyphrases"
 section: Advanced options
 requirements: [Template code]
+guide:
+  result: "An exact-tag rule that avoids matching the same letters inside unrelated tags."
+  needs:
+    - {label: "A working Genre calculated column", url: "/display/genres/"}
+  see: "Preview #genre with both a matching and a nonmatching test tag, then regenerate a cover."
 previous: {label: "Chapter-aware and dormant status", url: "/advanced/status/", section: "Advanced options"}
 next: {label: "Metadata cleanup", url: "/advanced/metadata-cleanup/", section: "Advanced options"}
 ---
 
-The basic genre recipe looks for a keyphrase anywhere in the complete tags value. That is easy to edit, but `romance` can also match `Necromancer AU`.
+The basic [Genres and flags]({{ '/display/genres/' | relative_url }}) recipe looks for a chosen phrase anywhere in the saved tags. That can give false matches: a rule for the complete tag `AU` might also pick up the letters `au` inside `Haunted House`. This technique makes the rule match a whole tag instead.
 
 ## What the precise example does
 
@@ -30,7 +35,7 @@ The parts mean:
 - `AU` is the text added to the calculated Genre column when that tag is found. Replace it with the label you want to display.
 - The two commas tell Calibre how the source tags and finished Genre value are separated.
 
-For example, source tags of `Fluff, AU, Time Travel` produce `AU`. Source tags of `Fluff, Alternate Universe AU` produce nothing from this rule, because none of those complete tags is exactly `AU`.
+For example, source tags of `Fluff, AU, Time Travel` produce `AU`. Source tags of `Fluff, Alternate Universe AU` produce nothing from this rule, because none of those complete tags is exactly `AU`. Save the calculated column and check both kinds of book before regenerating a cover.
 
 Put this code in the **Template** box of the calculated column that produces the value, such as `#genre`. It does not go in `personal.ini` or Generate Cover. You can add a separate rule for a longer tag such as `Alternate Universe AU`, or keep a broader match when several related tags should produce the same label.
 

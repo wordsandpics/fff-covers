@@ -6,11 +6,18 @@ description: "Generate a Calibre genre template from groups of tag keyphrases."
 permalink: /display/genres/code-generator/
 section: Cover content
 requirements: [Template code]
+guide:
+  result: "Ready-to-paste code that turns chosen tags into short cover labels."
+  needs:
+    - {label: "The Genre column and a chosen tag source", url: "/display/genres/"}
+  see: "Paste the generated code into #genre, check its value on a test book, then regenerate the cover."
 previous: {label: "Genres and flags", url: "/display/genres/", section: "Cover content"}
 next: {label: "Advanced display options", url: "/display/combining-fields/", section: "Cover content"}
 ---
 
-This generator creates the `#genre` template described in [Genres and flags]({{ '/display/genres/' | relative_url }}). For each cover label, add the words or phrases that should make it appear.
+This generator helps you turn tags into short cover labels without writing the code yourself. For example, enter `Domestic Bliss` as the phrase to find and `Fluff` as the label to show. It creates the `#genre` template described in [Genres and flags]({{ '/display/genres/' | relative_url }}). Create that calculated column first, then choose whether to search Calibre's standard Tags or a separate tag column.
+
+For a first try, click **Load examples**, replace one example row with a tag and label from your own library, type that tag in the preview box, and check the result. The import option is for returning users who already have a compatible template.
 
 <div class="callout note">
   <div class="callout-title">Your information stays in your browser</div>
@@ -47,7 +54,7 @@ This generator creates the `#genre` template described in [Genres and flags]({{ 
 
   <section class="generator-panel" aria-labelledby="genre-output-title">
     <div class="generator-panel-heading"><div><span class="generator-step">4</span><h2 id="genre-output-title">Generate your Calibre template</h2></div></div>
-    <p>In Calibre, open <strong>Preferences → Add your own columns</strong>, edit <code>#genre</code>, and replace the contents of its <strong>Template</strong> box with the generated code.</p>
+    <p>In Calibre, open <strong>Preferences → Add your own columns</strong>, edit <code>#genre</code>, and replace the contents of its <strong>Template</strong> box with the generated code. Save the column and check its value on a test book. If you added <code>{#genre}</code> to a cover preset, save that preset and regenerate the book's cover.</p>
     <div class="generator-actions"><button class="generator-button generator-button-primary" id="genre-generate-template" type="button">Generate template</button></div>
     <div class="generator-output-wrap" id="genre-output-wrap" hidden><label for="genre-generated-code">Generated template</label><textarea id="genre-generated-code" rows="22" readonly spellcheck="false"></textarea><div class="generator-actions"><button class="generator-button" id="genre-copy-template" type="button">Copy code</button><button class="generator-button generator-button-secondary" id="genre-download-template" type="button">Download .txt</button></div><div class="generator-message" id="genre-copy-message" role="status" aria-live="polite" hidden></div></div>
   </section>

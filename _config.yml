@@ -52,7 +52,7 @@ nav:
         url: /choose/fandom/
       - label: By ship or tag
         url: /choose/ship-or-genre/
-      - label: Original works and fallbacks
+      - label: Original Works
         url: /choose/fallbacks/
       - label: Long titles
         url: /choose/long-titles/
@@ -71,6 +71,8 @@ nav:
         url: /advanced/tag-matching/
       - label: Metadata cleanup
         url: /advanced/metadata-cleanup/
+      - label: Covers from existing EPUBs
+        url: /advanced/existing-epubs/
       - label: Likeability score
         url: /advanced/likeability/
   - title: Reference

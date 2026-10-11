@@ -5,13 +5,20 @@ subtitle: "Preserving author order and handling repeated anthology ships"
 permalink: /advanced/anthology-ships/
 section: Advanced options
 requirements: [Calibre settings, personal.ini, Template code]
+guide:
+  result: "A short ship label based on the first distinct relationships in AO3 order, even for anthologies."
+  needs:
+    - {label: "The basic Relationships and short-ships columns", url: "/display/ships/"}
+  see: "Update one test fic, confirm #all_slashes preserves its relationship order, then check #short_ships and regenerate the cover."
 previous: {label: "Protect custom covers", url: "/choose/protect-covers/", section: "Choose a cover"}
 next: {label: "Ship code generator", url: "/display/ships/code-generator/", section: "Advanced options"}
 ---
 
-The basic short ship setup reads directly from `#ship`. That works, but Calibre sorts columns like this alphabetically. If a fic has several relationships, the first ship in the column may be the one that comes first in the alphabet, not the one the author listed first.
+If a fic has several relationships, you may want its cover to show the first ships the author listed—for example, `Steddie, Ronance`—without repeating a name. The basic short-ship setup reads `#ship`, but Calibre sorts that kind of column alphabetically. Its first ship may therefore differ from the author's first ship.
 
 This step saves the ships in their original order before Calibre can sort them. The cover can then use the first two different slash relationships and turn them into short ship names.
+
+An **anthology** is one EPUB containing several stories. This setup helps when their repeated relationships need to become a short, ordered list on one cover, but it can also help a single fic with several ships.
 
 ## What you'll end up with
 
@@ -29,16 +36,6 @@ For example, after you add the Steddie and Ronance short-name replacements, an a
 ```text
 Steddie, Ronance
 ```
-
-## Setup checklist
-
-1. Create the `all_slashes` long-text column in Calibre.
-2. Add the `all_slashes` extraction settings to the `[defaults]` section of `personal.ini`.
-3. Add the AO3 mapping that sends `all_slashes` to `#all_slashes`.
-4. Refresh one test fic and check that the new column preserved AO3's relationship order.
-5. Replace the `#short_ships` template with the advanced version below, or use the Ship code generator after the setup is working.
-
-The sections below walk through each step and explain why it is needed.
 
 ## How it works
 
@@ -70,7 +67,7 @@ Enter `all_slashes`—without the `#`—in Calibre's **Lookup name** box. Calibr
 
 ## Update personal.ini
 
-Add the following to the `[defaults]` section of `personal.ini`. The comments beginning with `#` explain what each part does. If your file already contains one of these setting names, add the new value to the existing setting instead of creating a second copy.
+Open **FanFicFare → Edit personal.ini**. The [Choose by fandom]({{ '/choose/fandom/' | relative_url }}) page briefly explains its section headings: `[defaults]` applies to supported sites generally, while `[archiveofourown.org]` applies to AO3. Add the following to `[defaults]`. The comments beginning with `#` explain what each part does. If your file already contains one of these setting names, add the new value to the existing setting instead of creating a second copy.
 
 ```ini
 # Tell FFF that all_slashes is a new name we want to use.
@@ -97,7 +94,9 @@ add_to_custom_columns_settings:
     all_slashes=>#all_slashes
 ```
 
-Download a new fic or update the metadata for one already in Calibre. To check the result, select the fic and open **Edit metadata**, then find the **All Slash Relationships** custom field. It should contain the fic's slash relationships in the same order as AO3. You can also show the column in your main library view if you want to compare several fics.
+In **FanFicFare → Configure FanFicFare → Custom Columns**, enable **Allow custom_columns_settings from personal.ini to override** so FanFicFare can use this mapping. This setting is needed for this advanced setup, not for the basic mapped columns in Step 3.
+
+Download a new fic or update the metadata for one already in Calibre. To check the result, select the fic and open **Edit metadata**, then find the **All Slash Relationships** custom field. It should contain the fic's slash relationships in the same order as AO3. You can also show the column in your main library view if you want to compare several fics. Do not move on to the short-ship template until this saved value looks right.
 
 ### Downloadable copies
 
@@ -109,7 +108,7 @@ If you would rather download the code than copy it from the page, use these file
 
 ## Update the short ship template
 
-Replace the [basic short ship template]({{ '/display/ships/' | relative_url }}) with the version below. In **Preferences → Add your own columns**, edit `#short_ships` and paste this into its **Template** box. It reads the new `#all_slashes` column, removes repeated ships, and uses the first two different relationships. If an older fic does not have anything in `#all_slashes` yet, the template tries the original `#ship` column instead.
+Replace the [basic short ship template]({{ '/display/ships/' | relative_url }}) with the version below. In **Preferences → Add your own columns**, edit `#short_ships` and paste this into its **Template** box. It reads the new `#all_slashes` column, removes repeated ships, and uses the first two different relationships. If an older fic does not have anything in `#all_slashes` yet, the template tries the original `#ship` column instead. The Sherlock and Hollanov replacements are examples; add or replace them with the complete relationship names and short labels you want.
 
 ```text
 program:
@@ -149,11 +148,17 @@ rof;
 if !result then return 'Gen' else return result fi
 ```
 
-The ship-name replacements work like the ones in the basic Ships recipe. The template uses one translation table for every selected relationship, so add each ship only once. Copy each complete relationship in the same participant order used by AO3: `Character A/Character B` does not match `Character B/Character A`. To add a mapping, copy an `elif` block above the **Add your ships** line.
+The ship-name replacements work like the ones in the basic Ships recipe. The template uses one translation table for every selected relationship, so add each ship only once. Copy each complete relationship in the same participant order saved in `#all_slashes`: `Character A/Character B` does not match `Character B/Character A`. To add a mapping, copy an `elif` block above the **Add your ships** line. Save the column, check `#short_ships` on the same test fic, then regenerate its cover if it uses `{#short_ships}`.
 
 ### Optional AO3 category fallback
 
-The manual template above displays `Gen` when it finds no slash relationship. If you want it to show AO3's saved relationship category instead—such as `M/M`, `F/F`, or `Other`—first complete the [AO3 relationship-category setup]({{ '/display/ships/' | relative_url }}#works-without-a-romantic-relationship-tag). Then use the [Ship code generator]({{ '/display/ships/code-generator/' | relative_url }}) and enable **Use AO3 category when no relationship is found**. The generated template replaces the manual one above and needs the mapped `#ao3_category` column to work.
+The manual template above displays `Gen` when it finds no slash relationship. To show AO3's saved relationship category instead—such as `M/M`, `F/F`, or `Other`—first save that category in its own Calibre column:
+
+1. In **Preferences → Add your own columns**, create **AO3 relationship category**, lookup name `ao3_category`, as **Comma separated text, like tags**.
+2. In **FanFicFare → Configure FanFicFare → Custom Columns**, map it to **AO3 Categories**. Leave **New Only** unchecked and save the settings.
+3. Download or update one test fic without a slash relationship. Check **Edit metadata** to confirm that `#ao3_category` contains the AO3 category. An empty column cannot supply a fallback.
+
+Then use the [Ship code generator]({{ '/display/ships/code-generator/' | relative_url }}) and enable **Use AO3 category when no relationship is found**. The generated template replaces the manual one above. Preview it with an empty relationship list and a sample category, then save the new `#short_ships` template and regenerate a test cover.
 
 ## A note about anthologies
 
@@ -165,15 +170,13 @@ This works well for something like several Steddie works mixed with several Rona
 
 ## Using the first ship for cover selection
 
-You can also tell FFF to use a special cover preset when a particular ship appears first. Put ship rules above fandom rules, because FFF uses the first rule that matches:
+You can also tell FFF to use a special cover preset when a particular ship appears first. Create and save the named preset first. In the existing `generate_cover_settings:` block, put this ship rule above fandom rules, because FFF uses the first rule that matches:
 
 ```ini
-generate_cover_settings:
     ${all_slashes} => ^\s*Mycroft Holmes/Greg Lestrade(?:\s*,|$) => Classics Mystrade
-    ${category} => [Ss]herlock => Classics Sherlock
 ```
 
-The symbols around the ship name make the rule check only the first ship in the list. Copy the complete pattern and replace `Mycroft Holmes/Greg Lestrade` with the relationship you want to match.
+The symbols around the ship name make the rule check only the first ship in the list. Copy the complete pattern and replace `Mycroft Holmes/Greg Lestrade` with the relationship you want to match. Save `personal.ini` and update a matching fic to check the preset choice.
 
 ## If you followed the previous version of this step
 

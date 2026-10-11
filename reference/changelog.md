@@ -7,6 +7,13 @@ previous: {label: "Downloads", url: "/reference/downloads/", section: "Reference
 next: {label: "Contact", url: "/contact/", section: "Reference"}
 ---
 
+## 11 October 2026
+
+- Redesigned navigation and added a simple overview of how covers are made.
+- Added “At a glance” guidance to clarify each step's result and requirements.
+- Simplified and clarified the instructions across the guide, with more helpful troubleshooting.
+- Added a guide to making covers from metadata in existing EPUBs.
+
 ## 24 September 2026
 
 - Added an optional AO3 relationship-category fallback to the Ship code generator, with a configurable Calibre column.

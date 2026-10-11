@@ -10,8 +10,11 @@
   function setOpen(open) {
     body.classList.toggle('navigation-open', open);
     openButton.setAttribute('aria-expanded', String(open));
-    if (open) closeButton.focus();
-    else openButton.focus();
+    if (open) {
+      const activeLink = navigation.querySelector('.nav-link.active');
+      if (activeLink) navigation.scrollTop = Math.max(0, activeLink.offsetTop - navigation.clientHeight / 2);
+      closeButton.focus();
+    } else openButton.focus();
   }
 
   openButton.addEventListener('click', function () { setOpen(true); });

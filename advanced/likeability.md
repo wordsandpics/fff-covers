@@ -4,11 +4,17 @@ title: "Likeability score"
 subtitle: "Create an experimental engagement score for sorting your library"
 section: Advanced options
 requirements: [Calibre settings, Template code]
-previous: {label: "Metadata cleanup", url: "/advanced/metadata-cleanup/", section: "Advanced options"}
+guide:
+  result: "An optional number for sorting similar books in your Calibre library; it need not appear on a cover."
+  needs:
+    - {label: "Mapped Words and Chapters columns", url: "/start/metadata/"}
+    - {label: "Kudos and Hits columns created on this page"}
+  see: "Check the calculated score on a book with nonzero kudos and hits after mapping its source columns."
+previous: {label: "Covers from existing EPUBs", url: "/advanced/existing-epubs/", section: "Advanced options"}
 next: {label: "Troubleshooting", url: "/reference/troubleshooting/", section: "Reference"}
 ---
 
-This optional calculated column compares kudos with hits, then adjusts the result slightly for word and chapter count.
+This optional column gives each fic a number you can use to sort your Calibre library. It compares kudos with hits, then adjusts slightly for word and chapter count; for example, you could sort a set of similar fics by this score. It does not change their covers unless you choose to put the number there.
 
 ## What the score does
 
@@ -32,6 +38,8 @@ For each missing column:
 3. Enter the heading and lookup name from the table. Calibre displays a `#` before custom lookup names, so `kudos` becomes `#kudos`.
 4. Choose **Integers** as the column type, then save. Restart Calibre if asked.
 5. Open **FanFicFare → Configure FanFicFare → Custom Columns** and map the column to the FanFicFare value shown in the table. Leave **New Only** unchecked so updates can refresh the number.
+
+For a book already in your library, the new columns remain blank until FanFicFare processes it again. Select one test book and choose **FanFicFare → Update Existing FanFiction Books → Update Calibre Metadata from Website**. If its filled Saved metadata column already contains all four values, you can update from that column instead. Check **Edit metadata** to confirm that Kudos, Hits, Words, and Chapters are filled before creating or testing the score.
 
 ## Create the calculated score column
 

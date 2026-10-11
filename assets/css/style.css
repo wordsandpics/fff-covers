@@ -90,16 +90,47 @@ body {
 }
 
 .nav-section {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
   font-size: 12px;
   font-weight: 600;
+  justify-content: space-between;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #7898ae;
   padding: 0 20px;
   margin: 24px 0 8px;
+  list-style: none;
 }
 
-.nav-section:first-child {
+.nav-section::-webkit-details-marker {
+  display: none;
+}
+
+.nav-section::after {
+  content: "▸";
+  font-size: 13px;
+  margin-left: 8px;
+  transition: transform 0.15s;
+}
+
+.nav-group[open] .nav-section::after {
+  transform: rotate(90deg);
+}
+
+.nav-section:hover,
+.nav-section:focus-visible {
+  color: #dde2f0;
+}
+
+.nav-section:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid #7EC6F6;
+  outline-offset: -2px;
+}
+
+.nav-group:first-of-type .nav-section {
   margin-top: 0;
 }
 
@@ -374,6 +405,110 @@ pre code {
 .callout.warning p { color: #8b93b0; }
 
 /* ----------------------------------------
+   Guide orientation and overview flow
+---------------------------------------- */
+
+.guide-at-a-glance,
+.cover-flow {
+  background: #1a2340;
+  border: 1px solid rgba(126, 198, 246, 0.22);
+  border-radius: 8px;
+}
+
+.guide-at-a-glance {
+  margin: 0 0 28px;
+  padding: 18px 22px;
+}
+
+.guide-at-a-glance-title,
+.cover-flow-label {
+  color: #7EC6F6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.guide-at-a-glance dl {
+  margin-top: 10px;
+}
+
+.guide-at-a-glance dl > div {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 128px minmax(0, 1fr);
+  padding: 5px 0;
+}
+
+.guide-at-a-glance dt {
+  color: #a8c8dd;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.guide-at-a-glance dd {
+  color: #cad1e6;
+  font-size: 14px;
+  margin: 0;
+}
+
+.cover-flow {
+  margin: 22px 0 32px;
+  padding: 22px;
+}
+
+.cover-flow figcaption {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.cover-flow-node {
+  background: #131d33;
+  border: 1px solid rgba(126, 198, 246, 0.25);
+  border-radius: 7px;
+  color: #dde2f0;
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.cover-flow-node strong,
+.cover-flow-node span {
+  display: block;
+}
+
+.cover-flow-node span {
+  color: #a8b5cd;
+  font-size: 13px;
+  line-height: 1.45;
+  margin-top: 3px;
+}
+
+.cover-flow-arrow {
+  color: #7EC6F6;
+  font-size: 22px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.cover-flow-branches {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cover-flow-branch {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+  padding: 14px;
+}
+
+.cover-flow-branch .cover-flow-label {
+  margin-bottom: 10px;
+}
+
+/* ----------------------------------------
    Step cards (index page)
 ---------------------------------------- */
 
@@ -464,6 +599,16 @@ img.small{
   width: 60%;
 }
 @media (max-width: 768px) {
+  .guide-at-a-glance dl > div {
+    gap: 2px;
+    grid-template-columns: 1fr;
+    padding: 7px 0;
+  }
+
+  .cover-flow-branches {
+    grid-template-columns: 1fr;
+  }
+
   img.small{
     width: 80%;
   }

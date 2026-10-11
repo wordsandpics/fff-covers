@@ -5,11 +5,16 @@ subtitle: "Install the plugin, import a preset, generate your first cover"
 permalink: /start/first-cover/
 section: Start here
 requirements: [Calibre settings, FanFicFare, Generate Cover]
+guide:
+  result: "One working cover design that FanFicFare can use on new downloads."
+  needs:
+    - {label: "FanFicFare installed and able to download one AO3 fic"}
+  see: "Download one test fic after saving the preset and choosing it in FanFicFare."
 previous: {label: "Overview", url: "/", section: "Start here"}
 next: {label: "Set up your artwork", url: "/start/artwork/", section: "Start here"}
 ---
 
-By the end of this step you'll have automatically generated covers appearing on every fic you download — no manual work per fic required.
+By the end of this step, FanFicFare can automatically make a cover from the same starter design whenever you download a fic. Whether it replaces an existing cover depends on the option you choose below.
 
 ## 1. Install Generate Cover
 
@@ -18,31 +23,10 @@ Generate Cover is a separate Calibre plugin. Install it from Calibre's preferenc
 **Preferences → Plugins → Get new plugins**, search for "Generate Cover", install, and restart Calibre.
 
 ## 2. Import your starter preset
-To get you started I have prepared a preset and alternate coloured images. The design is very loosely inspired in Penguin Classics. It's meant to be a clean, simple design that prioritizes legibility above all. Feel free to use the images as you wish. 
 
+A **preset** is a saved cover design: its background image, fonts, layout, and text. Download the [Classics starter preset]({{ '/code/classics_preset.zip' | relative_url }}). This ZIP includes a grey background with a generic book symbol; you do not need to unzip it. [Step 2]({{ '/start/artwork/' | relative_url }}) has optional colours and explains how to add your own artwork.
 
-### Download the files
-
-There are two downloads. They serve different purposes:
-
-1. **[Classics preset]({{ '/code/classics_preset.zip' | relative_url }})**
-   Import this ZIP into Generate Cover. It contains the preset settings and the default grey background with a generic book symbol.
-
-2. **[Alternative colour backgrounds]({{ '/code/wordsandpics_classic_covers.zip' | relative_url }})**
-   This optional ZIP contains SVG background images in several colours. Extract or unzip it before using the images. Do not try to import this ZIP as a Generate Cover preset.
-
-<div class="callout note">
-  <div class="callout-title">Preset or background image?</div>
-  <p><code>classics_preset.zip</code> is a complete Generate Cover preset and should be imported from the Settings tab. The files inside <code>wordsandpics_classic_covers.zip</code> are individual background images. Unzip that file and select an SVG from Generate Cover's Select Image tab.</p>
-</div>
-
-The supplied backgrounds use a generic book symbol. Fandom symbols shown in screenshots of my personal library are part of my own customised presets; they are not automatically detected or included in the download. Step 2 explains how to make separate presets for different fandoms.
-
-<img src="{{ '/assets/img/cover-colours.png' | relative_url }}" alt="Cover colour options" class="small">
-
-### Import the starter preset
-
-1. Open **Generate Cover** from Calibre's toolbar.
+1. Select a fic in Calibre, then open **Generate Cover** from the toolbar.
 2. Open the **Settings** tab.
 3. Next to **Saved Settings**, click the import button—the arrow pointing inward.
 4. Select the downloaded file named `classics_preset.zip`.
@@ -55,46 +39,11 @@ The preview should now show the grey starter cover with the generic book symbol.
 
 ![Imported Classics preset]({{ '/assets/img/gcc-results.png' | relative_url }})
 
-### Use a different background colour
-
-The colour backgrounds are images, not presets:
-
-1. Find `wordsandpics_classic_covers.zip` in your Downloads folder.
-2. Extract or unzip it.
-3. In Generate Cover, select the **Classics** preset.
-4. Open the **Select Image** tab.
-5. Add or choose one of the extracted `.svg` files.
-6. Return to **Settings** and save the preset.
-
-To keep several colour versions, duplicate or rename the preset before changing its image—for example, **Classics Blue** or **Classics Green**.
+The imported preset is enough for a first cover. You can change its artwork later.
 
 ### Saving and selecting a preset
 
 **Saving** stores your design changes under a preset name in Generate Cover. **Selecting** chooses which saved preset Generate Cover should use. Select a preset inside Generate Cover when you want to preview or edit it; select it in FanFicFare's **Calibre Cover** table when you want FanFicFare to use it automatically. After editing a preset, return to **Settings** and save it before testing a download.
-
-### What's in the preset
-
-Here's a brief tour of the four tabs so you know what you're working with.
-
-#### Fonts
-
-<img src="{{ '/assets/img/gcc-fonts.png' | relative_url }}" alt="Generate Cover — Fonts tab" class="small">
-
-This preset uses Tahoma, just for wide availability. Text is white. The **Use the same font family for all text** option is checked, so if you want to change the typeface you only need to change it in one place. You can customise this any way you want, but be aware: there seems to be a bug and not all fonts will appear in the menu or work. Test your way forward.
-
-#### Dimensions
-
-<img src="{{ '/assets/img/gcc-dimensions.png' | relative_url }}" alt="Generate Cover — Dimensions tab" class="small">
-
-Covers are generated at 750 × 1100 pixels, a standard ebook portrait ratio. The background SVG is stretched to fill the cover area. You don't need to change anything here. But you can tweak the margins if needed. 
-
-#### Contents
-
-<img src="{{ '/assets/img/gcc-contents.png' | relative_url }}" alt="Generate Cover — Contents tab" class="small">
-
-Four elements are displayed in this order: title, author, series (only appears if the fic is part of a series),and custom text. The custom text field is set to `{pubdate}`, which pulls the publication date.
-
-This is the minimum useful cover: you know what the fic is, who wrote it, when it was published, and whether it's part of a series. It all uses standard data that every fic already has. In the next parts of the tutorial we'll add more useful information to covers using custom columns and FanFicFare automation.
 
 ## 3. Configure automatic cover selection
 
@@ -115,14 +64,23 @@ Click OK.
 
 ## 4. Test it
 
-Download any fic from AO3. When it completes, you should see a generated cover in the book details panel — your chosen color background, title, author, publication date.
+Download a public AO3 fic and check its cover in Calibre's book details panel. If you chose **Yes**, the new cover should show the grey starter background, title, author, and publication date. If you chose **Yes, unless FanFicFare found a cover image**, a cover from AO3 will remain when one is available; try a fic without a source cover to see the generated design.
 
 <div class="callout note">
   <div class="callout-title">Something not working?</div>
   <ul>
-    <li><strong>The preset will not import:</strong> make sure you selected <code>classics_preset.zip</code>, not the colour-background ZIP.</li>
-    <li><strong>The colour ZIP will not import:</strong> this is expected. Extract it first, then select an individual SVG from the Select Image tab.</li>
+    <li><strong>The preset will not import:</strong> make sure you selected <code>classics_preset.zip</code> and did not unzip it.</li>
     <li><strong>The cover still shows a book symbol:</strong> the supplied backgrounds use that symbol. Fandom symbols require background images that you provide yourself.</li>
     <li><strong>No generated cover appears:</strong> check that the Default row in FanFicFare's Calibre Cover settings points to your saved preset. You can also select a book and run Generate Cover manually to test the preset.</li>
   </ul>
 </div>
+
+## Explore the preset later (optional)
+
+You can use the starter design without changing these settings. When you are ready to customise it:
+
+- **Fonts:** The [Fonts tab]({{ '/assets/img/gcc-fonts.png' | relative_url }}) sets the typeface and colour. The starter uses white Tahoma text and one font family throughout.
+- **Dimensions:** The [Dimensions tab]({{ '/assets/img/gcc-dimensions.png' | relative_url }}) sets the cover size to 750 × 1100 pixels. You do not need to change it for this guide.
+- **Contents:** The [Contents tab]({{ '/assets/img/gcc-contents.png' | relative_url }}) displays title, author, series when present, and custom text. The starter's custom text is `{pubdate}`, the publication date. [Step 4]({{ '/start/generate-covers/' | relative_url }}) shows how to replace or add to it.
+
+Save the preset after any change; an already-generated cover will not update until you generate it again.

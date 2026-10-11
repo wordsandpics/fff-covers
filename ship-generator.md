@@ -6,17 +6,24 @@ description: "Generate a Calibre short-ships template from AO3 relationship name
 permalink: /display/ships/code-generator/
 section: Advanced options
 requirements: [Template code]
+guide:
+  result: "Ready-to-paste code for your ordered short-ship column."
+  needs:
+    - {label: "The #all_slashes setup and #short_ships column", url: "/advanced/anthology-ships/"}
+  see: "Paste the generated code into #short_ships, check it on a test book, then regenerate the cover."
 previous: {label: "Anthology-aware ships", url: "/advanced/anthology-ships/", section: "Advanced options"}
 next: {label: "Chapter-aware and dormant status", url: "/advanced/status/", section: "Advanced options"}
 ---
 
-This generator is the optional advanced continuation of [Anthology-aware ships]({{ '/advanced/anthology-ships/' | relative_url }}). It creates the longer `#short_ships` template that can show several order-preserved relationships. Add the full AO3 relationship name and the shorter name you want on your covers; the generator writes the repetitive Calibre code for you.
+This optional generator helps you put several short ship names on a cover without writing the code yourself. For example, enter `Shane Hollander/Ilya Rozanov` and `Hollanov` to show `Hollanov` on the cover. It builds the `#short_ships` template for the ordered relationships set up in [Anthology-aware ships]({{ '/advanced/anthology-ships/' | relative_url }}).
 
-Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-ships/' | relative_url }}). This tool creates the calculated template only—it does not create the Calibre columns or change `personal.ini`.
+Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-ships/' | relative_url }}) and create the `#short_ships` calculated column. This tool creates its template only—it does not create Calibre columns or change `personal.ini`.
+
+For a first try, click **Load examples**, replace one relationship and short name with your own, and type that relationship in the preview box. Importing existing code is optional and is mainly for returning users.
 
 <div class="callout note">
   <div class="callout-title">Optional AO3 category fallback</div>
-  <p>If you have completed the <a href="{{ '/display/ships/' | relative_url }}#works-without-a-romantic-relationship-tag">AO3 relationship-category setup</a>, you can enable <strong>Use AO3 category when no relationship is found</strong>. When a fic has no slash relationship, the generated template can then show its saved AO3 category, such as <code>M/M</code> or <code>F/F</code>, instead of the generic <code>Gen</code> fallback. The checkbox does not create or fill that category column for you.</p>
+  <p>If you have completed the <a href="{{ '/advanced/anthology-ships/' | relative_url }}#optional-ao3-category-fallback">AO3 relationship-category setup</a>, you can enable <strong>Use AO3 category when no relationship is found</strong>. When a fic has no slash relationship, the generated template can then show its saved AO3 category, such as <code>M/M</code> or <code>F/F</code>, instead of the generic <code>Gen</code> fallback. The checkbox does not create or fill that category column for you.</p>
 </div>
 
 <div class="callout note">
@@ -58,7 +65,7 @@ Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-shi
     </div>
 
     <p>Use the complete relationship name exactly as it appears on AO3, including the order of the people: <code>Character A/Character B</code> and <code>Character B/Character A</code> are different relationship names. Matching ignores capitalization, but it does not reverse the relationship for you. Add an alternative name when older or differently sourced stories use the other order or another version of the same relationship.</p>
-    <p class="generator-help">If you deliberately use FanFicFare's <code>sort_ships:true</code>, enter the participant order FanFicFare saves instead of AO3's original order.</p>
+    <details class="generator-import"><summary>If you changed how FanFicFare sorts relationships</summary><p class="generator-help">Enter the participant order that FanFicFare saves in <code>#all_slashes</code>, which may differ from AO3's original order.</p></details>
     <p class="generator-help">If you use <a href="{{ '/advanced/metadata-cleanup/' | relative_url }}">metadata cleanup</a> that changes relationship names, enter the cleaned value instead of the original AO3 value.</p>
 
     <div class="generator-limit-setting">
@@ -86,7 +93,7 @@ Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-shi
           AO3 category column lookup name
           <input id="category-column" type="text" value="#ao3_category" placeholder="#ao3_category">
         </label>
-        <p class="generator-help">Enter any custom-column lookup name, with or without its leading <code>#</code>. The column must contain FanFicFare's AO3 Categories metadata; see <a href="{{ '/display/ships/' | relative_url }}#works-without-a-romantic-relationship-tag">Works without a romantic relationship tag</a>.</p>
+        <p class="generator-help">Enter any custom-column lookup name, with or without its leading <code>#</code>. The column must contain FanFicFare's AO3 Categories metadata; see <a href="{{ '/advanced/anthology-ships/' | relative_url }}#optional-ao3-category-fallback">Optional AO3 category fallback</a>.</p>
       </div>
     </div>
 
@@ -130,7 +137,7 @@ Before using it, complete the [`#all_slashes` setup]({{ '/advanced/anthology-shi
       </div>
     </div>
 
-    <p>When your rows and preview look right, generate the complete template. In Calibre, open <strong>Preferences → Add your own columns</strong>, edit <code>#short_ships</code>, and replace the contents of its <strong>Template</strong> box with this result.</p>
+    <p>When your rows and preview look right, generate the complete template. In Calibre, open <strong>Preferences → Add your own columns</strong>, edit <code>#short_ships</code>, and replace the contents of its <strong>Template</strong> box with this result. Save the column and check its value on a test book. If it appears on a cover, regenerate that cover to see the change.</p>
 
     <div class="generator-actions">
       <button class="generator-button generator-button-primary" id="generate-template" type="button">Generate template</button>

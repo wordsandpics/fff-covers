@@ -4,11 +4,16 @@ title: "Metadata cleanup"
 subtitle: "Make inconsistent source tags more useful before saving them"
 section: Advanced options
 requirements: [personal.ini]
+guide:
+  result: "More consistent saved names for fandoms, relationships, or characters."
+  needs:
+    - {label: "A working FanFicFare metadata setup", url: "/start/metadata/"}
+  see: "Save personal.ini, update one test fic, and compare its saved values with the source page."
 previous: {label: "Precise tag matching", url: "/advanced/tag-matching/", section: "Advanced options"}
-next: {label: "Likeability score", url: "/advanced/likeability/", section: "Advanced options"}
+next: {label: "Covers from existing EPUBs", url: "/advanced/existing-epubs/", section: "Advanced options"}
 ---
 
-We get tags from AO3 and other supported sites. FanFicFare can modify them—for example, by cleaning up inconsistent names—before writing them into your Calibre database.
+This technique makes inconsistent names uniform before FanFicFare saves them in Calibre. For example, you can make both `Sherlock` and `Sherlock (BBC)` appear as `Sherlock (BBC TV 2010)` in your library. The same idea can clean up relationships or characters from AO3 and other supported sites.
 
 Every code block on this page goes in FanFicFare's `personal.ini`. Open **FanFicFare → Edit personal.ini**, find or create an `[archiveofourown.org]` section, and place one `add_to_replace_metadata:` heading beneath it. Add the indented cleanup rules below that heading; do not repeat the heading for every group.
 

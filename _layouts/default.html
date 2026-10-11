@@ -31,10 +31,14 @@
         <button class="menu-close" type="button" aria-label="Close navigation">×</button>
       </div>
       {% for section in site.nav %}
-      <div class="nav-section{% if page.section == section.title %} active{% endif %}">{{ section.title }}</div>
-      {% for p in section.pages %}
-      <a class="nav-link{% if p.subitem %} nav-subitem{% endif %}{% if page.url == p.url %} active{% endif %}" href="{{ p.url | relative_url }}">{{ p.label }}</a>
-      {% endfor %}
+      <details class="nav-group"{% if forloop.first or page.section == section.title %} open{% endif %}>
+        <summary class="nav-section{% if page.section == section.title %} active{% endif %}">{{ section.title }}</summary>
+        <div class="nav-group-links">
+          {% for p in section.pages %}
+          <a class="nav-link{% if p.subitem %} nav-subitem{% endif %}{% if page.url == p.url %} active{% endif %}" href="{{ p.url | relative_url }}"{% if page.url == p.url %} aria-current="page"{% endif %}>{{ p.label }}</a>
+          {% endfor %}
+        </div>
+      </details>
       {% endfor %}
     </nav>
 
@@ -51,10 +55,20 @@
       {% endif %}
       <h1>{{ page.title }}</h1>
       {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
-      {% if page.requirements %}
+      {% if page.requirements and page.guide == nil %}
       <div class="page-requirements" aria-label="Requirements">
         {% for requirement in page.requirements %}<span>{{ requirement }}</span>{% endfor %}
       </div>
+      {% endif %}
+      {% if page.guide %}
+      <aside class="guide-at-a-glance" aria-label="What this page does and what you need">
+        <div class="guide-at-a-glance-title">At a glance</div>
+        <dl>
+          <div><dt>You’ll get</dt><dd>{{ page.guide.result }}</dd></div>
+          <div><dt>Before you begin</dt><dd>{% for item in page.guide.needs %}{% if forloop.index > 1 %}; {% endif %}{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.label }}</a>{% else %}{{ item.label }}{% endif %}{% endfor %}</dd></div>
+          <div><dt>To see the change</dt><dd>{{ page.guide.see }}</dd></div>
+        </dl>
+      </aside>
       {% endif %}
       {% endif %}
       {{ content }}
