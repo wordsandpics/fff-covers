@@ -22,24 +22,29 @@ You now have FanFicFare metadata in Calibre columns. This step puts a few of tho
 1. Select a fic with values in the columns you made in Step 3, then open **Generate Cover** from Calibre's toolbar.
 2. Select the preset you want to change.
 3. Open the **Contents** tab.
-4. Find **Custom text**. This is where every example on this page goes.
+4. In **Field Order**, select **Custom Text 1**, **Custom Text 2**, or **Custom Text 3**. Each has its own text and presentation settings.
 
-The starter preset uses `{pubdate}` in this box. You can replace it, keep it on another line, or combine it with saved metadata.
+The starter preset uses `{pubdate}` in **Custom Text 1**. You can replace it or put the examples below in any of the three custom text fields. Select a field to set its font, alignment, style, colour, spacing, and optional backdrop. Shared font and colour options can apply those choices to all text.
 
-![Generate Cover custom columns in cover text]({{ '/assets/img/gcc-custom-columns.png' | relative_url }})
+![Generate Cover showing Custom Text 2 with its own presentation controls and metadata]({{ '/assets/img/gcc-custom-columns.png' | relative_url }})
 
 ## Put saved values on a cover
 
 The names inside braces are Calibre lookup names. Replace `{pubdate}` with a simple layout such as:
 
+#### Custom Field 1:
+
 ```
 {#ship}
+```
+#### Custom Field 2:
+```
 {#words} · {#status}
 ```
 
-Each line becomes a separate line on the cover. For a fic whose relationship is `Sherlock Holmes/John Watson`, word count is `34,291`, and status is `Completed`, the result would be those names on the first line and `34,291 · Completed` on the second. The middle dot is ordinary visible text, so you can remove it, change the order, or use a different separator. This first version may be long; the next recipes create shorter cover-ready values.
+Each custom field becomes a separate line on the cover. For a fic whose relationship is `Sherlock Holmes/John Watson`, word count is `34,291`, and status is `Completed`, the result would be those names on the first line and `34,291 · Completed` on the second. The middle dot is ordinary visible text, so you can remove it, change the order, or use a different separator.  Take a look at the advanced settings for tips on how to make the values shorter or more readable.
 
-Return to **Settings** and click **Save** so the edited Custom text becomes part of the preset. Saving a preset changes the design; it does not replace covers that were already generated.
+Click **Save** so the edited text becomes part of the preset. Saving a preset changes the design; it does not replace covers that were already generated.
 
 ## Generate a cover manually
 

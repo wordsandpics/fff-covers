@@ -7,6 +7,10 @@ previous: {label: "Downloads", url: "/reference/downloads/", section: "Reference
 next: {label: "Contact", url: "/contact/", section: "Reference"}
 ---
 
+## 12 November 2026
+
+- Updated the starter preset, walkthrough, and screenshots for the latest official Generate Cover settings, including three independently styled custom text fields.
+
 ## 11 October 2026
 
 - Redesigned navigation and added a simple overview of how covers are made.

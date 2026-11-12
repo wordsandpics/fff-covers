@@ -79,8 +79,9 @@ Download a public AO3 fic and check its cover in Calibre's book details panel. I
 
 You can use the starter design without changing these settings. When you are ready to customise it:
 
-- **Fonts:** The [Fonts tab]({{ '/assets/img/gcc-fonts.png' | relative_url }}) sets the typeface and colour. The starter uses white Tahoma text and one font family throughout.
 - **Dimensions:** The [Dimensions tab]({{ '/assets/img/gcc-dimensions.png' | relative_url }}) sets the cover size to 750 × 1100 pixels. You do not need to change it for this guide.
-- **Contents:** The [Contents tab]({{ '/assets/img/gcc-contents.png' | relative_url }}) displays title, author, series when present, and custom text. The starter's custom text is `{pubdate}`, the publication date. [Step 4]({{ '/start/generate-covers/' | relative_url }}) shows how to replace or add to it.
+- **Contents:** The [Contents tab]({{ '/assets/img/gcc-contents.png' | relative_url }}) controls text appearance and content. You can choose standard fields: Title, author, series, and you can put custom data in 3 different fields that can be styled independently.
+  - **Font and text colour:** Select a field to adjust its font, size, alignment, style, colour, and spacing. You can also add a coloured background behind the text. The starter uses Tahoma, with a bold title and italic series name. [See the title controls]({{ '/assets/img/gcc-fonts.png' | relative_url }}).
+  - **Data:** Choose which fields appear and what each custom text field says. The starter puts `{pubdate}` (the publication date) in **Custom Text 1**. [Step 4]({{ '/start/generate-covers/' | relative_url }}) shows how to use Custom Text 1, 2, and 3.
 
 Save the preset after any change; an already-generated cover will not update until you generate it again.
